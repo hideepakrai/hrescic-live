@@ -26,9 +26,9 @@ const navItems = [
     megaKey: "whoWeCreateFor",
   },
   {
-    name: "Brands We Partner With",
-    href: "/brands-we-partner-with",
-    megaKey: "brands",
+    // name: "Brands We Partner With",
+    // href: "/brands-we-partner-with",
+    // megaKey: "brands",
   },
   { name: "Let's Talk", href: "/lets-talk", megaKey: "contact" },
 ];
@@ -150,10 +150,10 @@ const megaMenuData: Record<
         href: "/who-we-create-for/tourism-travel",
         subcategories: [
           {
-            title: "Platform Clarity",
+            title: "MyRent",
             description:
-              "Scaling a tourism platform without losing structure or bookings.",
-            href: "/who-we-create-for/tourism-travel",
+              "Web Design Case Study – 2025.",
+            href: "/who-we-create-for/myrent",
           },
         ],
       },
@@ -162,10 +162,16 @@ const megaMenuData: Record<
         href: "/who-we-create-for/education-e-learning",
         subcategories: [
           {
-            title: "Ecosystem Scale",
+            title: "CDC",
             description:
-              "Turning fragmented education products into one scalable system.",
-            href: "/who-we-create-for/education-e-learning",
+              "Web Design Case Study – 2025.",
+            href: "/who-we-create-for/cdc",
+          },
+          {
+            title: "EXPO – Life far and beyond",
+            description:
+              "Web Design Case Study – 2025.",
+            href: "/who-we-create-for/expo-life-far-beyond",
           },
         ],
       },
@@ -174,10 +180,16 @@ const megaMenuData: Record<
         href: "/who-we-create-for/health-pharma-beauty",
         subcategories: [
           {
-            title: "Trust Architecture",
+            title: "L’Oréal",
             description:
-              "Building a multi-brand medical ecosystem without diluting authority.",
-            href: "/who-we-create-for/health-pharma-beauty",
+              "Web Design Case Study – 2025.",
+            href: "/who-we-create-for/loreal",
+          },
+           {
+            title: "Poliderma",
+            description:
+              "Web Design Case Study – 2025.",
+            href: "/who-we-create-for/poliderma",
           },
         ],
       },
@@ -186,78 +198,96 @@ const megaMenuData: Record<
         href: "/who-we-create-for/local-boutique-brands",
         subcategories: [
           {
-            title: "Premium Positioning",
+            title: "Castania",
             description:
-              "Transforming a quality product into a premium, scalable brand.",
-            href: "/who-we-create-for/local-boutique-brands",
+              "Web Design Case Study – 2025.",
+            href: "/who-we-create-for/castania",
+          },
+           {
+            title: "NAVADA",
+            description:
+              "Web Design Case Study – 2025.",
+            href: "/who-we-create-for/navada",
+          },
+           {
+            title: "Minglanje v Klancu",
+            description:
+              "Web Design Case Study – 2025.",
+            href: "/who-we-create-for/minglanje-v-klanjcu",
+          },
+           {
+            title: "IDS",
+            description:
+              "Web Design Case Study – 2025.",
+            href: "/who-we-create-for/ids",
           },
         ],
       },
     ],
   },
 
-  brands: {
-    title: "Brands We Partner With",
-    subtitle:
-      "Case study sekcija; SEO: marketing results, case studies, agency portfolio.",
-    items: [
-      {
-        title: "CASE STUDIES",
-        cards: [
-          {
-            title: "CDC",
-            description: "Web Design Case Study - 2025",
-            href: "/case-studies/cdc",
-          },
-          {
-            title: "MyRent",
-            description: "Web Design Case Study - 2025",
-            href: "/case-studies/myrent",
-          },
-          {
-            title: "Castania",
-            description: "Web Design Case Study - 2025",
-            href: "/case-studies/castania",
-          },
-          {
-            title: "Poliderma",
-            description: "Web Design Case Study - 2025",
-            href: "/case-studies/poliderma",
-          },
-          {
-            title: "L'Oreal",
-            description: "Web Design Case Study - 2025",
-            href: "/case-studies/loreal",
-          },
-          {
-            title: "Karlo Ban",
-            description: "Web Design Case Study - 2025",
-            href: "/case-studies/karlo-ban",
-          },
-          {
-            title: "NAVADA",
-            description: "Web Design Case Study - 2025",
-            href: "/case-studies/navada",
-          },
-          {
-            title: "IDS",
-            description: "Web Design Case Study - 2025",
-            href: "/case-studies/ids",
-          },
-          {
-            title: "Minglanje V Klanjcu",
-            description: "Web Design Case Study - 2025",
-            href: "/case-studies/minglanje-v-klanjcu",
-          },
-          {
-            title: "EXPO - Life far and beyond",
-            description: "Web Design Case Study - 2025",
-            href: "/case-studies/expo-life-far-beyond",
-          },
-        ],
-      },
-    ],
-  },
+  // brands: {
+  //   title: "Brands We Partner With",
+  //   subtitle:
+  //     "Case study sekcija; SEO: marketing results, case studies, agency portfolio.",
+  //   items: [
+  //     {
+  //       title: "CASE STUDIES",
+  //       cards: [
+  //         {
+  //           title: "CDC",
+  //           description: "Web Design Case Study - 2025",
+  //           href: "/case-studies/cdc",
+  //         },
+  //         {
+  //           title: "MyRent",
+  //           description: "Web Design Case Study - 2025",
+  //           href: "/case-studies/myrent",
+  //         },
+  //         {
+  //           title: "Castania",
+  //           description: "Web Design Case Study - 2025",
+  //           href: "/case-studies/castania",
+  //         },
+  //         {
+  //           title: "Poliderma",
+  //           description: "Web Design Case Study - 2025",
+  //           href: "/case-studies/poliderma",
+  //         },
+  //         {
+  //           title: "L'Oreal",
+  //           description: "Web Design Case Study - 2025",
+  //           href: "/case-studies/loreal",
+  //         },
+  //         {
+  //           title: "Karlo Ban",
+  //           description: "Web Design Case Study - 2025",
+  //           href: "/case-studies/karlo-ban",
+  //         },
+  //         {
+  //           title: "NAVADA",
+  //           description: "Web Design Case Study - 2025",
+  //           href: "/case-studies/navada",
+  //         },
+  //         {
+  //           title: "IDS",
+  //           description: "Web Design Case Study - 2025",
+  //           href: "/case-studies/ids",
+  //         },
+  //         {
+  //           title: "Minglanje V Klanjcu",
+  //           description: "Web Design Case Study - 2025",
+  //           href: "/case-studies/minglanje-v-klanjcu",
+  //         },
+  //         {
+  //           title: "EXPO - Life far and beyond",
+  //           description: "Web Design Case Study - 2025",
+  //           href: "/case-studies/expo-life-far-beyond",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 
   contact: {
     title: "Let’s Talk",

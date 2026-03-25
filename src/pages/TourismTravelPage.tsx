@@ -98,14 +98,20 @@ const TourismTravelPage = () => {
                                     </p>
 
                                     <div className="mt-4 sm:mt-8 lg:mt-6 flex flex-col gap-3">
-                                        <GoldButton>
-                                            Talk about scaling your education business
-                                        </GoldButton>
+                                      {/* Link to /lets-talk#ask */}
+                                     <a href="lets-talk#demo">
+        <GoldButton>
+           Book a tourism strategy call
+        </GoldButton>
+    </a>
 
-                                        <GoldButton>
-                                            See how education platforms grow with us
-                                        </GoldButton>
-                                    </div>
+    {/* Link to /lets-talk#demo */}
+    <a href="/lets-talk#ask">
+        <GoldButton>
+            Ask about direct booking growth
+        </GoldButton>
+    </a>
+</div>
                                 </div>
                             </div>
                         </div>
@@ -281,8 +287,11 @@ const TourismTravelPage = () => {
                     </div>
 
                     <div className="mt-8 flex justify-center">
-                        <GoldButton>   See how clarity drives growth in tourism</GoldButton>
-                    </div>
+    {/* Link to MyRent Case Study (example link: /case-studies/myrent) */}
+    <a href="/who-we-create-for/myrent">
+        <GoldButton>See how clarity drives growth in tourism</GoldButton>
+    </a>
+</div>
                 </div>
             </section>
 
@@ -358,9 +367,16 @@ const TourismTravelPage = () => {
                         </p>
 
                         <div className="mt-7 flex w-full max-w-[420px] flex-col items-center gap-3">
-                            <GoldButton> Book a tourism strategy call</GoldButton>
-                            <GoldButton>  Ask about direct booking growth</GoldButton>
-                        </div>
+    {/* Link to /lets-talk#demo */}
+    <a href="/lets-talk#demo" className="w-full sm:w-fit">
+        <GoldButton>Book a tourism strategy call</GoldButton>
+    </a>
+
+    {/* Link to /lets-talk#ask */}
+    <a href="/lets-talk#ask" className="w-full sm:w-fit">
+        <GoldButton>Ask about direct booking growth</GoldButton>
+    </a>
+</div>
                     </div>
                 </div>
             </section>

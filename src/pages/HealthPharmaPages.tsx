@@ -51,14 +51,22 @@ const QuoteMark = () => (
   </span>
 );
 
-const GoldButton = ({ children }) => (
-  <button
-    type="button"
-    className="w-full sm:w-fit rounded-full bg-[#d5943b] px-5 sm:px-7 py-[13px] sm:py-[14px] text-center text-[14px] sm:text-[15px] font-medium leading-[1.35] text-white transition duration-300 hover:bg-[#c9852d] hover:shadow-[0_12px_24px_rgba(213,148,59,0.24)]"
-  >
-    {children}
-  </button>
-);
+const GoldButton = ({ children, href }) => {
+  const baseClass = "inline-block w-full sm:w-fit rounded-full bg-[#d5943b] px-5 sm:px-7 py-[13px] sm:py-[14px] text-center text-[14px] sm:text-[15px] font-medium leading-[1.35] text-white transition duration-300 hover:bg-[#c9852d] hover:shadow-[0_12px_24px_rgba(213,148,59,0.24)]";
+  
+  if (href) {
+    return (
+      <a href={href} className={baseClass}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <button type="button" className={baseClass}>
+      {children}
+    </button>
+  );
+};
 
 const HealthPharmaPages = () => {
   return (
@@ -95,11 +103,11 @@ const HealthPharmaPages = () => {
                   </p>
 
                   <div className="mt-7 sm:mt-8 lg:mt-9 flex flex-col gap-3">
-                    <GoldButton>
+                    <GoldButton href="/lets-talk#ask">
                       Talk about scaling without losing trust
                     </GoldButton>
 
-                    <GoldButton>
+                    <GoldButton href="/lets-talk#demo">
                       See how medical brands grow with us
                     </GoldButton>
                   </div>
@@ -283,7 +291,9 @@ const HealthPharmaPages = () => {
           </div>
 
           <div className="mt-8 flex justify-center">
-            <GoldButton>See how trust-driven ecosystems scale</GoldButton>
+           <GoldButton href="/who-we-create-for/poliderma">
+              See how trust-driven ecosystems scale
+              </GoldButton>
           </div>
         </div>
       </section>
@@ -351,8 +361,12 @@ const HealthPharmaPages = () => {
             </p>
 
             <div className="mt-7 flex w-full max-w-[420px] flex-col items-center gap-3">
-              <GoldButton>Book a health strategy call</GoldButton>
-              <GoldButton>Ask about ecosystem architecture</GoldButton>
+              <GoldButton href="/lets-talk#demo">
+                Book a health strategy call
+                </GoldButton>
+              <GoldButton href="/lets-talk#ask">
+                Ask about ecosystem architecture
+                </GoldButton>
             </div>
           </div>
         </div>

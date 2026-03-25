@@ -68,21 +68,21 @@ export default function App() {
         <Route path='who-we-create-for/tourism-travel' element={<TourismTravelPage />} />
 
 
-        <Route path="/case-studies/myrent" element={<MyRent />} />
-        <Route path="/case-studies/expo-life-far-beyond" element={<ExpoLifefarandbeyond />} />
-        <Route path="/case-studies/castania" element={<Castania />} />
-        <Route path="/case-studies/poliderma" element={<Poliderma />} />
+        <Route path="/who-we-create-for/myrent" element={<MyRent />} />
+        <Route path="/who-we-create-for/expo-life-far-beyond" element={<ExpoLifefarandbeyond />} />
+        <Route path="//who-we-create-for/castania" element={<Castania />} />
+        <Route path="/who-we-create-for/poliderma" element={<Poliderma />} />
 
 
 
-        <Route path="/case-studies/minglanje-v-klanjcu" element={<MinglanjeVKlanjcu />} />
-        <Route path="/case-studies/ids" element={<IDS />} />
-        <Route path="/case-studies/navada" element={<NavadaPages />} />
+        <Route path="/who-we-create-for/minglanje-v-klanjcu" element={<MinglanjeVKlanjcu />} />
+        <Route path="/who-we-create-for/ids" element={<IDS />} />
+        <Route path="/who-we-create-for/navada" element={<NavadaPages />} />
         {/* <Route path="/case-studies/poliderma" element={<Poliderma />} /> */}
-         <Route path="/case-studies/loreal" element={<LorealPage />} />
+         <Route path="/who-we-create-for/loreal" element={<LorealPage />} />
          <Route path="/case-studies/karlo-ban" element={<KarloBanPage />} />
          {/* <Route path="/case-studies/navada" element={<NavadaPage />} /> */}
-         <Route path="/case-studies/cdc" element={<CDCPage />} />
+         <Route path="/who-we-create-for/cdc" element={<CDCPage />} />
 
 
 

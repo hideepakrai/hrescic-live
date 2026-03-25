@@ -51,14 +51,22 @@ const QuoteMark = () => (
   </span>
 );
 
-const GoldButton = ({ children }) => (
-  <button
-    type="button"
-    className="w-full sm:w-fit rounded-full bg-[#CE6B03] px-5 sm:px-7 py-[13px] sm:py-[14px] text-center text-[14px] sm:text-[15px] font-medium leading-[1.35] text-white transition duration-300 hover:bg-[#c9852d] hover:shadow-[0_12px_24px_rgba(213,148,59,0.24)]"
-  >
-    {children}
-  </button>
-);
+const GoldButton = ({ children, href }) => {
+  const baseClass = "inline-block w-full sm:w-fit rounded-full bg-[#CE6B03] px-5 sm:px-7 py-[13px] sm:py-[14px] text-center text-[14px] sm:text-[15px] font-medium leading-[1.35] text-white transition duration-300 hover:bg-[#A65602] hover:shadow-[0_8px_16px_rgba(0,0,0,0.15)]";
+  
+  if (href) {
+    return (
+      <a href={href} className={baseClass}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <button type="button" className={baseClass}>
+      {children}
+    </button>
+  );
+};
 
 const LocalBoutiqueBrands = () => {
   return (
@@ -95,11 +103,11 @@ const LocalBoutiqueBrands = () => {
                   </p>
 
                   <div className="mt-7 sm:mt-8 lg:mt-9 flex flex-col gap-3">
-                    <GoldButton>
+                    <GoldButton href="/lets-talk#ask">
                        Talk about building a premium brand
                     </GoldButton>
 
-                    <GoldButton>
+                    <GoldButton href="/lets-talk#demo">
                       See how boutique brands scale with us
                     </GoldButton>
                   </div>
@@ -281,7 +289,9 @@ const LocalBoutiqueBrands = () => {
           </div>
 
           <div className="mt-8 flex justify-center">
-            <GoldButton> See how premium positioning changes everything</GoldButton>
+           <GoldButton href="/who-we-create-for/castania">
+              See how premium positioning changes everything
+              </GoldButton>
           </div>
         </div>
       </section>
@@ -330,23 +340,24 @@ const LocalBoutiqueBrands = () => {
       </section>
 
       {/* FINAL CTA */}
+     {/* FINAL CTA */}
       <section className="w-full px-3 pb-[54px] pt-3 sm:px-5 sm:pb-[80px] lg:pb-[90px]">
         <div className="mx-auto container-xl">
           <div className="flex flex-col items-center justify-center px-2 sm:px-4 py-4 sm:py-8 text-center">
             <h2
-              className=" text-[26px] sm:text-[32px] md:text-[36px] lg:text-[41px] font-normal leading-[1.15] tracking-[-0.02em] text-[#6e5c56]"
+              className="text-[26px] sm:text-[32px] md:text-[36px] lg:text-[41px] font-normal leading-[1.15] tracking-[-0.02em] text-[#6e5c56]"
               style={{ fontFamily: "Georgia, Times New Roman, serif" }}
             >
               Ready to turn your product into a premium brand?
             </h2>
 
             <p className="mt-4 max-w-[470px] text-[15px] sm:text-[16px] leading-[1.6] text-[#655852]">
-        Let’s talk about positioning, identity and building a brand system that supports growth.
+              Let’s talk about positioning, identity and building a brand system that supports growth.
             </p>
 
             <div className="mt-7 flex w-full max-w-[420px] flex-col items-center gap-3">
-              <GoldButton>Book a health strategy call</GoldButton>
-              <GoldButton>Ask about ecosystem architecture</GoldButton>
+              <GoldButton href="/lets-talk#ask">Book a brand strategy call</GoldButton>
+              <GoldButton href="/lets-talk#demo">Ask about boutique scaling</GoldButton>
             </div>
           </div>
         </div>
