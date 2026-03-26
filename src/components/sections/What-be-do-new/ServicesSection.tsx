@@ -130,8 +130,8 @@ const ServicesSection = () => {
 
         <div className="mx-auto max-w-5xl px-6 py-12 text-center text-white sm:px-8 sm:py-16 lg:px-12 lg:py-16">
           <h3 className="text-3xl font-light leading-tight md:text-4xl">
-            How Our Subscription Model Works
-          </h3>
+            How Our Subscription Model Works 
+          </h3> 
 
           <p className="mx-auto mt-5  text-sm font-normal leading-7 text-white/95 sm:text-base">
            Every plan includes a one-time setup that fixes your <br className="hidden md:block"/> 
@@ -153,10 +153,12 @@ const ServicesSection = () => {
   </div>
 ))}
           </div>
-
+          
+          <a href="#plans">
           <button className="mt-10 rounded-full bg-[#37C100] hover:bg-[#2d9802] px-8 py-3 text-sm font-medium text-white  transition hover:-translate-y-0.5">
             See Our Plans
           </button>
+          </a>
         </div>
       </div>
     </section>

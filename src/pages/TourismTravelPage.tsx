@@ -57,7 +57,7 @@ const QuoteMark = () => (
 const GoldButton = ({ children }) => (
     <button
         type="button"
-        className="w-full sm:w-fit rounded-full bg-[#3EDA00] px-3 sm:px-7 py-[13px] sm:py-[14px] text-center text-[12px] sm:text-[15px] font-medium leading-[1.35] text-white transition duration-300 hover:bg-[#3EDA00] hover:shadow-[0_12px_24px_rgba(213,148,59,0.24)] text-[#003C42]"
+        className="w-full sm:w-fit rounded-full bg-[#3EDA00] px-3 sm:px-7 py-[13px] sm:py-[14px] text-center text-[12px] sm:text-[15px] font-semibold leading-[1.35] text-[#003C42]  transition duration-300 hover:bg-[#3EDA00]  text-[#003C42]"
     >
         {children}
     </button>
@@ -71,9 +71,9 @@ const TourismTravelPage = () => {
                 <div className="mx-auto container-xl">
                     <div className="grid overflow-hidden rounded-[18px] bg-[#00353A] lg:grid-cols-[0.98fr_1.02fr]">
                         <div className="flex items-center order-2 lg:order-1">
-                            <div className="w-full px-4 py-7 sm:px-8 sm:py-10 md:px-10 md:py-9 lg:pb-[74px] lg:ps-[60px] lg:pe-8">
+                            <div className="w-full px-4 py-7 sm:px-8 sm:py-10 md:px-10 md:py-7 lg:pb-[74px] lg:ps-[75px] lg:pe-8">
                                 <div className="mb-7 flex flex-wrap items-center gap-2 sm:gap-3 text-[13px] text-[#666666] sm:mb-10 lg:mb-12">
-                                    <span className="text-[14px] sm:text-[15px] font-semibold text-[#fff]">
+                                    <span className="text-[14px] sm:text-[20px] font-semibold text-[#fff]">
                                         Who We Create For
                                     </span>
                                     <span className="text-[#9b9b9b]">|</span>
@@ -82,36 +82,37 @@ const TourismTravelPage = () => {
                                     </span>
                                 </div>
 
-                                <div>
+                                <div className="pt-8">
                                     <h1
-                                        className="max-w-[450px] text-[28px] sm:text-[34px] md:text-[40px] lg:text-[38px] font-[400] leading-[1.08] tracking-[-0.03em] text-[#fff]"
-                                        style={{ fontFamily: "Georgia, Times New Roman, serif" }}
+                                        className="pe-4 hero-title text-[28px] sm:text-[34px] md:text-[40px] lg:text-[38px] font-[400] leading-[1.08] tracking-[-0.03em] text-[#fff]"
+
                                     >
                                         <span className="text-[#3EDA00] pe-2">
                                             Tourism & Travel brands
                                         </span>
+                                        <br className="hidden lg:block" />
                                         need more than campaigns. They need clarity that converts. Directly.
 
                                     </h1>
-                                    <p className="mt-5 sm:mt-6 lg:mt-4 max-w-[430px] text-[15px] sm:text-[16px] leading-[1.75] text-[#fff]">
+                                    <p className="mt-5 sm:mt-6 lg:mt-4 max-w-[430px] text-[15px] sm:text-[17px] leading-[1.75] text-[#fff]">
                                         We help tourism and travel businesses stay visible, trusted and chosen, even in crowded, OTA-dominated markets.  Not by adding noise, but by making the value obvious at the moment of decision.
                                     </p>
 
                                     <div className="mt-4 sm:mt-8 lg:mt-6 flex flex-col gap-3">
-                                      {/* Link to /lets-talk#ask */}
-                                     <a href="lets-talk#demo">
-        <GoldButton>
-           Book a tourism strategy call
-        </GoldButton>
-    </a>
+                                        {/* Link to /lets-talk#ask */}
+                                        <a href="/lets-talk#demo">
+                                            <GoldButton>
+                                                Book a tourism strategy call
+                                            </GoldButton>
+                                        </a>
 
-    {/* Link to /lets-talk#demo */}
-    <a href="/lets-talk#ask">
-        <GoldButton>
-            Ask about direct booking growth
-        </GoldButton>
-    </a>
-</div>
+                                        {/* Link to /lets-talk#demo */}
+                                        <a href="/lets-talk#ask">
+                                            <GoldButton>
+                                                Ask about direct booking growth
+                                            </GoldButton>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -287,11 +288,11 @@ const TourismTravelPage = () => {
                     </div>
 
                     <div className="mt-8 flex justify-center">
-    {/* Link to MyRent Case Study (example link: /case-studies/myrent) */}
-    <a href="/who-we-create-for/myrent">
-        <GoldButton>See how clarity drives growth in tourism</GoldButton>
-    </a>
-</div>
+                        {/* Link to MyRent Case Study (example link: /case-studies/myrent) */}
+                        <a href="/who-we-create-for/myrent">
+                            <GoldButton>See how clarity drives growth in tourism</GoldButton>
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -312,12 +313,12 @@ const TourismTravelPage = () => {
                     </div>
 
                     <div className="mx-auto mt-8 md:container-xl sm:container-lg lg:px-[108px]"
-                       
+
                     >
-                      <div
-  className="overflow-hidden rounded-t-xl bg-[#fff]  p-4 lg:grid lg:grid-cols-[0.95fr_1.05fr] "
-  style={{ backgroundImage: "url('/assets/Image/tourism-brand-img.png')", backgroundSize: "cover", backgroundPosition: "center" }}
->
+                        <div
+                            className="overflow-hidden rounded-t-xl bg-[#fff]  p-4 lg:grid lg:grid-cols-[0.95fr_1.05fr] "
+                            style={{ backgroundImage: "url('/assets/Image/tourism-brand-img.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+                        >
 
                             {/* LEFT TEXT */}
                             <div className="flex items-center justify-center px-5 py-8 sm:px-8 sm:py-10 lg:px-[25px]">
@@ -333,7 +334,7 @@ const TourismTravelPage = () => {
                                 </p>
                             </div>
 
-                     
+
                         </div>
 
                         {/* BOTTOM STRIP */}
@@ -367,16 +368,16 @@ const TourismTravelPage = () => {
                         </p>
 
                         <div className="mt-7 flex w-full max-w-[420px] flex-col items-center gap-3">
-    {/* Link to /lets-talk#demo */}
-    <a href="/lets-talk#demo" className="w-full sm:w-fit">
-        <GoldButton>Book a tourism strategy call</GoldButton>
-    </a>
+                            {/* Link to /lets-talk#demo */}
+                            <a href="/lets-talk#demo" className="w-full sm:w-fit">
+                                <GoldButton>Book a tourism strategy call</GoldButton>
+                            </a>
 
-    {/* Link to /lets-talk#ask */}
-    <a href="/lets-talk#ask" className="w-full sm:w-fit">
-        <GoldButton>Ask about direct booking growth</GoldButton>
-    </a>
-</div>
+                            {/* Link to /lets-talk#ask */}
+                            <a href="/lets-talk#ask" className="w-full sm:w-fit">
+                                <GoldButton>Ask about direct booking growth</GoldButton>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

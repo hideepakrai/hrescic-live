@@ -9,6 +9,8 @@ type SectorCard = {
   why: string;
   need: string;
   cta: string;
+  link: string; // Added link
+  image: string; // Added image
   snapshot: SnapshotItem[];
   planLabel: string;
   plan: string;
@@ -25,6 +27,8 @@ const cards: SectorCard[] = [
     need:
       "A booking-focused brand and website that make the value obvious — instantly.",
     cta: "See Tourism Projects",
+    link: "/who-we-create-for/tourism-travel",
+    image: "/assets/Image/tourism-hero.png",
     snapshot: [
       "+68% bookings after full website rebuild",
       "3× more qualified inquiries after messaging refresh",
@@ -34,19 +38,21 @@ const cards: SectorCard[] = [
     plan: "GROW + SCALE",
   },
   {
-    title: "Yacht & Charter",
-    subtitle: "For brands that sail\nabove the noise.",
+    title: "Education & E-Learning",
+    subtitle: "For brands that\nbuild the future.",
     pain:
-      "Potential guests compare you with 20 nearly identical charter options — and postpone the decision.",
+      "Programs, platforms and funnels evolve separately, creating fragmented experiences for learners.",
     why:
-      "Your website and visuals don’t communicate professionalism, experience or the feeling of the journey.",
+      "Education businesses don’t struggle because they lack expertise. They struggle because complexity hides value.",
     need:
-      "A frictionless booking experience with strong visuals that sell the story before the form.",
-    cta: "See Tourism Projects",
+      "A clear structure learners immediately understand and systems that support scale without adding confusion.",
+    cta: "Explore Learning Projects",
+    link: "/who-we-create-for/education-elearning",
+    image: "/assets/Image/education-imgs.png",
     snapshot: [
-      "Booking friction reduced by 52%",
-      "Hero video increased session duration by 3×",
-      "Email + social funnel generating consistent leads",
+      "Registration friction reduced by 48%",
+      "Closer messaging = 2.5× higher enrolment",
+      "Scalable course ecosystem for rapid expansion",
     ],
     planLabel: "Suggested Plan",
     plan: "GROW + SCALE",
@@ -55,15 +61,17 @@ const cards: SectorCard[] = [
     title: "Health, Pharma & Beauty",
     subtitle: "For brands that build\ntrust through care.",
     pain:
-      "Clients want to trust you — but your online presence feels outdated or inconsistent compared to 10+ similar clinics/brands they browse.",
+      "Clients want to trust you — but your online presence feels outdated or inconsistent compared to others.",
     why:
-      "Your expertise and warmth don’t translate clearly into digital communication.",
+      "Your expertise and warmth don’t translate clearly into digital communication, creating hesitation.",
     need:
       "A credible, empathetic and structured digital identity that builds trust before they ever walk in.",
-    cta: "See Tourism Projects",
+    cta: "See Health Projects",
+    link: "/who-we-create-for/health-pharma",
+    image: "/assets/hero/health-pharma-img.png",
     snapshot: [
       "Clearer messaging = more qualified inquiries",
-      "+32% returning clients after content system setup",
+      "+32% returning clients after content setup",
       "Service pages redesigned for clarity & trust",
     ],
     planLabel: "Suggested Plan",
@@ -73,12 +81,14 @@ const cards: SectorCard[] = [
     title: "Local & Boutique Brands",
     subtitle: "For makers, doers\nand dreamers.",
     pain:
-      "Your product stands out in real life — but online you blend in with dozens of similar boutique brands.",
+      "Your product stands out in real life — but online you blend in with dozens of similar search results.",
     why:
       "Your personality, craft and story aren’t expressed visually or verbally in a way people remember.",
     need:
-      "Authentic identity + storytelling that match the quality of your work.",
-    cta: "See Tourism Projects",
+      "Authentic identity + storytelling that match the quality of your work and support premium pricing.",
+    cta: "See Boutique Projects",
+    link: "/who-we-create-for/local-boutique",
+    image: "/assets/Image/brands-hero-img.png",
     snapshot: [
       "Stronger brand clarity → higher perceived value",
       "Launch content generating instant traction",
@@ -97,48 +107,58 @@ const SectorCards: React.FC = () => {
           {cards.map((c, i) => (
             <article
               key={i}
-              className="rounded-2xl bg-[#F8F8F8] shadow-sm overflow-hidden flex flex-col"
+              className="rounded-2xl bg-[#F8F8F8] shadow-sm overflow-hidden flex flex-col h-full"
             >
-              {/* Top image placeholder */}
-              <div className="h-40 bg-[#F1F1F1]" />
+              {/* Top image content */}
+              <div className="h-44 overflow-hidden">
+                <img 
+                  src={c.image} 
+                  alt={c.title} 
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
 
               {/* Main content */}
-              <div className="flex flex-col gap-4 px-5 py-5 text-[#222]">
-                <h4 className="text-[20px] font-semibold text-[#555555]">{c.title}</h4>
-                <div className="h-px bg-black/10" />
+              <div className="flex flex-col flex-1 px-5 py-6 text-[#222]">
+                <h4 className="text-[20px] font-semibold text-[#111827]">{c.title}</h4>
+                <div className="mt-2 mb-4 h-px bg-black/10" />
 
-                <p className="text-md leading-6 whitespace-pre-line text-[#555555]">
+                <p className="text-[15px] leading-6 whitespace-pre-line text-[#4b5563] min-h-[48px]">
                   {c.subtitle}
                 </p>
 
-                <div className="h-px bg-black/10" />
+                <div className="my-4 h-px bg-black/10" />
 
-                <div className="space-y-3 text-[14px] leading-6 text-black/70">
+                <div className="flex-1 space-y-4 text-[14px] leading-relaxed text-[#374151]">
                   <div>
-                    <p className="font-semibold text-black/80">The pain:</p>
-                    <p>{c.pain}</p>
+                    <p className="font-bold text-[#111827]">The pain:</p>
+                    <p className="mt-1">{c.pain}</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-black/80">Why it happens:</p>
-                    <p>{c.why}</p>
+                    <p className="font-bold text-[#111827]">Why it happens:</p>
+                    <p className="mt-1">{c.why}</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-black/80">What you need:</p>
-                    <p>{c.need}</p>
+                    <p className="font-bold text-[#111827]">What you need:</p>
+                    <p className="mt-1">{c.need}</p>
                   </div>
                 </div>
 
-                <button className="mt-2 w-fit rounded-full bg-[#37C100] hover:bg-[#2d9802] px-5 py-2 text-[14px] font-medium text-white shadow-sm hover:opacity-95">
-                  {c.cta}
-                </button>
+                <div className="mt-6">
+                  <a href={c.link}>
+                    <button className="w-fit rounded-full bg-[#37C100] hover:bg-[#2d9802] px-6 py-2.5 text-[14px] font-medium text-white shadow-sm transition-all hover:-translate-y-0.5">
+                      {c.cta}
+                    </button>
+                  </a>
+                </div>
               </div>
 
               {/* Snapshot Results block */}
-              <div className="mt-auto bg-[#F1F1F1] px-5 py-4 text-sm">
-                <p className="font-semibold text-[#555555] mb-2">
+              <div className="bg-[#F1F1F1] px-5 py-5 text-sm min-h-[140px]">
+                <p className="font-bold text-[#374151] mb-2">
                   Snapshot Results:
                 </p>
-                <ul className="list-disc pl-4 font-medium space-y-1 text-[#555555]">
+                <ul className="list-disc pl-4 font-medium space-y-1.5 text-[#4b5563]">
                   {c.snapshot.map((s, idx) => (
                     <li key={idx}>{s}</li>
                   ))}
@@ -146,11 +166,11 @@ const SectorCards: React.FC = () => {
               </div>
 
               {/* Suggested Plan block */}
-              <div className="bg-[#E6E6E6] px-5 py-4">
-                <p className="text-[16px] font-semibold tracking-wide text-[#555555]">
+              <div className="bg-[#E5E7EB] px-5 py-5">
+                <p className="text-[13px] font-semibold tracking-wider text-[#6b7280] uppercase">
                   {c.planLabel}
                 </p>
-                <p className="mt-1 text-[24px] font-bold text-[#555555]">
+                <p className="mt-1 text-[22px] font-extrabold text-[#111827]">
                   {c.plan}
                 </p>
               </div>

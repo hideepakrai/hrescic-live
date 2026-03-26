@@ -12,7 +12,9 @@ import PlanSection from './PlanSection'
 const WhatWeDoPage = () => {
     return (
         <div className='px-4 md:px-0'>
-            <section className="container-xl mx-auto mt-4 bg-[#1D2931] rounded-2xl border border-[#5A1AFF]/30 overflow-hidden">
+            <section className="w-full px-3 pt-3 sm:px-4 lg:px-5">
+                <div className='container-xl mx-auto'>
+                    <div className='relative overflow-hidden rounded-[18px] bg-[#1D2931] lg:rounded-[20px]'>
                 <div className="grid md:grid-cols-[55%_45%] gap-10 items-center px-6 md:px-16 py-20">
 
                     <div className="max-w-xl">
@@ -29,15 +31,17 @@ const WhatWeDoPage = () => {
                         </p>
 
                         <div className="flex items-center gap-4">
-                            <a href="/lets-talk">
+                            <a href="/lets-talk#demo">
                                 <button className="bg-[#37C100] hover:bg-[#2d9802] text-white md:px-6 md:py-3 px-5 py-3 text-xs rounded-full md:text-sm font-medium transition-all">
                                     Book a Free Demo
                                 </button>
                             </a>
 
-                            <button className="flex items-center gap-2 bg-[#FFFFFF1A] hover:bg-[#37C100] hover:text-[#fff] text-white md:px-6 md:py-3 px-5 py-3 text-xs rounded-full md:text-sm transition-all">
-                                Ask Us Anything
-                            </button>
+                            <a href="/lets-talk#ask">
+                                <button className="flex items-center gap-2 bg-[#FFFFFF1A] hover:bg-[#37C100] hover:text-[#fff] text-white md:px-6 md:py-3 px-5 py-3 text-xs rounded-full md:text-sm transition-all">
+                                    Ask Us Anything
+                                </button>
+                            </a>
                         </div>
 
                         {/* <p className="mt-5 text-white/90 font-medium">
@@ -53,13 +57,15 @@ const WhatWeDoPage = () => {
                     </div>
 
                 </div>
+                </div>
+                </div>
             </section>
 
             <SliderBrand />
 
-            <ServicesSection/>
-            <PlanSection/>
-            
+            <ServicesSection />
+            <PlanSection />
+
 
             {/* <WorksSection /> */}
             {/* <PlansDeliverablesSec /> */}

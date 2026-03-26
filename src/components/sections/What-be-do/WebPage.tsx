@@ -16,8 +16,8 @@ const WebPage = () => {
           {/* 🔹 Left Text Content */}
           <div className="max-w-xl px-2">
             <h1 className="text-white font-normal text-3xl sm:text-4xl lg:text-[50px] mb-6 font-serif">
-              Creative systems that keep your brand alive.
-            </h1>
+              Creative systems that keep your brand alive. 
+            </h1> 
 
             <p className="text-gray-300 text-sm sm:text-base max-w-md mb-6">
               We build brands, websites, content and video that work together — not

@@ -52,8 +52,8 @@ const QuoteMark = () => (
 );
 
 const GoldButton = ({ children, href }) => {
-  const baseClass = "inline-block w-full sm:w-fit rounded-full bg-[#d5943b] px-5 sm:px-7 py-[13px] sm:py-[14px] text-center text-[14px] sm:text-[15px] font-medium leading-[1.35] text-white transition duration-300 hover:bg-[#c9852d] hover:shadow-[0_12px_24px_rgba(213,148,59,0.24)]";
-  
+  const baseClass = "inline-block w-full sm:w-fit rounded-full bg-[#DD9842] px-5 sm:px-7 py-[13px] sm:py-[14px] text-center text-[14px] sm:text-[15px] font-medium leading-[1.35] text-white transition duration-300 hover:bg-[#c9852d] hover:shadow-[0_12px_24px_rgba(213,148,59,0.24)]";
+
   if (href) {
     return (
       <a href={href} className={baseClass}>
@@ -72,7 +72,7 @@ const HealthPharmaPages = () => {
   return (
     <div className="w-full bg-white overflow-x-hidden">
       {/* HERO SECTION */}
-      <section className="w-full px-3 py-3 sm:px-5 sm:py-5">
+      {/* <section className="w-full px-3 py-3 sm:px-5 sm:py-5">
         <div className="mx-auto container-xl">
           <div className="grid overflow-hidden rounded-[18px] bg-[#ecebea] lg:grid-cols-[0.98fr_1.02fr]">
             <div className="flex items-center order-2 lg:order-1">
@@ -127,7 +127,65 @@ const HealthPharmaPages = () => {
             </div>
           </div>
         </div>
+      </section> */}
+
+
+
+      {/* HERO SECTION */}
+      <section className="w-full px-3 py-3 sm:px-5 sm:py-5">
+        <div className="mx-auto container-xl">
+          <div className="grid overflow-hidden rounded-[18px] bg-[#ecebea] lg:grid-cols-[0.98fr_1.02fr]">
+            <div className="flex items-center order-2 lg:order-1">
+              <div className="w-full px-4 py-7 sm:px-8 sm:py-10 md:px-10 md:py-7 lg:pb-[74px] lg:ps-[75px] lg:pe-8">
+                <div className="mb-7 flex flex-wrap items-center gap-2 sm:gap-3 text-[13px] text-[#666666] sm:mb-10 lg:mb-12">
+                  <span className="text-[14px] sm:text-[20px] font-semibold text-[#555555]">
+                    Who We Create For
+                  </span>
+                  <span className="text-[#9b9b9b]">|</span>
+                  <span className="text-[13px] italic text-[#555555]">
+                    Health, Pharma & Beauty
+                  </span>
+                </div>
+
+                <div className="pt-8">
+                  <h1
+                    className="pe-4  text-[28px] sm:text-[34px] md:text-[40px] lg:text-[38px] font-[400] leading-[1.08] tracking-[-0.03em] text-[#555555]">
+                    Health, pharma & beauty brands don’t grow on attention. They grow on trust.
+                  </h1>
+                  <p className="mt-5 sm:mt-6 lg:mt-4 max-w-[430px] text-[15px] sm:text-[17px] leading-[1.75] text-[#555555]">
+                    We help health, pharma and beauty businesses scale complex ecosystems — without losing credibility, clinical authority or SEO equity.
+                  </p>
+
+                  <div className="mt-4 sm:mt-8 lg:mt-6 flex flex-col gap-3">
+                    <GoldButton href="/lets-talk#ask">
+                      Talk about scaling without losing trust
+                    </GoldButton>
+
+                    <GoldButton href="/lets-talk#demo">
+                      See how medical brands grow with us
+                    </GoldButton>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2 p-[2px]">
+              <div className="relative h-[260px] overflow-hidden sm:h-[340px] md:h-[430px] lg:h-full lg:min-h-[552px]">
+                <img
+                  src="/assets/hero/health-pharma-img.png"
+                  alt="Health pharma beauty product"
+                  className="h-full w-full object-cover object-center"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_28%,rgba(255,255,255,0)_100%)]" />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
+
+
+
 
       {/* REALITY SECTION */}
       <section className="w-full px-3 pb-6 pt-0 sm:px-5 sm:pb-8 lg:pb-10">
@@ -291,9 +349,9 @@ const HealthPharmaPages = () => {
           </div>
 
           <div className="mt-8 flex justify-center">
-           <GoldButton href="/who-we-create-for/poliderma">
+            <GoldButton href="/who-we-create-for/poliderma">
               See how trust-driven ecosystems scale
-              </GoldButton>
+            </GoldButton>
           </div>
         </div>
       </section>
@@ -363,10 +421,10 @@ const HealthPharmaPages = () => {
             <div className="mt-7 flex w-full max-w-[420px] flex-col items-center gap-3">
               <GoldButton href="/lets-talk#demo">
                 Book a health strategy call
-                </GoldButton>
+              </GoldButton>
               <GoldButton href="/lets-talk#ask">
                 Ask about ecosystem architecture
-                </GoldButton>
+              </GoldButton>
             </div>
           </div>
         </div>

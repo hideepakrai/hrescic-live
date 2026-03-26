@@ -59,11 +59,11 @@ const GuidesSection: React.FC = () => {
           </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
-          {/* 1) Service */}
-          <div className="rounded-2xl bg-[#F8F8F8] px-6 py-5 shadow-sm">
-            <h4 className="text-[20px] font-bold text-[#555555]">Sevices</h4>
+          {/* 1) Services */}
+          <div className="rounded-2xl bg-[#F5F7FA] px-6 py-5 shadow-sm">
+            <h4 className="text-[20px] font-bold text-[#1D2931]">Services</h4>
             <div className="my-3 h-px bg-black/10" />
-            <ul className="space-y-4 font-medium text-[18px] text-[#555]">
+            <ul className="space-y-4 font-medium text-[16px] text-[#4b5563]">
               {services.map((s, i) => (
                 <li key={i}>{s}</li>
               ))}
@@ -71,8 +71,8 @@ const GuidesSection: React.FC = () => {
           </div>
 
           {/* 2) Problem It Solves */}
-          <div className="rounded-2xl bg-[#F3EEF7] px-6 py-5 shadow-sm">
-           <h4 className="text-[20px] font-bold text-[#555555]">Problem It Solves</h4>
+          <div className="rounded-2xl bg-[#EEF1F4] px-6 py-5 shadow-sm">
+           <h4 className="text-[20px] font-bold text-[#1D2931]">Problem It Solves</h4>
             <div className="my-3 h-px bg-black/10" />
             <div className="space-y-4">
               {problems.map((p, i) => (
@@ -82,11 +82,8 @@ const GuidesSection: React.FC = () => {
           </div>
 
           {/* 3) What You Get */}
-          <div className="rounded-2xl bg-[#E4DDEA] px-6 py-5 shadow-sm">
-            {/* <h3 className="text-base font-semibold text-black/80">
-              What You Get
-            </h3> */}
-           <h4 className="text-[20px] font-bold text-[#555555]">What You Get</h4>
+          <div className="rounded-2xl bg-[#E9EDF2] px-6 py-5 shadow-sm">
+           <h4 className="text-[20px] font-bold text-[#1D2931]">What You Get</h4>
 
             <div className="my-3 h-px bg-black/10" />
             <div className="space-y-4">
@@ -97,9 +94,8 @@ const GuidesSection: React.FC = () => {
           </div>
 
           {/* 4) How It Supports Growth */}
-          <div className="rounded-2xl bg-[#E2D8EC] px-6 py-5 shadow-sm">
-            
-           <h4 className="text-[20px] font-bold text-[#555555]">  How It Supports Growth</h4>
+          <div className="rounded-2xl bg-[#E3E8EF] px-6 py-5 shadow-sm">
+           <h4 className="text-[20px] font-bold text-[#1D2931]">How It Supports Growth</h4>
             
             <div className="my-3 h-px bg-black/10" />
             <div className="space-y-4">

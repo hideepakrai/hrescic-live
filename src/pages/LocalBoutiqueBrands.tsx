@@ -71,44 +71,40 @@ const GoldButton = ({ children, href }) => {
 const LocalBoutiqueBrands = () => {
   return (
     <div className="w-full bg-white overflow-x-hidden">
-      {/* HERO SECTION */}
+
+
+    {/* HERO SECTION */}
       <section className="w-full px-3 py-3 sm:px-5 sm:py-5">
         <div className="mx-auto container-xl">
           <div className="grid overflow-hidden rounded-[18px] bg-[#ecebea] lg:grid-cols-[0.98fr_1.02fr]">
             <div className="flex items-center order-2 lg:order-1">
-              <div className="w-full px-4 py-7 sm:px-8 sm:py-10 md:px-10 md:py-9 lg:pb-[74px] lg:ps-[60px] lg:pe-8">
-                <div className="mb-7 flex flex-wrap items-center gap-2 sm:gap-3 text-[13px] text-[#666666] sm:mb-10 lg:mb-14">
-                  <span className="text-[14px] sm:text-[15px] font-semibold text-[#444444]">
-                    Who We Create For
+              <div className="w-full px-4 py-7 sm:px-8 sm:py-10 md:px-10 md:py-7 lg:pb-[74px] lg:ps-[75px] lg:pe-8">
+                <div className="mb-7 flex flex-wrap items-center gap-2 sm:gap-3 text-[13px] text-[#666666] sm:mb-10 lg:mb-12">
+                  <span className="text-[14px] sm:text-[20px] font-semibold text-[#555555]">
+                  Who We Create For
                   </span>
                   <span className="text-[#9b9b9b]">|</span>
-                  <span className="text-[13px] italic text-[#666666]">
+                  <span className="text-[13px] italic text-[#555555]">
                    Local & boutique brands
                   </span>
                 </div>
 
-                <div>
-                  <h1
-                    className="max-w-[450px] text-[28px] sm:text-[34px] md:text-[40px] lg:text-[38px] font-[400] leading-[1.08] tracking-[-0.03em] text-[#555555]"
-                    style={{ fontFamily: "Georgia, Times New Roman, serif" }}
-                  >
-                    Local & boutique brands don’t win on price. <span className="text-[#327E92]">
-                        They win on meaning.
-                    </span>
-                 
+                <div className="pt-8">
+                  <h1 className="pe-4 hero-title text-[28px] sm:text-[34px] md:text-[40px] lg:text-[38px] font-[400] leading-[1.08] tracking-[-0.03em] text-[#555555]">
+                    Local & boutique brands don’t win on price.{" "}
+                    <span className="text-[#327E92]">They win on meaning.</span>
                   </h1>
-
-                  <p className="mt-5 sm:mt-6 lg:mt-7 max-w-[430px] text-[15px] sm:text-[16px] leading-[1.75] text-[#666666]">
-                   We help local and boutique brands move beyond commodity positioning, by building clear identities, premium perception and systems that support sustainable growth.
+                  <p className="mt-5 sm:mt-6 lg:mt-4 max-w-[430px] text-[15px] sm:text-[17px] leading-[1.75] text-[#555555]">
+                    We help local and boutique brands move beyond commodity positioning, by building clear identities, premium perception and systems that support sustainable growth.
                   </p>
 
-                  <div className="mt-7 sm:mt-8 lg:mt-9 flex flex-col gap-3">
+                  <div className="mt-4 sm:mt-8 lg:mt-6 flex flex-col gap-3">
                     <GoldButton href="/lets-talk#ask">
-                       Talk about building a premium brand
+                    Talk about building a premium brand
                     </GoldButton>
 
                     <GoldButton href="/lets-talk#demo">
-                      See how boutique brands scale with us
+                    See how boutique brands scale with us
                     </GoldButton>
                   </div>
                 </div>
@@ -118,7 +114,8 @@ const LocalBoutiqueBrands = () => {
             <div className="order-1 lg:order-2 p-[2px]">
               <div className="relative h-[260px] overflow-hidden sm:h-[340px] md:h-[430px] lg:h-full lg:min-h-[552px]">
                 <img
-                  src="/assets/Image/brands-hero-img.png"
+                                   src="/assets/Image/brands-hero-img.png"
+
                   alt="Health pharma beauty product"
                   className="h-full w-full object-cover object-center"
                 />
@@ -128,6 +125,8 @@ const LocalBoutiqueBrands = () => {
           </div>
         </div>
       </section>
+
+
 
       {/* REALITY SECTION */}
       <section className="w-full px-3 pb-6 pt-0 sm:px-5 sm:pb-8 lg:pb-10">
@@ -141,7 +140,7 @@ const LocalBoutiqueBrands = () => {
                  The reality of local & boutique brands
               </h2>
 
-              <p className="mx-auto mt-3 max-w-[420px] text-[14px] sm:text-[15px] leading-[1.55] text-[#786d68]">
+              <p className="mx-auto mt-3 max-w-[500px] text-[14px] sm:text-[18px] leading-[1.55] text-[#786d68]">
                  Many boutique brands start with an excellent product, but struggle to grow beyond local reach.
               </p>
             </div>
@@ -322,7 +321,8 @@ const LocalBoutiqueBrands = () => {
                   Instead of competing on volume or discounts,
                   <span className="text-[#96AB3D]">
                    we build brands that compete on identity, trust and perceived value,
-                  </span>{" "}
+                  </span>
+                  
                 allowing growth without eroding the brand.
                 </p>
               </div>
@@ -356,8 +356,8 @@ const LocalBoutiqueBrands = () => {
             </p>
 
             <div className="mt-7 flex w-full max-w-[420px] flex-col items-center gap-3">
-              <GoldButton href="/lets-talk#ask">Book a brand strategy call</GoldButton>
-              <GoldButton href="/lets-talk#demo">Ask about boutique scaling</GoldButton>
+              <GoldButton href="/lets-talk#demo">Book a brand strategy call</GoldButton>
+              <GoldButton href="/lets-talk#ask">Ask about boutique scaling</GoldButton>
             </div>
           </div>
         </div>

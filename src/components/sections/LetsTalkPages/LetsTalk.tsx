@@ -1,6 +1,8 @@
 import React from "react";
 import WhatToExpect from "./WhatToExpect";
 import CallsAvailableNote from "./CallsAvailableNote";
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 // ── shared field styles ──────────────────────────────────────────────────────
 const inputCls =
@@ -33,6 +35,21 @@ const ReCaptcha = () => (
 
 // ────────────────────────────────────────────────────────────────────────────
 const LetsTalk: React.FC = () => {
+
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100); // thoda delay for render
+      }
+    }
+  }, []);
+
   return (
     <>
       {/* ── HERO ───────────────────────────────────────────────────────────── */}
