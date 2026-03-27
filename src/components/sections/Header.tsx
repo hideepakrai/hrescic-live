@@ -53,89 +53,105 @@ const megaMenuData: Record<
     sections: [
       {
         title: "Branding & Strategy",
-        href: "/what-we-do",
+        href: "/what-we-do#branding",
         subcategories: [
           {
             title: "Brand Strategy & Positioning",
-            description: "Clear foundations, positioning, messaging.",
+            description: "",
+            href: "/what-we-do#branding",
           },
           {
             title: "Visual Identity",
-            description: "A consistent, modern visual language.",
+            description: "",
+            href: "/what-we-do#branding",
           },
           {
             title: "Packaging & Print Design",
-            description: "Physical brand experience design.",
+            description: "",
+            href: "/what-we-do#branding",
           },
           {
             title: "Brand Architecture",
-            description: "Structuring brands, sub-brands, and offers.",
+            description: "",
+            href: "/what-we-do#branding",
           },
         ],
       },
       {
         title: "Web & Digital",
-        href: "/what-we-do",
+        href: "/what-we-do#web",
         subcategories: [
           {
             title: "UX/UI & Web Design",
-            description: "Clear flows that turn visitors into clients.",
+            description: "",
+            href: "/what-we-do#web",
           },
           {
             title: "SEO & Technical Structure",
-            description: "Architecture that supports long-term growth.",
+            description: "",
+            href: "/what-we-do#web",
           },
           {
             title: "Webshop & Platforms",
-            description: "Custom e-commerce and platform builds.",
+            description: "",
+            href: "/what-we-do#web",
           },
           {
             title: "Deployment & Optimization",
-            description: "Fast launches and continuous improvement.",
+            description: "",
+            href: "/what-we-do#web",
           },
         ],
       },
       {
         title: "Content & Marketing",
-        href: "/what-we-do",
+        href: "/what-we-do#content",
         subcategories: [
           {
             title: "Content System",
-            description: "Your monthly communication rhythm.",
+            description: "",
+            href: "/what-we-do#content",
           },
           {
             title: "Marketing Strategy",
-            description: "Targeted plans to drive demand.",
+            description: "",
+            href: "/what-we-do#content",
           },
           {
             title: "Social, Ads & PPC",
-            description: "Paid distribution with purpose.",
+            description: "",
+            href: "/what-we-do#content",
           },
           {
             title: "Analytics & Optimization",
-            description: "Data-informed refinement and growth.",
+            description: "",
+            href: "/what-we-do#content",
           },
         ],
       },
       {
         title: "AI Video Production",
-        href: "/what-we-do",
+        href: "/what-we-do#video",
         subcategories: [
           {
             title: "Video for Social and Ads",
-            description: "Scroll-stopping storytelling.",
+            description: "",
+            href: "/what-we-do#video",
           },
           {
             title: "Video for Web & Presentations",
-            description: "Professional visual assets.",
+            description: "",
+            href: "/what-we-do#video",
           },
           {
             title: "AI-Powered Video Production",
-            description: "Scalable video creation.",
+            description: "",
+            href: "/what-we-do#video",
           },
           {
             title: "Video System & Variations",
-            description: "Formats, versions, ongoing refresh.",
+            description: "",
+            href: "/what-we-do#video",
           },
         ],
       },
@@ -151,8 +167,7 @@ const megaMenuData: Record<
         subcategories: [
           {
             title: "MyRent",
-            description:
-              "Web Design Case Study – 2025.",
+            description: "",
             href: "/who-we-create-for/myrent",
           },
         ],
@@ -163,14 +178,12 @@ const megaMenuData: Record<
         subcategories: [
           {
             title: "CDC",
-            description:
-              "Web Design Case Study – 2025.",
+            description: "",
             href: "/who-we-create-for/cdc",
           },
           {
             title: "EXPO – Life far and beyond",
-            description:
-              "Web Design Case Study – 2025.",
+            description: "",
             href: "/who-we-create-for/expo-life-far-beyond",
           },
         ],
@@ -181,14 +194,12 @@ const megaMenuData: Record<
         subcategories: [
           {
             title: "L’Oréal",
-            description:
-              "Web Design Case Study – 2025.",
+            description: "",
             href: "/who-we-create-for/loreal",
           },
            {
             title: "Poliderma",
-            description:
-              "Web Design Case Study – 2025.",
+            description: "",
             href: "/who-we-create-for/poliderma",
           },
         ],
@@ -199,95 +210,28 @@ const megaMenuData: Record<
         subcategories: [
           {
             title: "Castania",
-            description:
-              "Web Design Case Study – 2025.",
+            description: "",
             href: "/who-we-create-for/castania",
           },
            {
             title: "NAVADA",
-            description:
-              "Web Design Case Study – 2025.",
+            description: "",
             href: "/who-we-create-for/navada",
           },
            {
             title: "Minglanje v Klancu",
-            description:
-              "Web Design Case Study – 2025.",
+            description: "",
             href: "/who-we-create-for/minglanje-v-klanjcu",
           },
            {
             title: "IDS",
-            description:
-              "Web Design Case Study – 2025.",
+            description: "",
             href: "/who-we-create-for/ids",
           },
         ],
       },
     ],
   },
-
-  // brands: {
-  //   title: "Brands We Partner With",
-  //   subtitle:
-  //     "Case study sekcija; SEO: marketing results, case studies, agency portfolio.",
-  //   items: [
-  //     {
-  //       title: "CASE STUDIES",
-  //       cards: [
-  //         {
-  //           title: "CDC",
-  //           description: "Web Design Case Study - 2025",
-  //           href: "/case-studies/cdc",
-  //         },
-  //         {
-  //           title: "MyRent",
-  //           description: "Web Design Case Study - 2025",
-  //           href: "/case-studies/myrent",
-  //         },
-  //         {
-  //           title: "Castania",
-  //           description: "Web Design Case Study - 2025",
-  //           href: "/case-studies/castania",
-  //         },
-  //         {
-  //           title: "Poliderma",
-  //           description: "Web Design Case Study - 2025",
-  //           href: "/case-studies/poliderma",
-  //         },
-  //         {
-  //           title: "L'Oreal",
-  //           description: "Web Design Case Study - 2025",
-  //           href: "/case-studies/loreal",
-  //         },
-  //         {
-  //           title: "Karlo Ban",
-  //           description: "Web Design Case Study - 2025",
-  //           href: "/case-studies/karlo-ban",
-  //         },
-  //         {
-  //           title: "NAVADA",
-  //           description: "Web Design Case Study - 2025",
-  //           href: "/case-studies/navada",
-  //         },
-  //         {
-  //           title: "IDS",
-  //           description: "Web Design Case Study - 2025",
-  //           href: "/case-studies/ids",
-  //         },
-  //         {
-  //           title: "Minglanje V Klanjcu",
-  //           description: "Web Design Case Study - 2025",
-  //           href: "/case-studies/minglanje-v-klanjcu",
-  //         },
-  //         {
-  //           title: "EXPO - Life far and beyond",
-  //           description: "Web Design Case Study - 2025",
-  //           href: "/case-studies/expo-life-far-beyond",
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // },
 
   contact: {
     title: "Let’s Talk",
@@ -301,15 +245,20 @@ const megaMenuData: Record<
         cards: [
           {
             title: "Book a Free Demo",
-            description:
-              "Glavni poziv na akciju – kreativni demo, marketing konzultacije i free strategy call.",
-            href: "/lets-talk/book-demo",
+            description: "",
+            href: "/lets-talk#demo",
+          },
+          {
+            title: "Ask Us Anything",
+            description: "",
+            href: "/lets-talk#ask",
           },
         ],
       },
     ],
   },
 };
+
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -389,7 +338,7 @@ const Header = () => {
               })}
 
               <Link
-                to="/lets-talk"
+                to="/lets-talk#demo"
                 className="bg-[#37C100] hover:bg-[#2d9802] text-white px-6 py-3 rounded-full text-sm font-medium transition-all"
               >
                 Book a Free Demo
@@ -455,6 +404,7 @@ const Header = () => {
                             key={section.title}
                             to={section.href}
                             onMouseEnter={() => setActiveSectionIndex(idx)}
+                            onClick={() => setActiveMega(null)}
                             className={`block w-full text-left text-base font-bold py-3 px-4 rounded-md transition-all ${
                               isSelected
                                 ? "bg-[#F4F5F7] text-[#37c100]"
@@ -487,14 +437,17 @@ const Header = () => {
                             <Link
                               key={sub.title}
                               to={href}
+                              onClick={() => setActiveMega(null)}
                               className="group flex flex-col p-3 rounded-md hover:bg-[#F4F5F7] transition-colors"
                             >
                               <h4 className="text-[15px] font-semibold text-gray-900 group-hover:text-[#37c100]">
                                 {sub.title}
                               </h4>
-                              <p className="mt-1 text-xs text-gray-500 leading-relaxed">
-                                {sub.description}
-                              </p>
+                              {sub.description && (
+                                <p className="mt-1 text-xs text-gray-500 leading-relaxed">
+                                  {sub.description}
+                                </p>
+                              )}
                             </Link>
                           );
                         })}
@@ -522,14 +475,17 @@ const Header = () => {
                                 <Link
                                   key={card.title}
                                   to={href}
+                                  onClick={() => setActiveMega(null)}
                                   className="group flex flex-col p-3 rounded-md hover:bg-[#F4F5F7] transition-colors"
                                 >
                                   <h4 className="text-[15px] font-semibold text-gray-900 group-hover:text-[#37c100]">
                                     {card.title}
                                   </h4>
-                                  <p className="mt-1 text-xs text-gray-500 leading-relaxed">
-                                    {card.description}
-                                  </p>
+                                  {card.description && (
+                                    <p className="mt-1 text-xs text-gray-500 leading-relaxed">
+                                      {card.description}
+                                    </p>
+                                  )}
                                 </Link>
                               );
                             })}
@@ -562,7 +518,7 @@ const Header = () => {
             ))}
 
             <Link
-              to="/lets-talk"
+              to="/lets-talk#demo"
               onClick={() => setMobileOpen(false)}
               className="bg-[#37c100] hover:bg-[#8000FF] text-white w-full py-3 rounded-full text-sm font-medium text-center transition-all"
             >

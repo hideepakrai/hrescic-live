@@ -346,13 +346,15 @@ const Poliderma = () => {
                                 <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,60,66,0.08)_0%,rgba(0,60,66,0)_24%,rgba(0,0,0,0.03)_100%)]" />
 
                                 <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8">
-                                    <button
-                                        type="button"
-                                        className="inline-flex items-center gap-3 rounded-full bg-orange px-5 sm:px-7 py-[13px] sm:py-[12px] text-[13px] sm:text-[15px] font-medium text-white shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition duration-300 hover:translate-y-[-1px]"
-                                    >
-                                        Read the Case Study
-                                        <span className="text-[20px] leading-none">→</span>
-                                    </button>
+                                    <a href="/who-we-create-for/poliderma">
+                                        <button
+                                            type="button"
+                                            className="inline-flex items-center gap-3 rounded-full bg-orange px-5 sm:px-7 py-[13px] sm:py-[12px] text-[13px] sm:text-[15px] font-medium text-white shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition duration-300 hover:translate-y-[-1px]"
+                                        >
+                                            Read the Case Study
+                                            <span className="text-[20px] leading-none">→</span>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -772,7 +774,12 @@ const Poliderma = () => {
                         </p>
 
                         <div className="mt-7 flex w-full max-w-[420px] flex-col items-center gap-3">
-                            <button className="btn-primary">Let’s Talk</button>
+                            <a href="/lets-talk#ask" className="w-full sm:w-fit">
+                                <button className="btn-primary w-full">Let’s Talk</button>
+                            </a>
+                            {/* <a href="/lets-talk#ask" className="w-full sm:w-fit">
+                                <button className="btn-primary w-full bg-transparent !text-[#555555] border border-[#555555] hover:bg-[#555555] hover:text-white transition-all">Ask a question</button>
+                            </a> */}
 
                         </div>
                     </div>

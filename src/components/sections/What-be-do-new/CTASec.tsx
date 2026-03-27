@@ -15,15 +15,16 @@ const CTASec: React.FC = () => {
         </p>
 
         <div className="flex justify-center items-center gap-4 flex-wrap">
-          <a href="/lets-talk">
+          <a href="/lets-talk#demo">
             <button className="bg-[#37c100] hover:bg-[#2d9802] text-white px-6 py-3 rounded-full text-sm font-medium transition-all">
               Book a Free Demo
             </button>
           </a>
-
+          <a href=" /lets-talk#ask">
           <button className="border bg-[#37c1001f] border-[#37c100b5] text-[#2f2a4a] px-6 py-3 rounded-full text-sm font-medium hover:bg-white transition-all">
             Ask Us Anything
           </button>
+          </a>
         </div>
 
         <p className="mt-6 text-sm md:text-base text-[#2F2A4A] font-semibold">

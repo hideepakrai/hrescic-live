@@ -8,6 +8,7 @@ import {
   Phone,
   MapPin,
   Youtube,
+  Facebook,
 } from "lucide-react";
 
 /* ---------- DATA ---------- */
@@ -16,7 +17,6 @@ import {
 const exploreLinks = [
   { label: "What We Do", href: "/what-we-do" },
   { label: "Who We Create For", href: "/who-we-create-for" },
-  { label: "Brands We Partner With", href: "#" },
   { label: "Ideas & Insights", href: "/Ideas-Insights" },
   { label: "Let’s Talk", href: "/lets-talk" },
 ];
@@ -30,12 +30,12 @@ const connectDetails = [
   },
   {
     icon: Phone,
-    value: "+385 (0)91 xxx xxxx",
-    href: "tel:+38591xxxxxxx", // update with real number when ready
+    value: "+385 99 686 1721",
+    href: "tel:+385996861721",
   },
   {
     icon: MapPin,
-    value: "Zagreb, Croatia",
+    value: "Samobor, Croatia",
     href: "#",
   },
 ];
@@ -44,6 +44,7 @@ const connectDetails = [
 const socialIcons = [
   { icon: Linkedin, href: "#", name: "LinkedIn" },
   { icon: Instagram, href: "#", name: "Instagram" },
+  { icon: Facebook, href: "#", name: "Facebook" },
   { icon: Youtube, href: "#", name: "YouTube" },
 ];
 

@@ -24,11 +24,11 @@ const CTASection = () => {
 
         {/* Button */}
         <div className="mt-10">
-         <a href="/lets-talk">
-  <button className="bg-[#41C717] hover:bg-[#3aa914] text-white font-medium py-3 px-8 rounded-full transition-all duration-300">
-    Let’s Talk
-  </button>
-</a>
+          <a href="/lets-talk#ask">
+            <button className="bg-[#41C717] hover:bg-[#3aa914] text-white font-medium py-3 px-8 rounded-full transition-all duration-300">
+              Let’s Talk
+            </button>
+          </a>
         </div>
 
       </div>

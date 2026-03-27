@@ -127,7 +127,7 @@ export default function WhoWeCreateFor() {
             ))}
           </div>
 
-          <a href="/lets-talk">
+          <a href="/lets-talk#ask">
             <button className="rounded-full bg-[#41C717] px-6 py-3 text-md font-medium text-white transition-all hover:bg-[#3aa914]">
               Let’s Talk
             </button>

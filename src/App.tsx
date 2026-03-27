@@ -1,4 +1,3 @@
-
 import React from 'react'
 import HomePage from '@/pages/HomePage'
 import Header from '@/components/sections/Header'
@@ -27,10 +26,7 @@ import IDS from './pages/caseStudiesPage/IDS';
 import NavadaPages from './pages/caseStudiesPage/NavadaPages';
 import CDCPage from './pages/caseStudiesPage/CDCPage';
 import WhatWeDoPage from './components/sections/What-be-do-new/WhatWeDoPage';
-
-
-
-
+import ScrollToTop from '@/components/ScrollToTop'
 
 export default function App() {
   const [view, setView] = React.useState<'home' | 'product'>('home')
@@ -42,16 +38,17 @@ export default function App() {
         { label: "Gyuto", href: "/gyuto" },
         { label: "Santoku", href: "/santoku" },
         { label: "Nakiri", href: "/nakiri" },
+        { label: "O Noževima", href: "/o-nozevima" },
+        { label: "O Karlo Banu", href: "/o-karlo-banu" },
+        { label: "Što drugi kažu", href: "/recenzije" },
       ],
     },
-    { label: "O Noževima", href: "/o-nozevima" },
-    { label: "O Karlo Banu", href: "/o-karlo-banu" },
-    { label: "Što drugi kažu", href: "/recenzije" },
   ];
+
   return (
     <div className="text-brand-text">
-      <Header
-      />
+      <ScrollToTop />
+      <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
         
@@ -62,15 +59,15 @@ export default function App() {
         <Route path='/ideas-insights' element={<IdeasInsights />} />
         <Route path='/lets-talk' element={<LetsTalkPage />} />
 
-        <Route path='who-we-create-for/health-pharma-beauty' element={<HealthPharmaPages />} />
-        <Route path='who-we-create-for/local-boutique-brands' element={<LocalBoutiqueBrands />} />
-        <Route path='who-we-create-for/education-e-learning' element={<EducationELearningPage />} />
-        <Route path='who-we-create-for/tourism-travel' element={<TourismTravelPage />} />
+        <Route path='/who-we-create-for/health-pharma-beauty' element={<HealthPharmaPages />} />
+        <Route path='/who-we-create-for/local-boutique-brands' element={<LocalBoutiqueBrands />} />
+        <Route path='/who-we-create-for/education-e-learning' element={<EducationELearningPage />} />
+        <Route path='/who-we-create-for/tourism-travel' element={<TourismTravelPage />} />
 
 
         <Route path="/who-we-create-for/myrent" element={<MyRent />} />
         <Route path="/who-we-create-for/expo-life-far-beyond" element={<ExpoLifefarandbeyond />} />
-        <Route path="//who-we-create-for/castania" element={<Castania />} />
+        <Route path="/who-we-create-for/castania" element={<Castania />} />
         <Route path="/who-we-create-for/poliderma" element={<Poliderma />} />
 
 
@@ -80,10 +77,9 @@ export default function App() {
         <Route path="/who-we-create-for/navada" element={<NavadaPages />} />
         {/* <Route path="/case-studies/poliderma" element={<Poliderma />} /> */}
          <Route path="/who-we-create-for/loreal" element={<LorealPage />} />
-         <Route path="/case-studies/karlo-ban" element={<KarloBanPage />} />
+         <Route path="/who-we-create-for/karlo-ban" element={<KarloBanPage />} />
          {/* <Route path="/case-studies/navada" element={<NavadaPage />} /> */}
          <Route path="/who-we-create-for/cdc" element={<CDCPage />} />
-
 
 
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Play, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import YouTube, { YouTubeEvent, YouTubeProps } from "react-youtube";
@@ -10,28 +11,28 @@ const services = [
     title: "Branding & Strategy",
     description: "Build clarity, consistency and a voice people remember.",
     linkText: "Explore branding services",
-    href: "#",
+    href: "/what-we-do",
   },
   {
     title: "Web & Digital",
     description:
       "Websites and booking experiences designed to convert - not just exist.",
     linkText: "Explore web services",
-    href: "#",
+    href: "/what-we-do",
   },
   {
     title: "Content & Marketing",
     description:
       "Content that compounds: social, email, campaigns and analytics.",
     linkText: "Explore marketing services",
-    href: "#",
+    href: "/what-we-do",
   },
   {
     title: "AI Video Production",
     description:
       "Turn photos into cinematic stories. Faster, smarter, and finally affordable.",
     linkText: "See full services",
-    href: "#",
+    href: "/what-we-do",
   },
 ];
 
@@ -179,13 +180,13 @@ export default function AboutStrip() {
                 </p>
 
                 <hr className="mt-auto" />
-                <a
-                  href={service.href}
+                <Link
+                  to={service.href}
                   className="group flex items-center gap-1 pt-2 text-sm font-medium text-[#41C717] transition-all hover:text-[#3aa914]"
                 >
                   {service.linkText}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </motion.div>
             ))}
           </motion.div>

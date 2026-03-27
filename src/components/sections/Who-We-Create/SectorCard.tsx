@@ -37,6 +37,7 @@ const cards: SectorCard[] = [
     planLabel: "Suggested Plan",
     plan: "GROW + SCALE",
   },
+
   {
     title: "Education & E-Learning",
     subtitle: "For brands that\nbuild the future.",
@@ -47,7 +48,7 @@ const cards: SectorCard[] = [
     need:
       "A clear structure learners immediately understand and systems that support scale without adding confusion.",
     cta: "Explore Learning Projects",
-    link: "/who-we-create-for/education-elearning",
+    link: "/who-we-create-for/education-e-learning",
     image: "/assets/Image/education-imgs.png",
     snapshot: [
       "Registration friction reduced by 48%",
@@ -67,7 +68,7 @@ const cards: SectorCard[] = [
     need:
       "A credible, empathetic and structured digital identity that builds trust before they ever walk in.",
     cta: "See Health Projects",
-    link: "/who-we-create-for/health-pharma",
+    link: "/who-we-create-for/health-pharma-beauty",
     image: "/assets/hero/health-pharma-img.png",
     snapshot: [
       "Clearer messaging = more qualified inquiries",
@@ -87,7 +88,7 @@ const cards: SectorCard[] = [
     need:
       "Authentic identity + storytelling that match the quality of your work and support premium pricing.",
     cta: "See Boutique Projects",
-    link: "/who-we-create-for/local-boutique",
+    link: "/who-we-create-for/local-boutique-brands",
     image: "/assets/Image/brands-hero-img.png",
     snapshot: [
       "Stronger brand clarity → higher perceived value",

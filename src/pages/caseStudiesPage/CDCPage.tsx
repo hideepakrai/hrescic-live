@@ -200,12 +200,14 @@ const CDCPage = () => {
                     </span>
                   </div>
 
-                  <button
-                    type="button"
-                    className="rounded-full border border-[#E4D6DE] bg-transparent px-4 py-2 text-[11px] font-medium text-[#8F7F87] transition-all duration-300 hover:bg-white/60 sm:text-[12px]"
-                  >
-                    Back to Portfolio
-                  </button>
+                  <a href="/who-we-create-for">
+                    <button
+                      type="button"
+                      className="rounded-full border border-[#E4D6DE] bg-transparent px-4 py-2 text-[11px] font-medium text-[#8F7F87] transition-all duration-300 hover:bg-white/60 sm:text-[12px]"
+                    >
+                      Back to Portfolio
+                    </button>
+                  </a>
                 </div>
 
                 <div className="mb-5 flex items-center gap-2">
@@ -480,12 +482,14 @@ const CDCPage = () => {
                 </p>
 
                 <div className="flex justify-center py-8 sm:py-10 md:py-12">
-                  <button
-                    type="button"
-                    className="rounded-full bg-[#5E1DE1] px-5 py-[13px] text-[12px] font-medium leading-none text-white transition duration-300 hover:bg-[#4e16bd] hover:shadow-[0_14px_28px_rgba(94,29,225,0.22)] sm:px-7 sm:text-[13px] md:px-8 md:py-[14px] md:text-[14px]"
-                  >
-                    Join Our Global Community
-                  </button>
+                  <a href="/lets-talk#demo">
+                    <button
+                      type="button"
+                      className="rounded-full bg-[#5E1DE1] px-5 py-[13px] text-[12px] font-medium leading-none text-white transition duration-300 hover:bg-[#4e16bd] hover:shadow-[0_14px_28px_rgba(94,29,225,0.22)] sm:px-7 sm:text-[13px] md:px-8 md:py-[14px] md:text-[14px]"
+                    >
+                      Join Our Global Community
+                    </button>
+                  </a>
                 </div>
 
                 <p className="text-[11px] text-[#C8B9BE]">#F2ECEC</p>

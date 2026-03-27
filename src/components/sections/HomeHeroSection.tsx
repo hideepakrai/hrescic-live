@@ -147,7 +147,7 @@ export default function HomeHeroSection() {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a href="/lets-talk">
+                <a href="/lets-talk#ask">
                   <button className="rounded-full bg-[#37C100] px-5 py-3 text-xs font-medium text-white transition-all hover:bg-[#2d9802] md:px-6 md:py-3 md:text-sm">
                     Let&apos;s Talk
                   </button>

@@ -50,7 +50,7 @@ const steps = [
 const CheckItem = ({ text }: { text: string }) => {
   return (
     <li className="flex items-start gap-3 text-[13px] leading-6 text-[#5f5a68]">
-      <span className="mt-1 flex h-[15px] w-[15px] shrink-0 items-center justify-center rounded-full bg-[#37c100] text-[10px] font-bold text-white">
+      <span className="mt-1 flex h-[15px] w-[15px] shrink-0 items-center justify-center rounded-full bg-[#37C100] text-[10px] font-bold text-white">
         ✓
       </span>
       <span>{text}</span>
@@ -78,18 +78,24 @@ const ServicesSection = () => {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <div className="rounded-[16px] bg-[#F8F8F8] p-5">
-          <h3 className="text-[16px] font-semibold text-[#4b4b52]">Service</h3>
+        <div className="rounded-[16px] bg-[#F5F7FA] p-5">
+          <h3 className="text-[16px] font-semibold text-[#1D2931]">Service</h3>
           <div className="my-4 h-px bg-[#00000012]" />
           <ul className="space-y-6 text-[15px] text-[#56545c]">
-            {services.map((item) => (
-              <li key={item}>{item}</li>
+            {services.map((item, index) => (
+              <li 
+                key={item} 
+                id={index === 0 ? "branding" : index === 1 ? "web" : index === 2 ? "content" : "video"}
+                className="scroll-mt-24"
+              >
+                {item}
+              </li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-[16px] bg-[#F3EEF7] p-5">
-          <h3 className="text-[16px] font-semibold text-[#4b4b52]">
+        <div className="rounded-[16px] bg-[#EEF1F4] p-5">
+          <h3 className="text-[16px] font-semibold text-[#1D2931]">
             Problem It Solves
           </h3>
           <div className="my-4 h-px bg-[#00000012]" />
@@ -100,8 +106,8 @@ const ServicesSection = () => {
           </ul>
         </div>
 
-        <div className="rounded-[16px] bg-[#E4DDEA] p-5">
-          <h3 className="text-[16px] font-semibold text-[#4b4b52]">
+        <div className="rounded-[16px] bg-[#E9EDF2] p-5">
+          <h3 className="text-[16px] font-semibold text-[#1D2931]">
             What You Get
           </h3>
           <div className="my-4 h-px bg-[#00000012]" />
@@ -112,8 +118,8 @@ const ServicesSection = () => {
           </ul>
         </div>
 
-        <div className="rounded-[16px] bg-[#E2D8EC] p-5">
-          <h3 className="text-[16px] font-semibold text-[#4b4b52]">
+        <div className="rounded-[16px] bg-[#E3E8EF] p-5">
+          <h3 className="text-[16px] font-semibold text-[#1D2931]">
             How It Supports Growth
           </h3>
           <div className="my-4 h-px bg-[#00000012]" />
