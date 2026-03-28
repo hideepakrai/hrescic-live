@@ -84,7 +84,7 @@ const MasonryShuffleBlocks = () => {
   }, []);
 
   return (
-    <div className="hidden md:grid grid-cols-6 grid-rows-3 gap-5 h-[360px] w-full -ms-8">
+    <div className="hidden md:grid grid-cols-6 grid-rows-3 gap-5 h-[360px] w-full md:-ms-8">
       {assigned.map(({ tile, slot }) => (
         <motion.div
           key={tile.id}
@@ -107,7 +107,7 @@ const WhatWeDoPage = () => {
     <div className="px-4 md:px-0">
 
       {/* HERO SECTION */}
-      <section className="w-full px-3 pt-3 sm:px-4 lg:px-5">
+      <section className="w-full px-0 pt-3 sm:px-4 lg:px-5">
         <div className="container-xl mx-auto">
           <div className="relative overflow-hidden rounded-[18px] bg-[#1D2931] lg:rounded-[20px]">
             <div className="grid md:grid-cols-[55%_45%] gap-10 items-center px-6 md:px-16 py-20">
@@ -122,7 +122,7 @@ const WhatWeDoPage = () => {
                 </p>
                 <div className="flex items-center gap-4">
                   <a href="/lets-talk#demo">
-                    <button className="bg-[#37C100] hover:bg-[#2d9802] text-white md:px-6 md:py-3 px-5 py-3 text-xs rounded-full md:text-sm font-medium">
+                    <button className="bg-[#37C100] hover:bg-[#2d9802] text-white md:px-6 md:py-3 px-4 py-3 text-xs rounded-full md:text-sm font-medium">
                       Book a Free Demo
                     </button>
                   </a>
