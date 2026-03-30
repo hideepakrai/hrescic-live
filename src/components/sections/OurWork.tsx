@@ -16,7 +16,7 @@ const industries = [
     title: "Learning & Development",
     description:
       "For brands that educate professionals to reach their goals. Complete marketing funnel services to capture, nurture and convert leads into course sales.",
-    linkText: "Explore charter projects",
+    linkText: "Explore educational projects",
     image: "/assets/Image/learning.png",
     href: "/who-we-create-for/education-e-learning",
   },
