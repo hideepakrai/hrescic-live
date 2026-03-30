@@ -1,17 +1,26 @@
 import React from "react";
 
-const CTASec: React.FC = () => {
+interface CTASecProps {
+  headline?: string | React.ReactNode;
+  subtext?: string;
+}
+
+const CTASec: React.FC<CTASecProps> = ({ headline, subtext }) => {
   return (
-    <section className="w-full pb-14 mb-20 md:mt-0 mt-5">
-      <div className="md:max-w-[80%] max-w-[100%]  mx-auto bg-[#F3F1F8] rounded-2xl text-center px-6 py-16 md:py-20">
+    <section className="w-full pb-14 mb-8 md:mt-10 mt-20 px-4 md:px-0">
+      <div className="md:max-w-[80%] max-w-[100%]  mx-auto bg-gray-100 rounded-2xl text-center px-6 py-16 md:py-20">
         
         <span className="text-2xl sm:text-3xl md:text-[36px] font-semibold text-[#2F2A4A] mb-5">
-          Ready to build your own <br className="hidden sm:block" />
-          creative system?
+          {headline || (
+            <>
+              Ready to build your own <br className="hidden sm:block" />
+              creative system?
+            </>
+          )}
         </span>
 
         <p className="text-sm md:text-base text-[#6B6785] mb-8 mt-6">
-          Let’s make your brand clear, consistent and impossible to ignore.
+          {subtext || "Let’s make your brand clear, consistent and impossible to ignore."}
         </p>
 
         <div className="flex justify-center items-center gap-4 flex-wrap">
@@ -21,15 +30,15 @@ const CTASec: React.FC = () => {
             </button>
           </a>
           <a href=" /lets-talk#ask">
-          <button className="border bg-[#37c1001f] border-[#37c100b5] text-[#2f2a4a] px-6 py-3 rounded-full text-sm font-medium hover:bg-white transition-all">
+          <button className="border bg-[#37c1000a] border-[#37c1004d] text-[#2f2a4a] px-6 py-3 rounded-full text-sm font-medium hover:bg-white transition-all">
             Ask Us Anything
           </button>
           </a>
         </div>
 
-        <p className="mt-6 text-sm md:text-base text-[#2F2A4A] font-semibold">
+        {/* <p className="mt-6 text-sm md:text-base text-[#2F2A4A] font-semibold">
           No pressure. No obligations. Just clarity.
-        </p>
+        </p> */}
 
       </div>
     </section>

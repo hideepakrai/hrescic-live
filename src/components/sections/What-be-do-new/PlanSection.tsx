@@ -115,7 +115,7 @@ const PlanSection = () => {
         </p>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4 px-4 md:px-0">
         {plans.map((plan) => (
           <div
             key={plan.title}

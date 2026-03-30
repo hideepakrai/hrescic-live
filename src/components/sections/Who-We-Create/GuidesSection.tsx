@@ -33,7 +33,7 @@ const GuidesSection: React.FC = () => {
   const CheckItem = ({ text }: { text: string }) => (
     <div className="flex items-start gap-3">
       <span className="mt-0.5 pt-1">
-    <FaCircleCheck className="text-[#37C100] text-lg"/>
+        <FaCircleCheck className="text-[#37C100] text-lg"/>
 
       </span>
       <p className="text-sm leading-6 text-black/75">{text}</p>

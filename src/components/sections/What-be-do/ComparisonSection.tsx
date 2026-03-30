@@ -84,6 +84,10 @@ const rows: Row[] = [
     values: ["–", "Light", "Full, multi-channel", "Custom"],
   },
   {
+    label: "Performance & Speed",
+    values: ["Standard", "Optimised", "High-performance", "Enterprise-grade"],
+  },
+  {
     label: "Strategy & analytics",
     values: ["–", "Monthly insights", "Full strategy + analytics", "Leadership-level"],
   },
@@ -127,18 +131,18 @@ const ComparisonSection: React.FC = () => {
 
         {/* Inner light panel with table */}
         <div className="px-5 sm:px-8 lg:px-0 py-0 ">
-          <div className="rounded-2xl bg-[#FDFBFF] border border-[#E8E1FF]  overflow-hidden">
+          <div className="rounded-2xl bg-white border border-gray-200  overflow-hidden">
             <div className="overflow-x-auto">
               <div className="min-w-[720px]">
                 {/* Header row */}
-                <div className="grid grid-cols-[1.6fr_1fr_1fr_1fr_1fr] text-xs md:text-sm font-semibold text-[#37c100] bg-[##37c10008]">
-                  <div className="px-4 py-3 border-b border-[#E2D9FF] text-left">
+                <div className="grid grid-cols-[1.6fr_1fr_1fr_1fr_1fr] text-xs md:text-sm font-semibold text-[#37c100] bg-gray-50/50">
+                  <div className="px-4 py-3 border-b border-gray-200 text-left">
                     Feature / Element
                   </div>
                   {plans.map((plan) => (
                     <div
                       key={plan}
-                      className="px-4 py-3 border-b border-[#E2D9FF] text-left"
+                      className="px-4 py-3 border-b border-gray-200 text-left"
                     >
                       {plan}
                     </div>
@@ -155,7 +159,7 @@ const ComparisonSection: React.FC = () => {
                       className={`grid grid-cols-[1.6fr_1fr_1fr_1fr_1fr] text-xs md:text-sm text-[#4A4267] ${rowBg}`}
                     >
                       {/* Feature label */}
-                      <div className="px-4 py-3 border-b border-[#EEE7FF] font-semibold">
+                      <div className="px-4 py-3 border-b border-gray-100 font-semibold">
                         {row.label}
                       </div>
 
@@ -163,7 +167,7 @@ const ComparisonSection: React.FC = () => {
                       {row.values.map((val, i) => (
                         <div
                           key={i}
-                          className="px-4 py-3 border-b border-[#EEE7FF]"
+                          className="px-4 py-3 border-b border-gray-100"
                         >
                           {val}
                         </div>

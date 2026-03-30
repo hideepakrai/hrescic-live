@@ -26,6 +26,10 @@ import IDS from './pages/caseStudiesPage/IDS';
 import NavadaPages from './pages/caseStudiesPage/NavadaPages';
 import CDCPage from './pages/caseStudiesPage/CDCPage';
 import WhatWeDoPage from './components/sections/What-be-do-new/WhatWeDoPage';
+import WebDigitalPage from './pages/WebDigitalPage';
+import BrandingStrategyPage from './pages/BrandingStrategyPage';
+import ContentMarketingPage from './pages/ContentMarketingPage';
+import AiVideoProductionPage from './pages/AiVideoProductionPage';
 import ScrollToTop from '@/components/ScrollToTop'
 
 export default function App() {
@@ -53,6 +57,10 @@ export default function App() {
         <Route path='/' element={<HomePage />} />
         
         <Route path='/what-we-do' element={<WhatWeDoPage />} />
+        <Route path='/what-we-do/branding-strategy' element={<BrandingStrategyPage />} />
+        <Route path='/what-we-do/content-marketing' element={<ContentMarketingPage />} />
+        <Route path='/what-we-do/ai-video-production' element={<AiVideoProductionPage />} />
+        <Route path='/what-we-do/web-digital' element={<WebDigitalPage />} />
         <Route path='/what-we-do-new' element={<WebPage />} />
 
         <Route path='/who-we-create-for' element={<WorkPage />} />

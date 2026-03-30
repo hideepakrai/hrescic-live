@@ -53,105 +53,105 @@ const megaMenuData: Record<
     sections: [
       {
         title: "Branding & Strategy",
-        href: "/what-we-do#branding",
+        href: "/what-we-do/branding-strategy",
         subcategories: [
           {
             title: "Brand Strategy & Positioning",
             description: "",
-            href: "/what-we-do#branding",
+            href: "/what-we-do/branding-strategy",
           },
           {
             title: "Visual Identity",
             description: "",
-            href: "/what-we-do#branding",
+            href: "/what-we-do/branding-strategy",
           },
           {
             title: "Packaging & Print Design",
             description: "",
-            href: "/what-we-do#branding",
+            href: "/what-we-do/branding-strategy",
           },
           {
             title: "Brand Architecture",
             description: "",
-            href: "/what-we-do#branding",
+            href: "/what-we-do/branding-strategy",
           },
         ],
       },
       {
         title: "Web & Digital",
-        href: "/what-we-do#web",
+        href: "/what-we-do/web-digital",
         subcategories: [
           {
             title: "UX/UI & Web Design",
             description: "",
-            href: "/what-we-do#web",
+            href: "/what-we-do/web-digital",
           },
           {
             title: "SEO & Technical Structure",
             description: "",
-            href: "/what-we-do#web",
+            href: "/what-we-do/web-digital",
           },
           {
             title: "Webshop & Platforms",
             description: "",
-            href: "/what-we-do#web",
+            href: "/what-we-do/web-digital",
           },
           {
             title: "Deployment & Optimization",
             description: "",
-            href: "/what-we-do#web",
+            href: "/what-we-do/web-digital",
           },
         ],
       },
       {
         title: "Content & Marketing",
-        href: "/what-we-do#content",
+        href: "/what-we-do/content-marketing",
         subcategories: [
           {
             title: "Content System",
             description: "",
-            href: "/what-we-do#content",
+            href: "/what-we-do/content-marketing",
           },
           {
             title: "Marketing Strategy",
             description: "",
-            href: "/what-we-do#content",
+            href: "/what-we-do/content-marketing",
           },
           {
             title: "Social, Ads & PPC",
             description: "",
-            href: "/what-we-do#content",
+            href: "/what-we-do/content-marketing",
           },
           {
             title: "Analytics & Optimization",
             description: "",
-            href: "/what-we-do#content",
+            href: "/what-we-do/content-marketing",
           },
         ],
       },
       {
         title: "AI Video Production",
-        href: "/what-we-do#video",
+        href: "/what-we-do/ai-video-production",
         subcategories: [
           {
             title: "Video for Social and Ads",
             description: "",
-            href: "/what-we-do#video",
+            href: "/what-we-do/ai-video-production",
           },
           {
             title: "Video for Web & Presentations",
             description: "",
-            href: "/what-we-do#video",
+            href: "/what-we-do/ai-video-production",
           },
           {
             title: "AI-Powered Video Production",
             description: "",
-            href: "/what-we-do#video",
+            href: "/what-we-do/ai-video-production",
           },
           {
             title: "Video System & Variations",
             description: "",
-            href: "/what-we-do#video",
+            href: "/what-we-do/ai-video-production",
           },
         ],
       },
@@ -375,11 +375,11 @@ const Header = () => {
                 <h2 className="text-[26px] font-semibold text-gray-900">
                   {currentMega.title}
                 </h2>
-                {currentMega.subtitle && (
+                {/* {currentMega.subtitle && (
                   <p className="mt-1 text-sm text-gray-500 max-w-xl">
                     {currentMega.subtitle}
                   </p>
-                )}
+                )} */}
               </div>
 
               <div className="border-t border-gray-200 mb-6" />

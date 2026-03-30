@@ -73,7 +73,7 @@ const SliderBrand = () => {
           </div>
 
           {/* Bottom Row - 6 logos */}
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 px-4 md:px-0">
             {bottomRowBrands.map((brand, index) => (
               <LogoCard
                 key={`bottom-${index}`}

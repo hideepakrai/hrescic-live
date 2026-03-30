@@ -12,30 +12,59 @@ const labelTextCls = "text-[15px] font-semibold text-[#0F0F3D]";
 const optionalCls = "text-[11px] font-normal text-[#0F0F3D] ml-1";
 
 // ── shared reCAPTCHA placeholder ─────────────────────────────────────────────
-const ReCaptcha = () => (
-  <div className="w-[304px] h-[78px] border border-gray-300 rounded-sm flex items-center justify-between px-3 bg-[#F9F9F9] shadow-md">
-    <label
-      htmlFor="not-a-robot"
-      className="flex items-center gap-3 text-base text-gray-800 font-normal cursor-pointer"
-    >
-      <div className="w-6 h-6 border border-gray-500 rounded-sm flex-shrink-0">
-        <input
-          type="checkbox"
-          id="not-a-robot"
-          className="appearance-none w-full h-full cursor-pointer"
-        />
+interface ReCaptchaProps {
+  onCheck?: (checked: boolean) => void;
+}
+
+const ReCaptcha: React.FC<ReCaptchaProps> = ({ onCheck }) => {
+  const [checked, setChecked] = React.useState(false);
+
+  const handleToggle = () => {
+    const next = !checked;
+    setChecked(next);
+    if (onCheck) onCheck(next);
+  };
+
+  return (
+    <div className="w-[304px] h-[78px] border border-gray-300 rounded-sm flex items-center justify-between px-3 bg-[#F9F9F9] shadow-sm select-none">
+      <label
+        htmlFor="not-a-robot"
+        className="flex items-center gap-3 text-sm text-gray-800 font-normal cursor-pointer"
+      >
+        <div 
+          onClick={handleToggle}
+          className={`w-6 h-6 border border-gray-400 rounded-sm flex-shrink-0 flex items-center justify-center transition-all bg-white hover:border-gray-600 ${checked ? 'bg-[#37C100]/10 border-[#37C100]' : ''}`}
+        >
+          {checked && (
+            <svg className="w-5 h-5 text-[#37C100]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+            </svg>
+          )}
+          <input
+            type="checkbox"
+            id="not-a-robot"
+            checked={checked}
+            onChange={handleToggle}
+            className="sr-only"
+          />
+        </div>
+        I'm not a robot
+      </label>
+      <div className="flex flex-col items-center gap-1 text-gray-500 leading-none flex-shrink-0 opacity-80">
+        <img src="/assets/Image/re.svg" alt="reCAPTCHA logo" className="w-8 h-8" />
+        <span className="text-[9px] text-gray-400">reCAPTCHA</span>
+        <div className="flex gap-2 text-[9px] text-gray-400 hover:text-gray-600">
+           <a href="#" className="hover:underline">Privacy</a>
+           <a href="#" className="hover:underline">Terms</a>
+        </div>
       </div>
-      I'm not a robot
-    </label>
-    <div className="flex flex-col items-end text-gray-500 leading-none flex-shrink-0">
-      <img src="./assets/Image/re.svg" alt="reCAPTCHA logo" />
     </div>
-  </div>
-);
+  );
+};
 
 // ────────────────────────────────────────────────────────────────────────────
 const LetsTalk: React.FC = () => {
-
+  const [recaptchaChecked, setRecaptchaChecked] = React.useState(false);
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -45,10 +74,20 @@ const LetsTalk: React.FC = () => {
       if (el) {
         setTimeout(() => {
           el.scrollIntoView({ behavior: "smooth" });
-        }, 100); // thoda delay for render
+        }, 100); 
       }
     }
   }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!recaptchaChecked) {
+      alert("Please verify that you are not a robot.");
+      return;
+    }
+    alert("Message sent successfully!");
+    // logic to send email or save to DB would go here
+  };
 
   return (
     <>
@@ -84,15 +123,15 @@ const LetsTalk: React.FC = () => {
               {/* contact details at bottom */}
               <div className="mt-auto pt-10 space-y-4 text-[14px] text-white/95">
                 <div className="flex items-center gap-3">
-                  <img src="./assets/Image/mail.svg" alt="email" className="w-8" />
+                  <img src="/assets/Image/mail.svg" alt="email" className="w-8" />
                   <span>tea@hrescic.com</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <img src="./assets/Image/phone.svg" alt="phone" className="w-8" />
+                  <img src="/assets/Image/phone.svg" alt="phone" className="w-8" />
                   <span>+385 99 686 1721</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <img src="./assets/Image/map.svg" alt="location" className="w-8" />
+                  <img src="/assets/Image/map.svg" alt="location" className="w-8" />
                   <span>Samobor, Croatia</span>
                 </div>
               </div>
@@ -100,18 +139,18 @@ const LetsTalk: React.FC = () => {
 
             {/* Right form panel */}
             <div className="p-8 md:p-10 bg-white">
-              <form className="space-y-5">
+              <form className="space-y-5" onSubmit={handleSubmit}>
 
                 {/* Name */}
                 <label className={labelCls}>
                   <span className={labelTextCls}>Name*</span>
-                  <input type="text" className={inputCls} />
+                  <input type="text" className={inputCls} required />
                 </label>
 
                 {/* Email */}
                 <label className={labelCls}>
                   <span className={labelTextCls}>Email*</span>
-                  <input type="email" className={inputCls} />
+                  <input type="email" className={inputCls} required />
                 </label>
 
                 {/* Company (optional) */}
@@ -141,6 +180,7 @@ const LetsTalk: React.FC = () => {
                     rows={4}
                     placeholder="e.g. increase bookings, improve conversion, get more qualified leads, reposition the brand..."
                     className="w-full rounded-md border border-black/10 p-3 text-sm outline-none focus:ring-2 focus:ring-black/5 focus:border-black/30 resize-none"
+                    required
                   />
                 </div>
 
@@ -149,12 +189,12 @@ const LetsTalk: React.FC = () => {
                   type="submit"
                   className="inline-flex items-center gap-2 bg-[#37C100] hover:bg-[#2d9802] text-white px-6 py-2 rounded-full text-sm font-medium shadow-sm transition"
                 >
-                  <img src="./assets/Image/mail2-icon.svg" alt="" />
+                  <img src="/assets/Image/mail2-icon.svg" alt="" />
                   Book My Demo.
                 </button>
 
                 {/* reCAPTCHA */}
-                <ReCaptcha />
+                <ReCaptcha onCheck={setRecaptchaChecked} />
 
                 {/* Small text */}
                 <p className="text-[13px] text-[#555555]">
@@ -194,15 +234,15 @@ const LetsTalk: React.FC = () => {
               {/* contact details at bottom */}
               <div className="mt-auto pt-10 space-y-4 text-[14px] text-white/95">
                 <div className="flex items-center gap-3">
-                  <img src="./assets/Image/mail.svg" alt="email" className="w-8" />
+                  <img src="/assets/Image/mail.svg" alt="email" className="w-8" />
                   <span>tea@hrescic.com</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <img src="./assets/Image/phone.svg" alt="phone" className="w-8" />
+                  <img src="/assets/Image/phone.svg" alt="phone" className="w-8" />
                   <span>+385 99 686 1721</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <img src="./assets/Image/map.svg" alt="location" className="w-8" />
+                  <img src="/assets/Image/map.svg" alt="location" className="w-8" />
                   <span>Samobor, Croatia</span>
                 </div>
               </div>
@@ -210,18 +250,18 @@ const LetsTalk: React.FC = () => {
 
             {/* Right form panel */}
             <div className="p-8 md:p-10 bg-white rounded-[20px]">
-              <form className="space-y-5">
+              <form className="space-y-5" onSubmit={handleSubmit}>
 
                 {/* Name */}
                 <label className={labelCls}>
                   <span className={labelTextCls}>Name*</span>
-                  <input type="text" className={inputCls} />
+                  <input type="text" className={inputCls} required />
                 </label>
 
                 {/* Email */}
                 <label className={labelCls}>
                   <span className={labelTextCls}>Email*</span>
-                  <input type="email" className={inputCls} />
+                  <input type="email" className={inputCls} required />
                 </label>
 
                 {/* Textarea */}
@@ -233,6 +273,7 @@ const LetsTalk: React.FC = () => {
                     rows={4}
                     placeholder="Ask anything — from pricing and timelines to whether this even makes sense for you."
                     className="w-full rounded-md border border-black/10 p-3 text-sm outline-none focus:ring-2 focus:ring-black/5 focus:border-black/30 resize-none"
+                    required
                   />
                 </div>
 
@@ -241,12 +282,12 @@ const LetsTalk: React.FC = () => {
                   type="submit"
                   className="inline-flex items-center gap-2 bg-[#0F0F3D] hover:bg-[#1a1a5e] text-white px-6 py-2 rounded-full text-sm font-medium shadow-sm transition"
                 >
-                  <img src="./assets/Image/mail2-icon.svg" alt="" />
+                  <img src="/assets/Image/mail2-icon.svg" alt="" />
                   Send My Question.
                 </button>
 
                 {/* reCAPTCHA */}
-                <ReCaptcha />
+                <ReCaptcha onCheck={setRecaptchaChecked} />
 
                 {/* Small text */}
                 <p className="text-[13px] text-[#555555]">
@@ -271,7 +312,6 @@ const LetsTalk: React.FC = () => {
 
       {/* ── WHAT HAPPENS NEXT ────────────────────────────────────────────── */}
       <WhatToExpect />
-       {/* <CallsAvailableNote/> */}
     </>
   );
 };

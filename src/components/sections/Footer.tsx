@@ -42,10 +42,10 @@ const connectDetails = [
 
 // Social icons
 const socialIcons = [
-  { icon: Linkedin, href: "#", name: "LinkedIn" },
-  { icon: Instagram, href: "#", name: "Instagram" },
-  { icon: Facebook, href: "#", name: "Facebook" },
-  { icon: Youtube, href: "#", name: "YouTube" },
+  { icon: Linkedin,  href: "https://www.linkedin.com/in/tea-hre%C5%A1%C4%8Di%C4%87/", target: "_blank", name: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/hrescic_agency/", target: "_blank", name: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100070323768269", target: "_blank", name: "Facebook" },
+  { icon: Youtube, href: "https://www.youtube.com/@hrescic", target: "_blank", name: "YouTube" },
 ];
 
 /* ---------- REUSABLE COMPONENTS ---------- */
@@ -59,7 +59,9 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
   <li>
     <a
       href={href}
-      className="hover:text-white transition-colors duration-300 text-base"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-white transition-colors duration-300 text-base "
     >
       {children}
     </a>
@@ -96,7 +98,7 @@ const Footer: React.FC = () => {
             <FooterHeading title="Explore" />
             <ul className="space-y-1.5">
               {exploreLinks.map((link) => (
-                <FooterLink key={link.label} href={link.href}>
+                <FooterLink key={link.label} href={link.href}  >
                   {link.label}
                 </FooterLink>
               ))}
@@ -129,6 +131,8 @@ const Footer: React.FC = () => {
                 <a
                   key={social.name}
                   href={social.href}
+                  target={social.target}
+                  rel="noopener noreferrer"
                   aria-label={social.name}
                   className="text-slate-300/80 hover:text-white transition-colors"
                 >
