@@ -103,7 +103,9 @@ const WebDigitalPage = () => {
                 <p className="mt-4 text-[13px] text-white/60 italic">
                   We review your current setup before the call.
                 </p>
+                
               </div>
+
 
               {/* RIGHT ANIMATED COLOR BOXES */}
               <MasonryShuffleBlocks />
