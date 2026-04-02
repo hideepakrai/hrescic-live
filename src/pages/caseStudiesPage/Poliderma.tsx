@@ -770,12 +770,12 @@ const Poliderma = () => {
                         </h2>
 
                         <p className="mt-4 max-w-2xl text-[15px] sm:text-[16px] leading-[1.6] text-[#555555]">
-                          Because great marketing doesn’t stop — it evolves. Whether you need a website that books guests, a video that tells your story, or a full creative system that scales with you — we’re here to help your brand stay relevant, consistent and alive.
+                          Because great marketing doesn't stop — it evolves. Whether you need a website that books guests, a video that tells your story, or a full creative system that scales with you — we're here to help your brand stay relevant, consistent and alive.
                         </p>
 
                         <div className="mt-7 flex w-full max-w-[420px] flex-col items-center gap-3">
                             <a href="/lets-talk#ask" className="w-full sm:w-fit">
-                                <button className="btn-primary w-full">Let’s Talk</button>
+                                <button className="btn-primary w-full">Let's Talk</button>
                             </a>
                             {/* <a href="/lets-talk#ask" className="w-full sm:w-fit">
                                 <button className="btn-primary w-full bg-transparent !text-[#555555] border border-[#555555] hover:bg-[#555555] hover:text-white transition-all">Ask a question</button>

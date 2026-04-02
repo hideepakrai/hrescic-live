@@ -35,7 +35,7 @@ const caseCards = [
     {
         title: "Case - ",
         highlight: "Summary",
-        text: "MyRent operates within a highly complex tourism ecosystem with multiple user types and services. The challenge wasn’t building more, it was creating clarity within complexity.",
+        text: "MyRent operates within a highly complex tourism ecosystem with multiple user types and services. The challenge wasn't building more, it was creating clarity within complexity.",
         image: "/assets/Image/tourism-brand-img2.png",
         alt: "Case summary visual",
         bg: "bg-[#003C42]",
@@ -54,7 +54,7 @@ const QuoteMark = () => (
     </span>
 );
 
-const GoldButton = ({ children }) => (
+const GoldButton = ({ children }: { children: React.ReactNode }) => (
     <button
         type="button"
         className="w-full sm:w-fit rounded-full bg-[#3EDA00] px-3 sm:px-7 py-[13px] sm:py-[14px] text-center text-[12px] sm:text-[15px] font-semibold leading-[1.35] text-[#003C42]  transition duration-300 hover:bg-[#3EDA00]  text-[#003C42]"
@@ -158,7 +158,7 @@ const TourismTravelPage = () => {
                                     className="mt-4 sm:mt-5 text-[22px] sm:text-[26px] md:text-[26px] font-normal leading-[1.28] tracking-[-0.015em] text-[#555555]"
                                     style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                                 >
-                                    Your brand and digital presence may look “nice”, but it doesn’t clearly communicate why you’re the better choice, fast enough.
+                                    Your brand and digital presence may look 'nice', but it doesn't clearly communicate why you're the better choice, fast enough.
                                 </p>
                             </div>
 
@@ -197,7 +197,7 @@ const TourismTravelPage = () => {
                                     className="mt-8 sm:mt-10 md:mt-14 lg:mt-[72px] text-[22px] sm:text-[24px] md:text-[26px] font-normal leading-[1.35] tracking-[-0.015em] text-[#fff]"
                                     style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                                 >
-                                    Tourism growth doesn’t come from more content or louder campaigns. It comes from clarity at the moment of decision, when guests are comparing, hesitating and choosing.
+                                    Tourism growth doesn't come from more content or louder campaigns. It comes from clarity at the moment of decision, when guests are comparing, hesitating and choosing.
                                 </p>
                             </div>
 
@@ -235,7 +235,7 @@ const TourismTravelPage = () => {
                                     className="text-[20px] sm:text-[22px] font-normal leading-[1.35] tracking-[-0.015em] text-[#00353A]"
                                     style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                                 >
-                                    That’s what we build, by aligning brand, digital and content into one coherent tourism system.
+                                    That's what we build, by aligning brand, digital and content into one coherent tourism system.
                                 </p>
                             </div>
                         </div>
@@ -308,7 +308,7 @@ const TourismTravelPage = () => {
                             className="mt-3 text-[22px] sm:text-[26px] md:text-[26px] font-normal leading-[1.33] tracking-[-0.015em] text-[#555555]"
                             style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                         >
-                            Tourism brands don’t lose because they lack effort. They lose because complexity hides their value.
+                            Tourism brands don't lose because they lack effort. They lose because complexity hides their value.
                         </p>
                     </div>
 
@@ -343,7 +343,7 @@ const TourismTravelPage = () => {
                                 className="text-[18px] px-4 sm:text-[22px] text-[#fff]"
                                 style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                             >
-                                That’s how attention turns into trust, and trust into direct bookings.
+                                That's how attention turns into trust, and trust into direct bookings.
                             </p>
                         </div>
                     </div>

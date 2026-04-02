@@ -128,7 +128,7 @@ const NavadaPage = () => {
           <section className="grid gap-10 px-1 md:grid-cols-2 md:items-center lg:px-16">
             <div className="text-[20px] leading-8 text-[#6f6964]">
               <p>
-                “NAVADA” - meaning: noun, feminine (Gen. sg. navade; pl. Nom.
+                'NAVADA' - meaning: noun, feminine (Gen. sg. navade; pl. Nom.
                 navade, Gen. navada) archaic: a custom; a way of life, work, or
                 behavior that has become established within a human community and
                 is transmitted from generation to generation. The term was
@@ -163,13 +163,13 @@ const NavadaPage = () => {
             <div className="grid gap-4">
               <div className="rounded-[18px] bg-[#e8e2dc] px-6 py-8 shadow-[0_8px_28px_rgba(0,0,0,0.02)] sm:rounded-[20px] sm:px-8 sm:py-10 lg:min-h-[274px] lg:px-12 lg:py-12">
                 <p className="text-[14px] leading-7 text-[#6f6964] sm:text-[18px]">
-                  The custom illustration “Vrata Samobora” (The Gate of Samobor)
+                  The custom illustration 'Vrata Samobora' (The Gate of Samobor)
                   by NAVADA brings together recognizable motifs of Samobor in a
                   single composition. An arched gateway opens onto views of the
                   Secession-style concrete bridge over the Gradna creek, the
                   Church of St. Anastasia, and the fountain from King Tomislav
                   Square, forming a visual narrative that connects tradition
-                  with the town’s architectural symbols.
+                  with the town's architectural symbols.
                 </p>
               </div>
 
@@ -218,7 +218,7 @@ const NavadaPage = () => {
         <div className="mx-auto container-xl">
           <section>
             <h6 className="mb-2 text-[14px] text-[#555555]">
-              Julie Huebn: “Samobor after a Photograph”, lithograph, 1860 (from
+              Julie Huebn: 'Samobor after a Photograph', lithograph, 1860 (from
               the I. Sudnik collection)
             </h6>
 

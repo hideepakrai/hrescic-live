@@ -8,9 +8,9 @@ const services = [
 ];
 
 const problems = [
-  "People don’t quickly understand your value.",
-  "Your website looks good but doesn’t perform.",
-  "You’re visible, but not consistently or to the right people.",
+  "People don't quickly understand your value.",
+  "Your website looks good but doesn't perform.",
+  "You're visible, but not consistently or to the right people.",
   "Hard to stand out in a crowded market.",
 ];
 

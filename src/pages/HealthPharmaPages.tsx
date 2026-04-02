@@ -33,7 +33,7 @@ const caseCards = [
   {
     title: "Case - ",
     highlight: "Summary",
-    text: "As the Poliderma ecosystem expanded across clinical services, cosmetic dermatology and skincare products, structural weaknesses became visible. The challenge wasn’t visibility, it was scaling traffic, conversions and product expansion without fragmenting trust or SEO equity.",
+    text: "As the Poliderma ecosystem expanded across clinical services, cosmetic dermatology and skincare products, structural weaknesses became visible. The challenge wasn't visibility, it was scaling traffic, conversions and product expansion without fragmenting trust or SEO equity.",
     image: "/assets/Image/case-study-3.png",
     alt: "Case summary visual",
   },
@@ -51,7 +51,12 @@ const QuoteMark = () => (
   </span>
 );
 
-const GoldButton = ({ children, href }) => {
+interface GoldButtonProps {
+  children: React.ReactNode;
+  href?: string;
+}
+
+const GoldButton = ({ children, href }: GoldButtonProps) => {
   const baseClass = "inline-block w-full sm:w-fit rounded-full bg-[#DD9842] px-5 sm:px-7 py-[13px] sm:py-[14px] text-center text-[14px] sm:text-[15px] font-medium leading-[1.35] text-white transition duration-300 hover:bg-[#c9852d] hover:shadow-[0_12px_24px_rgba(213,148,59,0.24)]";
 
   if (href) {
@@ -92,7 +97,7 @@ const HealthPharmaPages = () => {
                     className="max-w-[500px] text-[28px] sm:text-[34px] md:text-[40px] lg:text-[38px] font-[400] leading-[1.08] tracking-[-0.03em] text-[#555555]"
                     style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                   >
-                    Health, pharma &amp; beauty brands don’t grow on attention.
+                    Health, pharma &amp; beauty brands don't grow on attention.
                     They grow on trust.
                   </h1>
 
@@ -150,7 +155,7 @@ const HealthPharmaPages = () => {
                 <div className="pt-8">
                   <h1
                     className="pe-4  text-[28px] sm:text-[34px] md:text-[40px] lg:text-[38px] font-[400] leading-[1.08] tracking-[-0.03em] text-[#555555]">
-                    Health, pharma & beauty brands don’t grow on attention. They grow on trust.
+                    Health, pharma & beauty brands don't grow on attention. They grow on trust.
                   </h1>
                   <p className="mt-5 sm:mt-6 lg:mt-4 max-w-[430px] text-[15px] sm:text-[17px] leading-[1.75] text-[#555555]">
                     We help health, pharma and beauty businesses scale complex ecosystems — without losing credibility, clinical authority or SEO equity.
@@ -256,7 +261,7 @@ const HealthPharmaPages = () => {
                   className="mt-8 sm:mt-10 md:mt-14 lg:mt-[72px] text-[22px] sm:text-[24px] md:text-[26px] font-normal leading-[1.35] tracking-[-0.015em] text-[#6f5e57]"
                   style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                 >
-                  Growth in regulated, trust-based industries doesn’t come from
+                  Growth in regulated, trust-based industries doesn't come from
                   campaigns. It comes from structural clarity across the entire
                   ecosystem - clinical, commercial and digital.
                 </p>
@@ -296,7 +301,7 @@ const HealthPharmaPages = () => {
                   className="text-[20px] sm:text-[22px] font-normal leading-[1.35] tracking-[-0.015em] text-[#74625b]"
                   style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                 >
-                  That’s what we build, by treating growth as ecosystem
+                  That's what we build, by treating growth as ecosystem
                   architecture, not marketing execution.
                 </p>
               </div>
@@ -414,7 +419,7 @@ const HealthPharmaPages = () => {
             </h2>
 
             <p className="mt-4 max-w-[470px] text-[15px] sm:text-[16px] leading-[1.6] text-[#655852]">
-              Let’s talk about structuring growth in regulated, trust-based
+              Let's talk about structuring growth in regulated, trust-based
               industries.
             </p>
 

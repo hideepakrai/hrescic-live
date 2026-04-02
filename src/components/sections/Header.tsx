@@ -4,7 +4,8 @@ import { Menu, X } from "lucide-react";
 
 import { LANGUAGES } from "@/constants";
 import i18n from "@/i18n";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
+import { usePathname } from "next/navigation";
 
 type SubCategory = {
   title: string;
@@ -24,11 +25,6 @@ const navItems = [
     name: "Who We Create For",
     href: "/who-we-create-for",
     megaKey: "whoWeCreateFor",
-  },
-  {
-    // name: "Brands We Partner With",
-    // href: "/brands-we-partner-with",
-    // megaKey: "brands",
   },
   { name: "Let's Talk", href: "/lets-talk", megaKey: "contact" },
 ];
@@ -193,7 +189,7 @@ const megaMenuData: Record<
         href: "/who-we-create-for/health-pharma-beauty",
         subcategories: [
           {
-            title: "L’Oréal",
+            title: "L'Oréal",
             description: "",
             href: "/who-we-create-for/loreal",
           },
@@ -234,7 +230,7 @@ const megaMenuData: Record<
   },
 
   contact: {
-    title: "Let’s Talk",
+    title: "Let's Talk",
     subtitle:
       "Kontakt / booking demo; SEO: marketing consultation, creative demo, contact agency.",
     items: [
@@ -261,6 +257,7 @@ const megaMenuData: Record<
 
 
 const Header = () => {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMega, setActiveMega] = useState<string | null>(null);
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
@@ -282,6 +279,10 @@ const Header = () => {
     i18n.changeLanguage(lang_code);
   };
 
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white">
       <div
@@ -294,11 +295,11 @@ const Header = () => {
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0">
               <Link
-                to="/"
+                href="/"
                 className="flex items-center gap-2 text-3xl font-serif font-medium text-gray-900"
               >
                 <img
-                  src="../assets/Image/hrescic-logo.svg"
+                  src="/assets/Image/hrescic-logo.svg"
                   alt="Hrescic logo"
                   className="h-8 w-auto"
                 />
@@ -313,7 +314,7 @@ const Header = () => {
                 return (
                   <Link
                     key={item.name}
-                    to={item.href}
+                    href={item.href}
                     onMouseEnter={() =>
                       hasMega ? setActiveMega(item.megaKey as string) : null
                     }
@@ -338,7 +339,7 @@ const Header = () => {
               })}
 
               <Link
-                to="/lets-talk#demo"
+                href="/lets-talk#demo"
                 className="bg-[#37C100] hover:bg-[#2d9802] text-white px-6 py-3 rounded-full text-sm font-medium transition-all"
               >
                 Book a Free Demo
@@ -402,7 +403,7 @@ const Header = () => {
                         return (
                           <Link
                             key={section.title}
-                            to={section.href}
+                            href={section.href}
                             onMouseEnter={() => setActiveSectionIndex(idx)}
                             onClick={() => setActiveMega(null)}
                             className={`block w-full text-left text-base font-bold py-3 px-4 rounded-md transition-all ${
@@ -436,7 +437,7 @@ const Header = () => {
                           return (
                             <Link
                               key={sub.title}
-                              to={href}
+                              href={href}
                               onClick={() => setActiveMega(null)}
                               className="group flex flex-col p-3 rounded-md hover:bg-[#F4F5F7] transition-colors"
                             >
@@ -474,7 +475,7 @@ const Header = () => {
                               return (
                                 <Link
                                   key={card.title}
-                                  to={href}
+                                  href={href}
                                   onClick={() => setActiveMega(null)}
                                   className="group flex flex-col p-3 rounded-md hover:bg-[#F4F5F7] transition-colors"
                                 >
@@ -509,7 +510,7 @@ const Header = () => {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className="text-base font-medium text-gray-600 hover:text-gray-900"
               >
@@ -518,7 +519,7 @@ const Header = () => {
             ))}
 
             <Link
-              to="/lets-talk#demo"
+              href="/lets-talk#demo"
               onClick={() => setMobileOpen(false)}
               className="bg-[#37c100] hover:bg-[#8000FF] text-white w-full py-3 rounded-full text-sm font-medium text-center transition-all"
             >

@@ -11,7 +11,7 @@ const CTASections: React.FC = () => {
           </h4>
   
           <p className="text-sm md:text-base text-[#5A5672] mb-1 py-2">
-            Let’s make your brand clear, consistent and impossible to ignore.
+            Let's make your brand clear, consistent and impossible to ignore.
           </p>
 
           <div className="flex  items-center gap-4 md:flex-nowrap md:gap-4 mt-6">

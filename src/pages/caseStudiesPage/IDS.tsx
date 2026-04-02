@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 
 const IDS = () => {
@@ -37,7 +38,7 @@ const IDS = () => {
               {/* Heading */}
               <h1
                 className="text-[28px] font-light leading-[1.1] text-[#6c6c6c] sm:text-[34px] md:text-[38px]  lg:text-[38px] xl:text-[38px]"
-                style={{ fontFamily: '"Optima", "Times New Roman", serif' }}
+                style={{ fontFamily: "'Optima', 'Times New Roman', serif" }}
               >
                 Coaching.com e-learning
                 Platform, creative direction,

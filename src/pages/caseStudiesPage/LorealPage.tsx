@@ -24,7 +24,7 @@ const LorealPage = () => {
 
               <h2
                 className="text-[25px] md:text-[35px] leading-[120%] text-white md:pt-36 pt-10 md:pe-0 pe-0"
-                style={{ fontFamily: '"Optima", sans-serif' }}
+                style={{ fontFamily: "'Optima', sans-serif" }}
               >
                 The packaging served as the initial reference point; the full
                 visual direction and all supporting assets were developed and
@@ -61,7 +61,7 @@ const LorealPage = () => {
                 {/* L'Oreal text top-left */}
                 <div className="absolute top-5 left-5 sm:top-6 sm:left-6 z-10">
                   <span className="text-white text-[20px] sm:text-[24px] md:text-[28px] font-light tracking-wide">
-                    L’ORÉAL
+                    L'ORÉAL
                   </span>
                 </div>
 
@@ -99,7 +99,7 @@ const LorealPage = () => {
           {/* Bottom Text */}
           <div className="mt-4 sm:mt-6 flex flex-col gap-1 md:px-2">
             <span className="text-white text-[1.2rem] sm:text-[1.35rem] md:text-xl lg:text-[30px] font-semibold tracking-wide">
-              L’Oreal Revitalift Laser Renew - Video Animation
+              L'Oreal Revitalift Laser Renew - Video Animation
             </span>
 
             <p className="text-white/70 text-[10px] sm:text-[13px] md:text-[13px] tracking-wide uppercase font-medium mt-2">

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { usePathname } from "next/navigation";
 import {
   Linkedin,
   Instagram,
@@ -18,7 +19,7 @@ const exploreLinks = [
   { label: "What We Do", href: "/what-we-do" },
   { label: "Who We Create For", href: "/who-we-create-for" },
   { label: "Ideas & Insights", href: "/Ideas-Insights" },
-  { label: "Let’s Talk", href: "/lets-talk" },
+  { label: "Let's Talk", href: "/lets-talk" },
 ];
 
 // Connect details
@@ -81,6 +82,12 @@ const FooterHeading: React.FC<FooterHeadingProps> = ({ title }) => (
 /* ---------- FOOTER ---------- */
 
 const Footer: React.FC = () => {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <footer className="text-slate-200 pt-16 pb-8 bg-[#26353F]">
 
@@ -89,7 +96,7 @@ const Footer: React.FC = () => {
 
 
         <div className="mb-10">
-          <img src="../assets/Image/hrescic-logo-white.svg"></img>
+          <img src="/assets/Image/hrescic-logo-white.svg"></img>
         </div>
         {/* Columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

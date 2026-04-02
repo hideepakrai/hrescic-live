@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -24,7 +25,7 @@ const HomeHeroSec = () => {
   );
 };
 
-const shuffle = (array) => {
+const shuffle = (array: any[]) => {
   let currentIndex = array.length,
     randomIndex;
 
@@ -124,13 +125,17 @@ const generateSquares = () => {
 };
 
 const ShuffleGrid = () => {
-  const timeoutRef = useRef(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [squares, setSquares] = useState(generateSquares());
 
   useEffect(() => {
     shuffleSquares();
 
-    return () => clearTimeout(timeoutRef.current);
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, []);
 
   const shuffleSquares = () => {

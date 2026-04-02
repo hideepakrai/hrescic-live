@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const partners = [
   {
@@ -134,7 +134,7 @@ const BrandPartnerSec = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
           {partners.map((partner) => (
             <Link
-              to={partner.link}
+              href={partner.link}
               key={partner.id}
               className={`flex flex-col group ${partner.gridCols}`}
             >

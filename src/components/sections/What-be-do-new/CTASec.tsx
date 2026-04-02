@@ -20,7 +20,7 @@ const CTASec: React.FC<CTASecProps> = ({ headline, subtext }) => {
         </span>
 
         <p className="text-sm md:text-base text-[#6B6785] mb-8 mt-6">
-          {subtext || "Let’s make your brand clear, consistent and impossible to ignore."}
+          {subtext || "Let's make your brand clear, consistent and impossible to ignore."}
         </p>
 
         <div className="flex justify-center items-center gap-4 flex-wrap">

@@ -7,7 +7,7 @@ const insightsData = [
     description: "Why big brands win with alignment, not chaos — and what small brands can borrow from them."
   },
   {
-    title: "Your Website Isn’t Slow, It’s Confused",
+    title: "Your Website Isn't Slow, It's Confused",
     description: "How to spot structural issues that kill conversions."
   },
   {
@@ -16,7 +16,7 @@ const insightsData = [
   },
   {
     title: "Tourism Brands: Why 90% Sound the Same",
-    description: "How to avoid blending into “39 other listings nearby”."
+    description: "How to avoid blending into '39 other listings nearby'."
   }
 ];
 

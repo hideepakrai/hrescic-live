@@ -42,7 +42,7 @@ export function AccordionItem({
       )}
     >
       {React.Children.map(children, (child) =>
-        React.isValidElement(child)
+        React.isValidElement<{ isOpen?: boolean; value?: string }>(child)
           ? React.cloneElement(child, { isOpen, value })
           : child
       )}

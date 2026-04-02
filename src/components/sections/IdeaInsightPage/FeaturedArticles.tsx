@@ -17,8 +17,8 @@ const topArticles: Article[] = [
     href: "#",
   },
   {
-    tag: "Your Website Isn’t Slow,",
-    title: "IT’S\nCONFUSED",
+    tag: "Your Website Isn't Slow,",
+    title: "IT'S\nCONFUSED",
     bullet: "How to spot structural issues that kill conversions.",
     href: "#",
   },
@@ -31,7 +31,7 @@ const topArticles: Article[] = [
   {
     tag: "Tourism Brands:",
     title: "WHY 90%\nSOUNDS\nTHE SAME",
-    bullet: "How to avoid blending into “30 other listings nearby”.",
+    bullet: "How to avoid blending into '30 other listings nearby'.",
     href: "#",
   },
 ];
@@ -86,7 +86,7 @@ const ArticleCard: React.FC<{ a: Article }> = ({ a }) => {
       {/* Bottom area */}
       <div className="absolute left-5 right-5 bottom-5 md:left-6 md:right-6 md:bottom-6">
         <div className="flex items-start gap-2 text-sm opacity-95">
-          <img src="./assets/Image/circle.svg" className="w-5 mt-1" />
+          <img src="/assets/Image/circle.svg" className="w-5 mt-1" />
           <p className="line-clamp-2 md:line-clamp-3 text-white font-normal text-[14px]">
             {a.bullet}
           </p>

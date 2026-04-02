@@ -3,7 +3,7 @@ import React from "react";
 const issueList = [
   "Disconnected products and offerings",
   "Inconsistent UX, brand and messaging",
-  "Complex funnels that don’t convert as expected",
+  "Complex funnels that don't convert as expected",
   "Growth that becomes harder to manage over time",
 
 ];
@@ -35,7 +35,7 @@ const caseCards = [
   {
     title: "Case - ",
     highlight: "Summary",
-    text: "Coaching.com operated across independently developed education programs, software and marketplace services. The challenge wasn’t growth,  it was unifying structure, experience and delivery without limiting future evolution.",
+    text: "Coaching.com operated across independently developed education programs, software and marketplace services. The challenge wasn't growth,  it was unifying structure, experience and delivery without limiting future evolution.",
     image: "/assets/Image/educations-case-2.png",
     alt: "Case summary visual",
     bg: "bg-[#F9F3F3]",
@@ -54,7 +54,12 @@ const QuoteMark = () => (
   </span>
 );
 
-const GoldButton = ({ children, href }) => {
+interface GoldButtonProps {
+  children: React.ReactNode;
+  href?: string;
+}
+
+const GoldButton = ({ children, href }: GoldButtonProps) => {
   const baseClass = "inline-block w-full sm:w-fit rounded-full bg-[#5E1DE1] px-5 sm:px-7 py-[13px] sm:py-[14px] text-center text-[14px] sm:text-[15px] font-medium leading-[1.35] text-white transition duration-300 hover:bg-[#4A14B1] hover:shadow-[0_8px_16px_rgba(0,0,0,0.15)]";
 
   if (href) {
@@ -102,7 +107,7 @@ const EducationELearningPage = () => {
                       fontFamily: "Optima, Georgia, Times New Roman, serif",
                       backgroundImage: "linear-gradient(90deg, #5E1DE1 0%, #FF1DA4 100%)",
                     }}>
-                    Education & e-learning brands don’t scale by adding more products. They scale by creating clarity.
+                    Education & e-learning brands don't scale by adding more products. They scale by creating clarity.
                   </h1>
 
                   <p className="mt-5 sm:mt-6 lg:mt-4 max-w-[430px] text-[15px] sm:text-[17px] leading-[1.75] text-[#0F0F3D]">
@@ -203,7 +208,7 @@ const EducationELearningPage = () => {
                   className="mt-8 sm:mt-10 md:mt-14 lg:mt-[72px] text-[22px] sm:text-[24px] md:text-[26px] font-normal leading-[1.35] tracking-[-0.015em] text-[#0F0F3D]"
                   style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                 >
-                  Education growth doesn’t come from more courses, more tools or more features.  It comes from clarity across the entire learning ecosystem — from first touchpoint to program delivery.
+                  Education growth doesn't come from more courses, more tools or more features.  It comes from clarity across the entire learning ecosystem — from first touchpoint to program delivery.
                 </p>
               </div>
 
@@ -241,7 +246,7 @@ const EducationELearningPage = () => {
                   className="text-[20px] sm:text-[22px] font-normal leading-[1.35] tracking-[-0.015em] text-[#0F0F3D]"
                   style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                 >
-                  That’s what we build by aligning brand, UX, content and structure into one scalable education system.
+                  That's what we build by aligning brand, UX, content and structure into one scalable education system.
                 </p>
               </div>
             </div>
@@ -313,7 +318,7 @@ const EducationELearningPage = () => {
               className="mt-3 text-[22px] sm:text-[26px] md:text-[28px] font-normal leading-[1.33] tracking-[-0.015em] text-[#0F0F3D]"
               style={{ fontFamily: "Georgia, Times New Roman, serif" }}
             >
-              Education businesses don’t struggle because they lack expertise. They struggle because complexity hides value.
+              Education businesses don't struggle because they lack expertise. They struggle because complexity hides value.
             </p>
           </div>
 
@@ -374,7 +379,7 @@ const EducationELearningPage = () => {
                 className="text-[20px] sm:text-[22px] text-[#0F0F3D]"
                 style={{ fontFamily: "Georgia, Times New Roman, serif" }}
               >
-                That’s how scale stays sustainable.
+                That's how scale stays sustainable.
               </p>
             </div>
           </div>
@@ -395,7 +400,7 @@ const EducationELearningPage = () => {
             </h2>
 
             <p className="mt-4 max-w-[470px] text-[15px] sm:text-[16px] leading-[1.6] text-[#0F0F3D]">
-              Let’s talk about structuring your education ecosystem for growth — without fragmentation.
+              Let's talk about structuring your education ecosystem for growth — without fragmentation.
             </p>
 
             <div className="mt-7 flex w-full max-w-[420px] flex-col items-center gap-3">

@@ -276,7 +276,7 @@ const CDCPage = () => {
                 >
                   With appreciation for the journey, providing creative direction
                   services for Coaching.com gave me the privilege of working closely
-                  with some of the world’s leading thought leaders, academic professors,
+                  with some of the world's leading thought leaders, academic professors,
                   and business professionals.
                 </p>
               </div>
@@ -404,7 +404,7 @@ const CDCPage = () => {
                 style={{ fontFamily: "Georgia, Times New Roman, serif" }}
               >
                 The objective of the Coaching.com website redesign was to establish a
-                unified design system that supports the platform’s long-term product
+                unified design system that supports the platform's long-term product
                 strategy.
               </p>
 

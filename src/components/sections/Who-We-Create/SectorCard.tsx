@@ -23,7 +23,7 @@ const cards: SectorCard[] = [
     pain:
       "People browse, compare your offer with 40 similar listings, and leave without booking.",
     why:
-      "Your digital experience feels “nice”, but it doesn’t clearly show why you’re the better choice.",
+      "Your digital experience feels 'nice', but it doesn't clearly show why you're the better choice.",
     need:
       "A booking-focused brand and website that make the value obvious — instantly.",
     cta: "See Tourism Projects",
@@ -44,7 +44,7 @@ const cards: SectorCard[] = [
     pain:
       "Programs, platforms and funnels evolve separately, creating fragmented experiences for learners.",
     why:
-      "Education businesses don’t struggle because they lack expertise. They struggle because complexity hides value.",
+      "Education businesses don't struggle because they lack expertise. They struggle because complexity hides value.",
     need:
       "A clear structure learners immediately understand and systems that support scale without adding confusion.",
     cta: "Explore Learning Projects",
@@ -64,7 +64,7 @@ const cards: SectorCard[] = [
     pain:
       "Clients want to trust you — but your online presence feels outdated or inconsistent compared to others.",
     why:
-      "Your expertise and warmth don’t translate clearly into digital communication, creating hesitation.",
+      "Your expertise and warmth don't translate clearly into digital communication, creating hesitation.",
     need:
       "A credible, empathetic and structured digital identity that builds trust before they ever walk in.",
     cta: "See Health Projects",
@@ -84,7 +84,7 @@ const cards: SectorCard[] = [
     pain:
       "Your product stands out in real life — but online you blend in with dozens of similar search results.",
     why:
-      "Your personality, craft and story aren’t expressed visually or verbally in a way people remember.",
+      "Your personality, craft and story aren't expressed visually or verbally in a way people remember.",
     need:
       "Authentic identity + storytelling that match the quality of your work and support premium pricing.",
     cta: "See Boutique Projects",

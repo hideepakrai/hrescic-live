@@ -9,44 +9,15 @@
 
 @font-face {
   font-family: "Optima";
-  src: url("/public/assets/OPTIMA.woff") format("woff");
+  src: url("/assets/OPTIMA.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
-
-/* @font-face {
-  font-family: "Optima";
-  src: url("/public/assets/Optima-Medium.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-} */
-
-
-/* @font-face {
-  font-family: "Optima";
-  src: url("/assets/Optima Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Optima";
-  src: url("/assets/OPTIMA_B.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-} */
-
-/* @font-face {
-  font-family: "Optima";
-  src: url("/assets/Optima-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-} */
 
 h1,
 h2,
 h3,
+h4,
 h5,
 h6 {
   font-family: "Optima", sans-serif !important;
@@ -58,12 +29,6 @@ p {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
-}
-
-h4 {
-  font-family: "Inter", sans-serif;
-
-  font-weight: 500;
 }
 
 html {

@@ -4,20 +4,20 @@ import React from "react";
 const services = [
   {
     service: "Branding & Strategy",
-    problem: "People don’t quickly understand your value.",
+    problem: "People don't quickly understand your value.",
     get: "Positioning, messaging, tone of voice, visual identity.",
     growth: "Creates clarity — the foundation for conversion.",
   },
   {
     service: "Web & Digital",
-    problem: "Your website looks good but doesn’t perform.",
+    problem: "Your website looks good but doesn't perform.",
     get: "UX/UI, landing pages, full websites, booking flows, SEO.",
     growth: "Turns clarity into action (leads, bookings, sales).",
   },
   {
     service: "Content & Marketing",
     problem:
-      "You’re visible, but not consistently or to the right people.",
+      "You're visible, but not consistently or to the right people.",
     get: "Social content, emails, blogs, campaigns, analytics.",
     growth: "Builds trust, demand and long-term momentum.",
   },

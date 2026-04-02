@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { Play, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import YouTube, { YouTubeEvent, YouTubeProps } from "react-youtube";
@@ -181,7 +181,7 @@ export default function AboutStrip() {
 
                 <hr className="mt-auto" />
                 <Link
-                  to={service.href}
+                  href={service.href}
                   className="group flex items-center gap-1 pt-2 text-sm font-medium text-[#41C717] transition-all hover:text-[#3aa914]"
                 >
                   {service.linkText}

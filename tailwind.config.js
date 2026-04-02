@@ -10,6 +10,10 @@ export default {
   				'Inter',
   				'ui-sans-serif',
   				'system-ui'
+  			],
+  			optima: [
+  				'Optima',
+  				'sans-serif'
   			]
   		},
   		colors: {

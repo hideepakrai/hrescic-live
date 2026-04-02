@@ -19,7 +19,7 @@ const MinglanjeVKlanjcu = () => {
                          <img src="/assets/Image/Samobor-logo.svg" alt="" />
                         </div>
 
-                        <h2 className="text-[24px] sm:text-[28px] md:text-[32px] text-[#555555] leading-[1.3] font-light mt-4 pb-14 " style={{ fontFamily: '"Optima", "Times New Roman", serif' }}>
+                        <h2 className="text-[24px] sm:text-[28px] md:text-[32px] text-[#555555] leading-[1.3] font-light mt-4 pb-14 " style={{ fontFamily: "'Optima', 'Times New Roman', serif" }}>
                             One whole street decided to<br className="hidden sm:block" />
                             have the festival of their own,<br className="hidden sm:block" />
                             so we were honored when<br className="hidden sm:block" />
@@ -37,7 +37,7 @@ const MinglanjeVKlanjcu = () => {
                     />
                     {/* Text overlay on image */}
                     {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="text-white text-center flex flex-col items-center leading-[0.9] tracking-widest" style={{ fontFamily: '"Optima", "Times New Roman", serif' }}>
+                        <div className="text-white text-center flex flex-col items-center leading-[0.9] tracking-widest" style={{ fontFamily: "'Optima', 'Times New Roman', serif" }}>
                             <span className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px]">MIN</span>
                             <span className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px]">GLA</span>
                             <span className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px]">NJ<span className="relative">E<span className="absolute -top-[10px] left-1/2 -translate-x-1/2 text-[20px]">~</span></span></span>
@@ -68,7 +68,7 @@ const MinglanjeVKlanjcu = () => {
                         Branding a place with such a deep, layered past is both a privilege and a challenge — especially when its history lives more in fragments, memories, and traces than in formal records.
                     </p>
                     <p className="md:text-[20px] max-w-[380px]">
-                        Scarcity of documentation doesn't mean absence; in fact, what surfaced proved far richer and more evocative than expected.
+                        Scarcity of documentation doesn"t mean absence; in fact, what surfaced proved far richer and more evocative than expected.
                     </p>
                 </div>
                 </div>
@@ -78,10 +78,10 @@ const MinglanjeVKlanjcu = () => {
             <section className="w-full max-w-[1200px] mx-auto px-4 md:px-0 mb-16 sm:mb-24">
                 <div className="w-full bg-[#f9f9f9] rounded-[20px] p-10 sm:p-16 md:p-24 flex flex-col items-center shadow-sm">
                     <div className="max-w-[500px] w-full flex flex-col items-start text-left">
-                        <p className="text-[20px] sm:text-[24px] md:text-[28px] text-[#444444] italic leading-[1.3] font-light" style={{ fontFamily: '"Optima", "Times New Roman", serif' }}>
-                            “Samobor je grad malih uličica,
+                        <p className="text-[20px] sm:text-[24px] md:text-[28px] text-[#444444] italic leading-[1.3] font-light" style={{ fontFamily: "'Optima', 'Times New Roman', serif" }}>
+                            'Samobor je grad malih uličica,
                             mirisnog cvijeća, i ljudi koji vole
-                            svoj mir.”
+                            svoj mir.'
                         </p>
 
                         <div className="flex items-center gap-4 mt-8">
@@ -96,13 +96,13 @@ const MinglanjeVKlanjcu = () => {
                 </div>
 
                 <p className="text-[#555555] text-[10px] sm:text-[14px] mt-4 px-2 tracking-wide font-normal ">
-                    Quote from the Book “Samobor”, Milan Lang, XXXX , about the nature of the people from Samobor.
+                    Quote from the Book 'Samobor', Milan Lang, XXXX , about the nature of the people from Samobor.
                 </p>
             </section>
 
             {/* The Result Section */}
             <section className="w-full max-w-[1200px] mx-auto px-4 lg:px-0 flex flex-col items-center">
-                <h3 className="text-[20px] sm:text-[40px] text-[#555555] mb-10 sm:mb-6 text-center" style={{ fontFamily: '"Optima", "Times New Roman", serif' }}>
+                <h3 className="text-[20px] sm:text-[40px] text-[#555555] mb-10 sm:mb-6 text-center" style={{ fontFamily: "'Optima', 'Times New Roman', serif" }}>
                     The result:
                 </h3>
 
@@ -115,7 +115,7 @@ const MinglanjeVKlanjcu = () => {
                             className="absolute inset-0 w-full h-full object-cover opacity-80"
                         />
                         {/* Overlay texts */}
-                        {/* <div className="absolute top-10 left-10 text-white flex flex-col items-start leading-[0.9] tracking-widest" style={{ fontFamily: '"Optima", "Times New Roman", serif' }}>
+                        {/* <div className="absolute top-10 left-10 text-white flex flex-col items-start leading-[0.9] tracking-widest" style={{ fontFamily: "'Optima', 'Times New Roman', serif" }}>
                             <span className="text-[28px] sm:text-[36px]">MIN</span>
                             <span className="text-[28px] sm:text-[36px]">GLA</span>
                             <span className="text-[28px] sm:text-[36px]">NJ<span className="relative">E<span className="absolute -top-[5px] left-1/2 -translate-x-1/2 text-[14px]">~</span></span></span>
@@ -124,7 +124,7 @@ const MinglanjeVKlanjcu = () => {
                             <span className="text-[28px] sm:text-[36px]">CU</span>
                         </div> */}
                         <div className="absolute bottom-6 right-6 text-right text-white">
-                            <h4 className="text-[32px] sm:text-[40px] leading-none mb-2" style={{ fontFamily: '"Optima", "Times New Roman", serif' }}>Marda</h4>
+                            <h4 className="text-[32px] sm:text-[40px] leading-none mb-2" style={{ fontFamily: "'Optima', 'Times New Roman', serif" }}>Marda</h4>
                             <p className="text-[10px] sm:text-[12px] font-sans tracking-wide">
                                 22.12.2026. u 19h  / Lokacija: Klanjec, Samobor
                             </p>

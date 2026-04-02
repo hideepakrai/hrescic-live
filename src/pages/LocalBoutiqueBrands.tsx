@@ -33,7 +33,7 @@ const caseCards = [
   {
     title: "Case - ",
     highlight: "Summary",
-    text: "Castania began as a small producer with an excellent product, competing in a low-margin, price-driven market. The challenge wasn’t quality, it was creating identity, differentiation and a system that could support long-term growth.",
+    text: "Castania began as a small producer with an excellent product, competing in a low-margin, price-driven market. The challenge wasn't quality, it was creating identity, differentiation and a system that could support long-term growth.",
     image: "/assets/Image/case-brand-3.png",
     alt: "Case summary visual",
   },
@@ -51,7 +51,12 @@ const QuoteMark = () => (
   </span>
 );
 
-const GoldButton = ({ children, href }) => {
+interface GoldButtonProps {
+  children: React.ReactNode;
+  href?: string;
+}
+
+const GoldButton = ({ children, href }: GoldButtonProps) => {
   const baseClass = "inline-block w-full sm:w-fit rounded-full bg-[#CE6B03] px-5 sm:px-7 py-[13px] sm:py-[14px] text-center text-[14px] sm:text-[15px] font-medium leading-[1.35] text-white transition duration-300 hover:bg-[#A65602] hover:shadow-[0_8px_16px_rgba(0,0,0,0.15)]";
   
   if (href) {
@@ -91,7 +96,7 @@ const LocalBoutiqueBrands = () => {
 
                 <div className="pt-8">
                   <h1 className="pe-4 hero-title text-[28px] sm:text-[34px] md:text-[40px] lg:text-[38px] font-[400] leading-[1.08] tracking-[-0.03em] text-[#555555]">
-                    Local & boutique brands don’t win on price.{" "}
+                    Local & boutique brands don't win on price.{" "}
                     <span className="text-[#327E92]">They win on meaning.</span>
                   </h1>
                   <p className="mt-5 sm:mt-6 lg:mt-4 max-w-[430px] text-[15px] sm:text-[17px] leading-[1.75] text-[#555555]">
@@ -155,7 +160,7 @@ const LocalBoutiqueBrands = () => {
                   className="mt-4 sm:mt-5 text-[22px] sm:text-[26px] md:text-[26px] font-normal leading-[1.28] tracking-[-0.015em] text-[#6e5f58]"
                   style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                 >
-                 Quality alone isn’t enough in crowded markets where everything looks similar and price becomes the default differentiator.
+                 Quality alone isn't enough in crowded markets where everything looks similar and price becomes the default differentiator.
                 </p>
               </div>
 
@@ -194,7 +199,7 @@ const LocalBoutiqueBrands = () => {
                   className="mt-8 sm:mt-10 md:mt-14 lg:mt-[72px] text-[22px] sm:text-[24px] md:text-[26px] font-normal leading-[1.35] tracking-[-0.015em] text-[#6f5e57]"
                   style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                 >
-                  Boutique brands don’t grow by shouting louder or discounting more.  They grow by making their value unmistakably clear, emotionally, visually and strategically.
+                  Boutique brands don't grow by shouting louder or discounting more.  They grow by making their value unmistakably clear, emotionally, visually and strategically.
                 </p>
               </div>
 
@@ -232,7 +237,7 @@ const LocalBoutiqueBrands = () => {
                   className="text-[20px] sm:text-[22px] font-normal leading-[1.35] tracking-[-0.015em] text-[#74625b]"
                   style={{ fontFamily: "Georgia, Times New Roman, serif" }}
                 >
-                 That’s what we build, by turning products into brands and brands into scalable systems.
+                 That's what we build, by turning products into brands and brands into scalable systems.
                 </p>
               </div>
             </div>
@@ -307,7 +312,7 @@ const LocalBoutiqueBrands = () => {
               className="mt-3 text-[22px] sm:text-[26px] md:text-[28px] font-normal leading-[1.33] tracking-[-0.015em] text-[#6f5e58]"
               style={{ fontFamily: "Georgia, Times New Roman, serif" }}
             >
-             Boutique brands can’t win by copying mass-market tactics.  They win by creating meaning customers are willing to pay for.
+             Boutique brands can't win by copying mass-market tactics.  They win by creating meaning customers are willing to pay for.
             </p>
           </div>
 
@@ -352,7 +357,7 @@ const LocalBoutiqueBrands = () => {
             </h2>
 
             <p className="mt-4 max-w-[470px] text-[15px] sm:text-[16px] leading-[1.6] text-[#655852]">
-              Let’s talk about positioning, identity and building a brand system that supports growth.
+              Let's talk about positioning, identity and building a brand system that supports growth.
             </p>
 
             <div className="mt-7 flex w-full max-w-[420px] flex-col items-center gap-3">

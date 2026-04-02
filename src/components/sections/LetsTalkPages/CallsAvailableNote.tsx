@@ -8,7 +8,7 @@ const CallsAvailableNote = () => {
         <div className="flex flex-col items-center text-center">
           {/* Icon */}
           <div className="mb-5 text-[#555555]">
-           <img src='./assets/Image/audio.svg' alt='audio Image'/>
+           <img src="/assets/Image/audio.svg" alt='audio Image'/>
           </div>
 
           {/* Title */}

@@ -31,7 +31,7 @@ const MarketingBlogCart = () => {
             </h3>
 
             <div className="mt-5 flex gap-3 text-sm items-start opacity-95">
-              <img src="./assets/Image/circle.svg" className="w-6 mt-1" />
+              <img src="/assets/Image/circle.svg" className="w-6 mt-1" />
               <span className="md:text-lg text-md">
                 Positioning, messaging, differentiation and decisions that build trust.
               </span>
@@ -53,11 +53,11 @@ const MarketingBlogCart = () => {
 
             <h3 className="font-serif md:text-3xl text-xl mt-6 leading-snug">
               Your website is not a brochure —
-              <br /> it’s a system.
+              <br /> it's a system.
             </h3>
 
             <div className="mt-5 flex gap-3 text-sm items-start opacity-95">
-              <img src="./assets/Image/circle.svg" className="w-6 mt-1" />
+              <img src="/assets/Image/circle.svg" className="w-6 mt-1" />
               <span className="md:text-lg text-md">
                 UX, clarity, structure & conversion fundamentals that scale results.
               </span>
@@ -85,7 +85,7 @@ const MarketingBlogCart = () => {
             </h3>
 
             <div className="mt-5 flex gap-3 text-sm items-start opacity-95">
-              <img src="./assets/Image/circle.svg" className="w-6 mt-1" />
+              <img src="/assets/Image/circle.svg" className="w-6 mt-1" />
               <span className="md:text-lg text-md">
                 Monthly structures, editorial thinking & AI workflow that keeps you visible.
               </span>
@@ -113,7 +113,7 @@ const MarketingBlogCart = () => {
             </h3>
 
             <div className="mt-5 flex gap-3 text-sm items-start opacity-95">
-              <img src="./assets/Image/circle.svg" className="w-6 mt-1" />
+              <img src="/assets/Image/circle.svg" className="w-6 mt-1" />
               <span className="md:text-lg text-md">
                 Clear behaviour patterns & decision science behind what really moves numbers.
               </span>

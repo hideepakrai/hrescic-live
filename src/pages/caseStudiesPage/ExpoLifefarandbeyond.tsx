@@ -23,7 +23,7 @@ const ExpoLifefarandbeyond = () => {
 
           <h2
             className="text-[25px] md:text-[35px] leading-[120%] text-white pt-20 md:pe-14 pe-4 "
-            style={{ fontFamily: '"Optima", sans-serif' }}
+            style={{ fontFamily: "'Optima', sans-serif" }}
           >
             The packaging served as
            
@@ -103,7 +103,7 @@ const ExpoLifefarandbeyond = () => {
         <div className="mt-4 sm:mt-6 flex flex-col gap-1 md:px-2">
           <h3
             className="text-white text-[1.2rem] sm:text-[1.35rem] md:text-xl lg:text-2xl font-normal tracking-wide"
-            style={{ fontFamily: '"Optima", sans-serif' }}
+            style={{ fontFamily: "'Optima', sans-serif" }}
           >
             EXO - Life and Beyond
           </h3>

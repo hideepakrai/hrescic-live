@@ -17,8 +17,8 @@ const plans: Plan[] = [
   {
     id: "start",
     label: "PLAN: START",
-    headline: "You’re not getting the sales or inquiries you should.",
-    subline: "People aren’t clearly understanding your offer or your value.",
+    headline: "You're not getting the sales or inquiries you should.",
+    subline: "People aren't clearly understanding your offer or your value.",
     oneTimeTitle: "One-time foundation",
     oneTime: [
       "Brand & website audit",
@@ -40,8 +40,8 @@ const plans: Plan[] = [
     id: "grow",
     label: "PLAN: GROW",
     headline:
-      "You’re getting clients — but not consistently or not the right ones.",
-    subline: "Your communication isn’t attracting the audience you want.",
+      "You're getting clients — but not consistently or not the right ones.",
+    subline: "Your communication isn't attracting the audience you want.",
     oneTimeTitle: "One-time foundation",
     oneTime: [
       "Deep brand & website review",

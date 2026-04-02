@@ -3,7 +3,7 @@ import i18nBackend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 
 const getCurrentHost =
-  import.meta.env.MODE === "development"
+  process.env.NEXT_PUBLIC_MODE === "development"
     ? "http://localhost:5173"
     : "LINK TO PROD";
 
