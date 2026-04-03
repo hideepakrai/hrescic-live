@@ -7,7 +7,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const auth = await authenticateAdmin();
   const isAuthenticated = Boolean(auth);
 
-  if (!isAuthenticated && process.env.NODE_ENV !== "development") {
+  if (!isAuthenticated) {
     redirect('/admin/login');
   }
 
