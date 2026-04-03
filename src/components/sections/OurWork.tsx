@@ -3,69 +3,68 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 // Data for the 4 industry cards
-const industries = [
-  {
-    title: "Tourism & Travel",
-    description:
-      "For brands that host the world. We help villas, boutique hotels, rental agencies, and yacht charters boost bookings and visibility.",
-    linkText: "See tourism projects",
-    image: "/assets/Image/travel.png",
-    href: "/who-we-create-for/tourism-travel",
-  },
-  {
-    title: "Learning & Development",
-    description:
-      "For brands that educate professionals to reach their goals. Complete marketing funnel services to capture, nurture and convert leads into course sales.",
-    linkText: "Explore educational projects",
-    image: "/assets/Image/learning.png",
-    href: "/who-we-create-for/education-e-learning",
-  },
-  {
-    title: "Health, Pharma & Beauty",
-    description:
-      "For brands that build trust through care. From clinics to pharma and beauty — clarity, empathy, credibility.",
-    linkText: "See health & beauty work",
-    image: "/assets/Image/Beauty.png",
-    href: "/who-we-create-for/health-pharma-beauty",
-  },
-  {
-    title: "Local & Boutique Brands",
-    description:
-      "For makers, doers and dreamers. Authentic identities and digital presence for independent brands.",
-    linkText: "Discover boutique projects",
-    image: "/assets/Image/local-Boutique.png",
-    href: "/who-we-create-for/local-boutique-brands",
-  },
-];
-
-// Data for the stats block
-const stats = [
-  {
-    value: "$52M+",
-    label: "in revenue - helped achieved for clients in driving their portfolios",
-  },
-  {
-    value: "12.000+",
-    label: "digital products and services delivered",
-  },
-  {
-    value: "2.300+",
-    label: "hours of video materials edited, animated and postproduced",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function WhoWeCreateFor() {
+  const { t } = useTranslation();
+
+  // Data for the 4 industry cards
+  const industries = [
+    {
+      title: t("work.tourism"),
+      description: t("work.tourism_desc"),
+      linkText: t("work.tourism_link"),
+      image: "/assets/Image/travel.png",
+      href: "/who-we-create-for/tourism-travel",
+    },
+    {
+      title: t("work.learning"),
+      description: t("work.learning_desc"),
+      linkText: t("work.learning_link"),
+      image: "/assets/Image/learning.png",
+      href: "/who-we-create-for/education-e-learning",
+    },
+    {
+      title: t("work.health"),
+      description: t("work.health_desc"),
+      linkText: t("work.health_link"),
+      image: "/assets/Image/Beauty.png",
+      href: "/who-we-create-for/health-pharma-beauty",
+    },
+    {
+      title: t("work.local"),
+      description: t("work.local_desc"),
+      linkText: t("work.local_link"),
+      image: "/assets/Image/local-Boutique.png",
+      href: "/who-we-create-for/local-boutique-brands",
+    },
+  ];
+
+  // Data for the stats block
+  const stats = [
+    {
+      value: "$52M+",
+      label: t("work.stat_revenue"),
+    },
+    {
+      value: "12.000+",
+      label: t("work.stat_products"),
+    },
+    {
+      value: "2.300+",
+      label: t("work.stat_video"),
+    },
+  ];
+
   return (
     <section className="bg-white py-16 px-4 md:px-10 md:py-18">
       <div className="container-xl mx-auto">
         <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
           <h2 className="mb-4 text-3xl font-normal text-gray-color md:text-[40px]">
-            Who We Create For
+            {t("work.title")}
           </h2>
           <p className="text-base text-gray-color md:text-lg">
-            We work with forward-thinking businesses across tourism, health,
-            beauty, charter and boutique industries - keeping them visible,
-            trustworthy and alive.
+            {t("work.subtitle")}
           </p>
         </div>
 
@@ -107,14 +106,14 @@ export default function WhoWeCreateFor() {
 
         <div className="mt-4 rounded-2xl bg-[#1D2931] p-10 text-center text-white md:p-14">
           <h3 className="mx-auto max-w-2xl px-0 py-5 text-[24px] font-normal md:mb-12 md:px-4 md:text-[40px]">
-            Delivering on-demand excellence
+            {t("work.excellence_title")}
             <br />
-            for brands around the world
+            {t("work.excellence_subtitle")}
           </h3>
 
           <div className="mb-10 grid grid-cols-1 gap-8 md:mb-12 md:grid-cols-3 md:gap-12">
             {stats.map((stat) => (
-              <div key={stat.value}>
+              <div key={stat.label}>
                 <div className="mb-2 text-[#41C717]">
                   <h3 className="text-4xl font-normal lg:text-[50px]">
                     {stat.value}
@@ -129,7 +128,7 @@ export default function WhoWeCreateFor() {
 
           <a href="/lets-talk#ask">
             <button className="rounded-full bg-[#41C717] px-6 py-3 text-md font-medium text-white transition-all hover:bg-[#3aa914]">
-              Let's Talk
+              {t("hero.lets_talk")}
             </button>
           </a>
         </div>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { FaPlay } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 type MediaCard = {
   id: number;
@@ -10,7 +11,6 @@ type MediaCard = {
   alt: string;
   showPlay?: boolean;
 };
-
 
 type Tile = {
   id: number;
@@ -67,59 +67,14 @@ const PlayBadge = () => {
   );
 };
 
-const RightMediaGrid = () => {
-  return (
-    <div className="mx-auto w-full max-w-[560px] lg:ms-auto">
-      <div className="grid grid-cols-[1.08fr_1fr] gap-3 sm:gap-4">
-        <div className="relative min-h-[220px] overflow-hidden rounded-[18px] bg-white/5 sm:min-h-[250px] lg:min-h-[250px]">
-          <img
-            src={mediaCards[0].image}
-            alt={mediaCards[0].alt}
-            className="h-full w-full object-cover"
-          />
-        </div>
-
-        <div className="grid grid-rows-2 gap-3 sm:gap-4">
-          <div className="relative min-h-[102px] overflow-hidden rounded-[18px] bg-white/5 sm:min-h-[118px] lg:min-h-[120px]">
-            <img
-              src={mediaCards[1].image}
-              alt={mediaCards[1].alt}
-              className="h-full w-full object-cover"
-            />
-            <PlayBadge />
-          </div>
-
-          <div className="relative min-h-[102px] overflow-hidden rounded-[18px] bg-white/5 sm:min-h-[118px] lg:min-h-[120px]">
-            <img
-              src={mediaCards[2].image}
-              alt={mediaCards[2].alt}
-              className="h-full w-full object-cover"
-            />
-            <PlayBadge />
-          </div>
-        </div>
-
-        <div className="relative ms-auto h-[120px] max-w-[110px] overflow-hidden rounded-[18px] bg-white/5 sm:max-w-[120px] lg:max-w-[120px]">
-          <img
-            src={mediaCards[4].image}
-            alt={mediaCards[4].alt}
-            className="h-full w-full object-cover"
-          />
-        </div>
-
-        <div className="relative h-[120px] overflow-hidden rounded-[18px] bg-white/5 sm:min-h-[70px] lg:min-h-[70px]">
-          <img
-            src={mediaCards[3].image}
-            alt={mediaCards[3].alt}
-            className="h-full w-full object-cover"
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
-
 export default function HomeHeroSection() {
+  const { t } = useTranslation();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleShowreelClick = () => {
     const target = document.getElementById("showreel-section");
 
@@ -138,60 +93,56 @@ export default function HomeHeroSection() {
     }, 900);
   };
 
-
   const shuffle = <T,>(arr: T[]) => {
-  const a = [...arr];
-  let i = a.length;
-  while (i) {
-    const j = Math.floor(Math.random() * i--);
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-};
+    const a = [...arr];
+    let i = a.length;
+    while (i) {
+      const j = Math.floor(Math.random() * i--);
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
 
-const slots: Slot[] = [
-  { slotId: "large", className: "col-span-1 row-span-2" },
+  const slots: Slot[] = [
+    { slotId: "large", className: "col-span-1 row-span-2" },
+    { slotId: "top", className: "col-start-2 row-start-1" },
+    { slotId: "middle", className: "col-start-2 row-start-2" },
+    { slotId: "bottom-left", className: "col-start-1 row-start-3 justify-self-end w-[110px]" },
+    { slotId: "bottom-right", className: "col-start-2 row-start-3" },
+  ];
 
-  { slotId: "top", className: "col-start-2 row-start-1" },
-  { slotId: "middle", className: "col-start-2 row-start-2" },
-
-  { slotId: "bottom-left", className: "col-start-1 row-start-3 justify-self-end w-[110px]" },
-  { slotId: "bottom-right", className: "col-start-2 row-start-3" },
-];
-
-const tileData: Tile[] = [
-  { id: 1, image: "/assets/Image/img1.png" },
-  { id: 2, image: "/assets/Image/img2.png" },
-  { id: 3, image: "/assets/Image/img3.png" },
-  { id: 4, image: "/assets/Image/img4.png" },
-  { id: 5, image: "/assets/Image/img5.png" },
-];
+  const tileData: Tile[] = [
+    { id: 1, image: "/assets/Image/img1.png" },
+    { id: 2, image: "/assets/Image/img2.png" },
+    { id: 3, image: "/assets/Image/img3.png" },
+    { id: 4, image: "/assets/Image/img4.png" },
+    { id: 5, image: "/assets/Image/img5.png" },
+  ];
 
   const createNextAssignments = (prev: AssignedTile[]): AssignedTile[] => {
-  let next: AssignedTile[] = [];
-  let tries = 0;
+    let next: AssignedTile[] = [];
+    let tries = 0;
 
-  do {
-    const shuffledSlots = shuffle(slots);
-    next = tileData.map((tile, i) => ({
+    do {
+      const shuffledSlots = shuffle(slots);
+      next = tileData.map((tile, i) => ({
+        tile,
+        slot: shuffledSlots[i],
+      }));
+      tries++;
+    } while (
+      tries < 6 &&
+      next.every((item, i) => item.slot.slotId === prev[i]?.slot.slotId)
+    );
+
+    return next;
+  };
+
+  const createInitialAssignments = (): AssignedTile[] =>
+    tileData.map((tile, i) => ({
       tile,
-      slot: shuffledSlots[i],
+      slot: slots[i],
     }));
-    tries++;
-  } while (
-    tries < 6 &&
-    next.every((item, i) => item.slot.slotId === prev[i]?.slot.slotId)
-  );
-
-  return next;
-};
-
-
-const createInitialAssignments = (): AssignedTile[] =>
-  tileData.map((tile, i) => ({
-    tile,
-    slot: slots[i],
-  }));
 
   const MasonryShuffleBlocks = () => {
     const [assigned, setAssigned] = useState<AssignedTile[]>(createInitialAssignments());
@@ -236,6 +187,7 @@ const createInitialAssignments = (): AssignedTile[] =>
               >
                 <img
                   src={tile.image}
+                  alt="Masonry tile"
                   className="h-full w-full object-cover"
                 />
   
@@ -253,7 +205,16 @@ const createInitialAssignments = (): AssignedTile[] =>
       </div>
     );
   };
-  
+
+  if (!mounted) {
+    return (
+      <section className="w-full px-3 pt-3 sm:px-4 lg:px-5">
+        <div className="container-xl mx-auto">
+          <div className="relative overflow-hidden rounded-[18px] bg-[#1D2931] lg:rounded-[20px] min-h-[430px]" />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="w-full px-3 pt-3 sm:px-4 lg:px-5">
@@ -267,24 +228,21 @@ const createInitialAssignments = (): AssignedTile[] =>
           <div className="relative grid min-h-[430px] items-center gap-12 px-6 py-8 sm:px-8 sm:py-10 md:px-8 lg:grid-cols-[1.02fr_.98fr] lg:gap-10 lg:px-14 lg:py-16">
             <div className="max-w-[560px] lg:ps-1">
               <h1 className="font-serif text-[34px] font-normal leading-[1.08] tracking-[-0.03em] text-white sm:text-[42px] md:text-[48px] lg:text-[50px] xl:text-[50px]">
-                Elite Marketing
+                {t("hero.title_elite")}
                 <br />
-                Expertise, Ready When
+                {t("hero.title_expertise")}
                 <br />
-                You Need It
+                {t("hero.title_need")}
               </h1>
-              
 
               <p className="mt-6 max-w-[470px] text-[14px] leading-7 text-white/80 sm:text-[15px] lg:text-[17px]">
-                Access premium creative and strategic talent that integrates
-                seamlessly with your business, precisely when, and how you need
-                it.
+                {t("hero.description")}
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a href="/lets-talk#ask">
                   <button className="rounded-full bg-[#37C100] px-5 py-3 text-xs font-medium text-white transition-all hover:bg-[#2d9802] md:px-6 md:py-3 md:text-sm">
-                    Let&apos;s Talk
+                    {t("hero.lets_talk")}
                   </button>
                 </a>
 
@@ -296,13 +254,13 @@ const createInitialAssignments = (): AssignedTile[] =>
                   <span className="flex h-6 w-6 items-center justify-center rounded-full ">
                     <FaPlay className=" text-[12px]" />
                   </span>
-                  Play Showreel
+                  {t("hero.play_showreel")}
                 </button>
               </div>
             </div>
 
             <div className="w-full">
-             <MasonryShuffleBlocks />
+              <MasonryShuffleBlocks />
             </div>
           </div>
         </div>

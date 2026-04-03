@@ -2,6 +2,10 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { CheckCircle2, RefreshCw, Save } from "lucide-react";
+import { useSelector } from "react-redux";
+import { selectAdminLocale } from "@/lib/store/features/adminLocaleSlice";
+import { LocaleCode } from "@/types/localization";
+import { ADMIN_TRANSLATIONS } from "@/lib/translations";
 import {
   DEFAULT_PRICING_SECTION_SETTINGS,
   fromMultiline,
@@ -35,6 +39,9 @@ async function readApiPayload(res: Response): Promise<ApiPayload> {
 }
 
 export default function PricingPlansAdminPage() {
+  const currentLocale = useSelector(selectAdminLocale) as LocaleCode;
+  const t = ADMIN_TRANSLATIONS[currentLocale] || ADMIN_TRANSLATIONS.en;
+
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -198,7 +205,7 @@ export default function PricingPlansAdminPage() {
       }
 
       await loadData();
-      setSuccess("Pricing section and plan cards saved successfully.");
+      setSuccess(t.pricing_cms.save_success);
     } catch (err) {
       const message = err instanceof Error ? err.message : "Failed to save pricing content";
       setError(message);
@@ -212,21 +219,21 @@ export default function PricingPlansAdminPage() {
       <section className="rounded-2xl border border-[#d7dfdb] bg-gradient-to-r from-[#f4fbf1] via-white to-white p-5 shadow-sm">
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div>
-            <h1 className="text-2xl font-black tracking-tight">Pricing Plans CMS</h1>
+            <h1 className="text-2xl font-black tracking-tight">{t.pricing_cms.title}</h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              Edit Plans & Deliverables content and push changes live from admin.
+              {t.pricing_cms.desc}
             </p>
           </div>
           <div className="grid grid-cols-2 gap-2 text-sm">
             <div className="rounded-xl border border-[#d7dfdb] bg-white px-3 py-2 text-center">
               <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-muted-foreground">
-                Plans
+                {t.pricing_cms.plans_count}
               </p>
               <p className="text-xl font-black text-foreground">{plans.length}</p>
             </div>
             <div className="rounded-xl border border-[#d7dfdb] bg-white px-3 py-2 text-center">
               <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-muted-foreground">
-                Configured
+                {t.pricing_cms.configured_count}
               </p>
               <p className="text-xl font-black text-foreground">{configuredPlans}</p>
             </div>
@@ -248,16 +255,16 @@ export default function PricingPlansAdminPage() {
       <section className="rounded-2xl border border-[#d7dfdb] bg-white p-5 shadow-sm">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-sm font-black uppercase tracking-[0.14em] text-foreground">
-            Section Settings
+            {t.pricing_cms.section_settings}
           </h2>
           <div className="rounded-lg border border-border bg-muted/30 px-3 py-1.5 text-xs text-muted-foreground">
-            Status: <span className="font-semibold text-foreground">{sectionStatus}</span>
+            {t.pricing_cms.status_label}: <span className="font-semibold text-foreground">{sectionStatus}</span>
           </div>
         </div>
         <div className="grid gap-3 md:grid-cols-2">
           <label className="space-y-1.5 text-sm">
             <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-              Section Title
+              {t.pricing_cms.section_title}
             </span>
             <input
               value={sectionSettings.title}
@@ -269,7 +276,7 @@ export default function PricingPlansAdminPage() {
           </label>
           <label className="space-y-1.5 text-sm">
             <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-              Section Status
+              {t.pricing_cms.status_label}
             </span>
             <select
               value={sectionStatus}
@@ -283,7 +290,7 @@ export default function PricingPlansAdminPage() {
           </label>
           <label className="space-y-1.5 text-sm md:col-span-2">
             <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-              Section Subtitle
+              {t.pricing_cms.section_subtitle}
             </span>
             <textarea
               value={sectionSettings.subtitle}
@@ -296,7 +303,7 @@ export default function PricingPlansAdminPage() {
           </label>
           <label className="space-y-1.5 text-sm">
             <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-              Bottom CTA Label
+              {t.pricing_cms.bottom_cta_label}
             </span>
             <input
               value={sectionSettings.bottomCtaLabel}
@@ -308,7 +315,7 @@ export default function PricingPlansAdminPage() {
           </label>
           <label className="space-y-1.5 text-sm">
             <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-              Bottom CTA Link
+              {t.pricing_cms.bottom_cta_link}
             </span>
             <input
               value={sectionSettings.bottomCtaHref}
@@ -332,13 +339,13 @@ export default function PricingPlansAdminPage() {
                 {/* <h3 className="text-xl font-black tracking-tight text-foreground">{plan.title}</h3> */}
               </div>
               <div className="rounded-lg border border-border bg-muted/30 px-3 py-1.5 text-xs text-muted-foreground">
-                Doc: <span className="font-semibold text-foreground">{plan.id ? "Saved" : "Pending"}</span>
+                Doc: <span className="font-semibold text-foreground">{plan.id ? t.common.configured : t.common.pending}</span>
               </div>
             </div>
 
             <div className="grid gap-3 md:grid-cols-4">
               <label className="space-y-1 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Label</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{t.pricing_cms.plan_labels.label}</span>
                 <input
                   value={plan.label}
                   onChange={(e) => updatePlan(plan.key, (prev) => ({ ...prev, label: e.target.value }))}
@@ -346,7 +353,7 @@ export default function PricingPlansAdminPage() {
                 />
               </label>
               <label className="space-y-1 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Title</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{t.pricing_cms.plan_labels.title}</span>
                 <input
                   value={plan.title}
                   onChange={(e) => updatePlan(plan.key, (prev) => ({ ...prev, title: e.target.value }))}
@@ -354,7 +361,7 @@ export default function PricingPlansAdminPage() {
                 />
               </label>
               <label className="space-y-1 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Order</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{t.pricing_cms.plan_labels.order}</span>
                 <input
                   type="number"
                   value={plan.order}
@@ -370,7 +377,7 @@ export default function PricingPlansAdminPage() {
                 />
               </label>
               <label className="space-y-1 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Status</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{t.pricing_cms.plan_labels.status}</span>
                 <select
                   value={plan.status}
                   onChange={(e) => updatePlan(plan.key, (prev) => ({ ...prev, status: e.target.value as CmsStatus }))}
@@ -385,7 +392,7 @@ export default function PricingPlansAdminPage() {
 
             <div className="mt-3 grid gap-3 md:grid-cols-2">
               <label className="space-y-1 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Subtitle</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{t.pricing_cms.plan_labels.subtitle}</span>
                 <textarea
                   value={plan.subtitle}
                   onChange={(e) => updatePlan(plan.key, (prev) => ({ ...prev, subtitle: e.target.value }))}
@@ -394,7 +401,7 @@ export default function PricingPlansAdminPage() {
                 />
               </label>
               <label className="space-y-1 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Intro</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{t.pricing_cms.plan_labels.intro}</span>
                 <textarea
                   value={plan.intro}
                   onChange={(e) => updatePlan(plan.key, (prev) => ({ ...prev, intro: e.target.value }))}
@@ -407,7 +414,7 @@ export default function PricingPlansAdminPage() {
             <div className="mt-3 grid gap-3 md:grid-cols-2">
               <label className="space-y-1 text-sm">
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                  Foundation Title
+                  {t.pricing_cms.plan_labels.foundation_title}
                 </span>
                 <input
                   value={plan.foundationTitle}
@@ -419,7 +426,7 @@ export default function PricingPlansAdminPage() {
               </label>
               <label className="space-y-1 text-sm">
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                  Monthly Title
+                  {t.pricing_cms.plan_labels.monthly_title}
                 </span>
                 <input
                   value={plan.monthlyTitle}
@@ -434,7 +441,7 @@ export default function PricingPlansAdminPage() {
             <div className="mt-3 grid gap-3 md:grid-cols-2">
               <label className="space-y-1 text-sm">
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                  Foundation Items (one per line)
+                  {t.pricing_cms.plan_labels.foundation_items}
                 </span>
                 <textarea
                   value={toMultiline(plan.foundation)}
@@ -447,7 +454,7 @@ export default function PricingPlansAdminPage() {
               </label>
               <label className="space-y-1 text-sm">
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                  Monthly Items (one per line)
+                  {t.pricing_cms.plan_labels.monthly_items}
                 </span>
                 <textarea
                   value={toMultiline(plan.monthly)}
@@ -463,7 +470,7 @@ export default function PricingPlansAdminPage() {
             <div className="mt-3 grid gap-3 md:grid-cols-2">
               <label className="space-y-1 text-sm">
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                  Ideal Title
+                  {t.pricing_cms.plan_labels.ideal_title}
                 </span>
                 <input
                   value={plan.idealTitle}
@@ -475,7 +482,7 @@ export default function PricingPlansAdminPage() {
               </label>
               <label className="space-y-1 text-sm">
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                  Ideal Text
+                  {t.pricing_cms.plan_labels.ideal_text}
                 </span>
                 <textarea
                   value={plan.ideal}
@@ -488,7 +495,7 @@ export default function PricingPlansAdminPage() {
 
             <div className="mt-3 grid gap-3 md:grid-cols-2">
               <label className="space-y-1 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">CTA Link</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{t.pricing_cms.plan_labels.cta_link}</span>
                 <input
                   value={plan.cta}
                   onChange={(e) => updatePlan(plan.key, (prev) => ({ ...prev, cta: e.target.value }))}
@@ -496,7 +503,7 @@ export default function PricingPlansAdminPage() {
                 />
               </label>
               <label className="space-y-1 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">CTA Label</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{t.pricing_cms.plan_labels.cta_label}</span>
                 <input
                   value={plan.ctaLabel}
                   onChange={(e) =>
@@ -516,7 +523,7 @@ export default function PricingPlansAdminPage() {
           disabled={loading || saving}
           className="inline-flex items-center gap-2 rounded-xl border border-border px-4 py-2 text-sm font-semibold transition hover:bg-muted disabled:opacity-60"
         >
-          <RefreshCw className="h-4 w-4" /> Reload
+          <RefreshCw className="h-4 w-4" /> {t.common.reload}
         </button>
         <button
           onClick={() => void handleSaveAll()}
@@ -524,10 +531,10 @@ export default function PricingPlansAdminPage() {
           className="inline-flex items-center gap-2 rounded-xl bg-[#37C100] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#2d9802] disabled:opacity-60"
         >
           {saving ? (
-            "Saving..."
+            t.pricing_cms.saving
           ) : (
             <>
-              <Save className="h-4 w-4" /> Save Pricing CMS
+              <Save className="h-4 w-4" /> {t.pricing_cms.save_all}
             </>
           )}
         </button>
@@ -537,7 +544,7 @@ export default function PricingPlansAdminPage() {
         <div className="rounded-xl border border-[#b9d9a7] bg-[#f4fbf1] px-3 py-2 text-xs text-[#1f7a39]">
           <p className="inline-flex items-center gap-1 font-semibold">
             <CheckCircle2 className="h-3.5 w-3.5" />
-            Public Plans & Deliverables section now reads from CMS published records.
+            {t.pricing_cms.footer_msg}
           </p>
         </div>
       )}

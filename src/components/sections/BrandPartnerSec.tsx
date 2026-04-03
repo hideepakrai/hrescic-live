@@ -1,132 +1,136 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
-
-const partners = [
-  {
-    id: 1,
-    title: "Coaching.com",
-    category: "Illustration Design, eBook & Digital Reports",
-    image: "/assets/Image/img1.png",
-    gridCols: "md:col-span-2",
-    link: "/who-we-create-for/cdc"
-  },
-  {
-    id: 2,
-    title: "MySkin & Poliderma",
-    category: "Illustration Design, eBook & Digital Reports",
-    image: "/assets/Image/Rectangle 1815.png",
-    gridCols: "md:col-span-1",
-    link: "/who-we-create-for/poliderma"
-  },
-  {
-    id: 3,
-    title: "Castania",
-    category: "Illustration Design, eBook & Digital Reports",
-    image: "/assets/Image/Rectangle 1831.png",
-    gridCols: "md:col-span-1",
-    link: "/who-we-create-for/castania"
-  },
-  {
-    id: 4,
-    title: "Navada",
-    category: "Illustration Design, storyboard",
-    image: "/assets/Image/Rectangle 1813.png",
-    gridCols: "md:col-span-2",
-    link: "/who-we-create-for/navada"
-  },
-  {
-    id: 5,
-    title: "L'oreal Revitalift",
-    category: "Direction and Storyboard",
-    image: "/assets/Image/Rectangle 1814.png",
-    gridCols: "md:col-span-2",
-    link: "/who-we-create-for/loreal"
-  },
-  {
-    id: 6,
-    title: "Minglanje V Klanjcu",
-    category: "Direction, Design",
-    image: "/assets/Image/Rectangle1828.png",
-    gridCols: "md:col-span-1",
-    link: "/who-we-create-for/minglanje-v-klanjcu"
-  },
-  {
-    id: 7,
-    title: "Karlo Ban",
-    category: "Illustration Design, eBook & Digital Reports",
-    image: "/assets/Image/Rectangle 1821.png",
-    gridCols: "md:col-span-1",
-    link: "/who-we-create-for/karlo-ban"
-  },
-  {
-    id: 8,
-    title: "Samoborski Tamburatorij",
-    category: "Illustration Design, eBook & Digital Reports",
-    image: "/assets/Image/Rectangle 1832.png",
-    gridCols: "md:col-span-2",
-    link: "/who-we-create-for/local-boutique-brands"
-  },
-  {
-    id: 9,
-    title: "MyRent - Case Study",
-    category: "Concept, direction and storyboard",
-    image: "/assets/Image/Rectangle 1826.png",
-    gridCols: "md:col-span-2",
-    link: "/who-we-create-for/myrent"
-  },
-  {
-    id: 10,
-    title: "Vila Lovelos",
-    category: "Direction, Design",
-    image: "/assets/Image/Frame.png",
-    gridCols: "md:col-span-1",
-    link: "/who-we-create-for/tourism-travel"
-  },
-  {
-    id: 11,
-    title: "Marcia Reynolds",
-    category: "Direction, Design",
-    image: "/assets/Image/Rectangle 1827.png",
-    gridCols: "md:col-span-1",
-    link: "/who-we-create-for/education-e-learning"
-  },
-  {
-    id: 12,
-    title: "EXO - Life and Beyond Story",
-    category: "Concept, direction and storyboard",
-    image: "/assets/Image/Rectangle 1876.png",
-    gridCols: "md:col-span-2",
-    link: "/who-we-create-for/expo-life-far-beyond"
-  },
-  {
-    id: 13,
-    title: "IDS Branding",
-    category: "Direction, Design",
-    image: "/assets/Image/Rectangle 1878.png",
-    gridCols: "md:col-span-1",
-    link: "/who-we-create-for/ids"
-  },
-  {
-    id: 14,
-    title: "Casa Horizontes",
-    category: "Direction, Design",
-    image: "/assets/Image/Rectangle 1879.png",
-    gridCols: "md:col-span-1",
-    link: "/who-we-create-for/tourism-travel"
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const BrandPartnerSec = () => {
+  const { t } = useTranslation();
+
+  const partners = [
+    {
+      id: 1,
+      title: "Coaching.com",
+      category: t("partners.cat_illustration"),
+      image: "/assets/Image/img1.png",
+      gridCols: "md:col-span-2",
+      link: "/who-we-create-for/cdc"
+    },
+    {
+      id: 2,
+      title: "MySkin & Poliderma",
+      category: t("partners.cat_illustration"),
+      image: "/assets/Image/Rectangle 1815.png",
+      gridCols: "md:col-span-1",
+      link: "/who-we-create-for/poliderma"
+    },
+    {
+      id: 3,
+      title: "Castania",
+      category: t("partners.cat_illustration"),
+      image: "/assets/Image/Rectangle 1831.png",
+      gridCols: "md:col-span-1",
+      link: "/who-we-create-for/castania"
+    },
+    {
+      id: 4,
+      title: "Navada",
+      category: t("partners.cat_storyboard"),
+      image: "/assets/Image/Rectangle 1813.png",
+      gridCols: "md:col-span-2",
+      link: "/who-we-create-for/navada"
+    },
+    {
+      id: 5,
+      title: "L'oreal Revitalift",
+      category: t("partners.cat_direction"),
+      image: "/assets/Image/Rectangle 1814.png",
+      gridCols: "md:col-span-2",
+      link: "/who-we-create-for/loreal"
+    },
+    {
+      id: 6,
+      title: "Minglanje V Klanjcu",
+      category: t("partners.cat_minglanje"),
+      image: "/assets/Image/Rectangle1828.png",
+      gridCols: "md:col-span-1",
+      link: "/who-we-create-for/minglanje-v-klanjcu"
+    },
+    {
+      id: 7,
+      title: "Karlo Ban",
+      category: t("partners.cat_illustration"),
+      image: "/assets/Image/Rectangle 1821.png",
+      gridCols: "md:col-span-1",
+      link: "/who-we-create-for/karlo-ban"
+    },
+    {
+      id: 8,
+      title: "Samoborski Tamburatorij",
+      category: t("partners.cat_illustration"),
+      image: "/assets/Image/Rectangle 1832.png",
+      gridCols: "md:col-span-2",
+      link: "/who-we-create-for/local-boutique-brands"
+    },
+    {
+      id: 9,
+      title: "MyRent - Case Study",
+      category: t("partners.cat_concept"),
+      image: "/assets/Image/Rectangle 1826.png",
+      gridCols: "md:col-span-2",
+      link: "/who-we-create-for/myrent"
+    },
+    {
+      id: 10,
+      title: "Vila Lovelos",
+      category: t("partners.cat_minglanje"),
+      image: "/assets/Image/Frame.png",
+      gridCols: "md:col-span-1",
+      link: "/who-we-create-for/tourism-travel"
+    },
+    {
+      id: 11,
+      title: "Marcia Reynolds",
+      category: t("partners.cat_minglanje"),
+      image: "/assets/Image/Rectangle 1827.png",
+      gridCols: "md:col-span-1",
+      link: "/who-we-create-for/education-e-learning"
+    },
+    {
+      id: 12,
+      title: "EXO - Life and Beyond Story",
+      category: t("partners.cat_concept"),
+      image: "/assets/Image/Rectangle 1876.png",
+      gridCols: "md:col-span-2",
+      link: "/who-we-create-for/expo-life-far-beyond"
+    },
+    {
+      id: 13,
+      title: "IDS Branding",
+      category: t("partners.cat_minglanje"),
+      image: "/assets/Image/Rectangle 1878.png",
+      gridCols: "md:col-span-1",
+      link: "/who-we-create-for/ids"
+    },
+    {
+      id: 14,
+      title: "Casa Horizontes",
+      category: t("partners.cat_minglanje"),
+      image: "/assets/Image/Rectangle 1879.png",
+      gridCols: "md:col-span-1",
+      link: "/who-we-create-for/tourism-travel"
+    },
+  ];
+
   return (
     <section className="bg-white py-16 md:py-10 px-4 md:px-10">
       <div className="container-xl mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-[40px] font-normal text-gray-900 mb-4">
-            Brands We Partner With
+            {t("partners.title")}
           </h2>
           <p className="text-gray-600 text-base md:text-lg">
-            From luxury tourism to local craftsmanship - we work with brands
-            that value strategy, creativity and measurable outcomes.
+            {t("partners.subtitle")}
           </p>
         </div>
 

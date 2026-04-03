@@ -6,6 +6,7 @@ import { LANGUAGES } from "@/constants";
 import i18n from "@/i18n";
 import Link from 'next/link';
 import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 type SubCategory = {
   title: string;
@@ -19,248 +20,248 @@ type MegaSection = {
   subcategories: SubCategory[];
 };
 
-const navItems = [
-  { name: "What We Do", href: "/what-we-do", megaKey: "whatWeDo" },
-  {
-    name: "Who We Create For",
-    href: "/who-we-create-for",
-    megaKey: "whoWeCreateFor",
-  },
-  { name: "Let's Talk", href: "/lets-talk", megaKey: "contact" },
-];
-
-const megaMenuData: Record<
-  string,
-  {
-    title: string;
-    subtitle?: string;
-    items?: {
-      title: string;
-      description?: string;
-      cards: { title: string; description: string; href?: string }[];
-    }[];
-    sections?: MegaSection[];
-  }
-> = {
-  whatWeDo: {
-    title: "What We Do",
-    subtitle:
-      "Pregled svih usluga i modela pretplate (branding, web, content, AI video). SEO: creative services, marketing subscription, branding agency Croatia.",
-    sections: [
-      {
-        title: "Branding & Strategy",
-        href: "/what-we-do/branding-strategy",
-        subcategories: [
-          {
-            title: "Brand Strategy & Positioning",
-            description: "",
-            href: "/what-we-do/branding-strategy",
-          },
-          {
-            title: "Visual Identity",
-            description: "",
-            href: "/what-we-do/branding-strategy",
-          },
-          {
-            title: "Packaging & Print Design",
-            description: "",
-            href: "/what-we-do/branding-strategy",
-          },
-          {
-            title: "Brand Architecture",
-            description: "",
-            href: "/what-we-do/branding-strategy",
-          },
-        ],
-      },
-      {
-        title: "Web & Digital",
-        href: "/what-we-do/web-digital",
-        subcategories: [
-          {
-            title: "UX/UI & Web Design",
-            description: "",
-            href: "/what-we-do/web-digital",
-          },
-          {
-            title: "SEO & Technical Structure",
-            description: "",
-            href: "/what-we-do/web-digital",
-          },
-          {
-            title: "Webshop & Platforms",
-            description: "",
-            href: "/what-we-do/web-digital",
-          },
-          {
-            title: "Deployment & Optimization",
-            description: "",
-            href: "/what-we-do/web-digital",
-          },
-        ],
-      },
-      {
-        title: "Content & Marketing",
-        href: "/what-we-do/content-marketing",
-        subcategories: [
-          {
-            title: "Content System",
-            description: "",
-            href: "/what-we-do/content-marketing",
-          },
-          {
-            title: "Marketing Strategy",
-            description: "",
-            href: "/what-we-do/content-marketing",
-          },
-          {
-            title: "Social, Ads & PPC",
-            description: "",
-            href: "/what-we-do/content-marketing",
-          },
-          {
-            title: "Analytics & Optimization",
-            description: "",
-            href: "/what-we-do/content-marketing",
-          },
-        ],
-      },
-      {
-        title: "AI Video Production",
-        href: "/what-we-do/ai-video-production",
-        subcategories: [
-          {
-            title: "Video for Social and Ads",
-            description: "",
-            href: "/what-we-do/ai-video-production",
-          },
-          {
-            title: "Video for Web & Presentations",
-            description: "",
-            href: "/what-we-do/ai-video-production",
-          },
-          {
-            title: "AI-Powered Video Production",
-            description: "",
-            href: "/what-we-do/ai-video-production",
-          },
-          {
-            title: "Video System & Variations",
-            description: "",
-            href: "/what-we-do/ai-video-production",
-          },
-        ],
-      },
-    ],
-  },
-
-  whoWeCreateFor: {
-    title: "Who We Create For",
-    sections: [
-      {
-        title: "Tourism & Travel",
-        href: "/who-we-create-for/tourism-travel",
-        subcategories: [
-          {
-            title: "MyRent",
-            description: "",
-            href: "/who-we-create-for/myrent",
-          },
-        ],
-      },
-      {
-        title: "Education & E-Learning",
-        href: "/who-we-create-for/education-e-learning",
-        subcategories: [
-          {
-            title: "CDC",
-            description: "",
-            href: "/who-we-create-for/cdc",
-          },
-          {
-            title: "EXPO – Life far and beyond",
-            description: "",
-            href: "/who-we-create-for/expo-life-far-beyond",
-          },
-        ],
-      },
-      {
-        title: "Health, Pharma & Beauty",
-        href: "/who-we-create-for/health-pharma-beauty",
-        subcategories: [
-          {
-            title: "L'Oréal",
-            description: "",
-            href: "/who-we-create-for/loreal",
-          },
-           {
-            title: "Poliderma",
-            description: "",
-            href: "/who-we-create-for/poliderma",
-          },
-        ],
-      },
-      {
-        title: "Local & Boutique Brands",
-        href: "/who-we-create-for/local-boutique-brands",
-        subcategories: [
-          {
-            title: "Castania",
-            description: "",
-            href: "/who-we-create-for/castania",
-          },
-           {
-            title: "NAVADA",
-            description: "",
-            href: "/who-we-create-for/navada",
-          },
-           {
-            title: "Minglanje v Klancu",
-            description: "",
-            href: "/who-we-create-for/minglanje-v-klanjcu",
-          },
-           {
-            title: "IDS",
-            description: "",
-            href: "/who-we-create-for/ids",
-          },
-        ],
-      },
-    ],
-  },
-
-  contact: {
-    title: "Let's Talk",
-    subtitle:
-      "Kontakt / booking demo; SEO: marketing consultation, creative demo, contact agency.",
-    items: [
-      {
-        title: "Contact & Demo",
-        description:
-          "Brzi kontakt, upit ili dogovor za prezentaciju rješenja i strategije.",
-        cards: [
-          {
-            title: "Book a Free Demo",
-            description: "",
-            href: "/lets-talk#demo",
-          },
-          {
-            title: "Ask Us Anything",
-            description: "",
-            href: "/lets-talk#ask",
-          },
-        ],
-      },
-    ],
-  },
-};
-
-
 const Header = () => {
+  const { t } = useTranslation();
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMega, setActiveMega] = useState<string | null>(null);
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const navItems = [
+    { name: t("nav.what_we_do"), href: "/what-we-do", megaKey: "whatWeDo" },
+    {
+      name: t("nav.who_we_create_for"),
+      href: "/who-we-create-for",
+      megaKey: "whoWeCreateFor",
+    },
+    { name: t("nav.lets_talk"), href: "/lets-talk", megaKey: "contact" },
+  ];
+
+  const megaMenuData: Record<
+    string,
+    {
+      title: string;
+      subtitle?: string;
+      items?: {
+        title: string;
+        description?: string;
+        cards: { title: string; description: string; href?: string }[];
+      }[];
+      sections?: MegaSection[];
+    }
+  > = {
+    whatWeDo: {
+      title: t("nav.what_we_do"),
+      sections: [
+        {
+          title: t("about.branding"),
+          href: "/what-we-do/branding-strategy",
+          subcategories: [
+            {
+              title: "Brand Strategy & Positioning",
+              description: "",
+              href: "/what-we-do/branding-strategy",
+            },
+            {
+              title: "Visual Identity",
+              description: "",
+              href: "/what-we-do/branding-strategy",
+            },
+            {
+              title: "Packaging & Print Design",
+              description: "",
+              href: "/what-we-do/branding-strategy",
+            },
+            {
+              title: "Brand Architecture",
+              description: "",
+              href: "/what-we-do/branding-strategy",
+            },
+          ],
+        },
+        {
+          title: t("about.web"),
+          href: "/what-we-do/web-digital",
+          subcategories: [
+            {
+              title: "UX/UI & Web Design",
+              description: "",
+              href: "/what-we-do/web-digital",
+            },
+            {
+              title: "SEO & Technical Structure",
+              description: "",
+              href: "/what-we-do/web-digital",
+            },
+            {
+              title: "Webshop & Platforms",
+              description: "",
+              href: "/what-we-do/web-digital",
+            },
+            {
+              title: "Deployment & Optimization",
+              description: "",
+              href: "/what-we-do/web-digital",
+            },
+          ],
+        },
+        {
+          title: t("about.content"),
+          href: "/what-we-do/content-marketing",
+          subcategories: [
+            {
+              title: "Content System",
+              description: "",
+              href: "/what-we-do/content-marketing",
+            },
+            {
+              title: "Marketing Strategy",
+              description: "",
+              href: "/what-we-do/content-marketing",
+            },
+            {
+              title: "Social, Ads & PPC",
+              description: "",
+              href: "/what-we-do/content-marketing",
+            },
+            {
+              title: "Analytics & Optimization",
+              description: "",
+              href: "/what-we-do/content-marketing",
+            },
+          ],
+        },
+        {
+          title: t("about.ai"),
+          href: "/what-we-do/ai-video-production",
+          subcategories: [
+            {
+              title: "Video for Social and Ads",
+              description: "",
+              href: "/what-we-do/ai-video-production",
+            },
+            {
+              title: "Video for Web & Presentations",
+              description: "",
+              href: "/what-we-do/ai-video-production",
+            },
+            {
+              title: "AI-Powered Video Production",
+              description: "",
+              href: "/what-we-do/ai-video-production",
+            },
+            {
+              title: "Video System & Variations",
+              description: "",
+              href: "/what-we-do/ai-video-production",
+            },
+          ],
+        },
+      ],
+    },
+
+    whoWeCreateFor: {
+      title: t("nav.who_we_create_for"),
+      sections: [
+        {
+          title: t("work.tourism"),
+          href: "/who-we-create-for/tourism-travel",
+          subcategories: [
+            {
+              title: "MyRent",
+              description: "",
+              href: "/who-we-create-for/myrent",
+            },
+          ],
+        },
+        {
+          title: t("work.learning"),
+          href: "/who-we-create-for/education-e-learning",
+          subcategories: [
+            {
+              title: "CDC",
+              description: "",
+              href: "/who-we-create-for/cdc",
+            },
+            {
+              title: "EXPO – Life far and beyond",
+              description: "",
+              href: "/who-we-create-for/expo-life-far-beyond",
+            },
+          ],
+        },
+        {
+          title: t("work.health"),
+          href: "/who-we-create-for/health-pharma-beauty",
+          subcategories: [
+            {
+              title: "L'Oréal",
+              description: "",
+              href: "/who-we-create-for/loreal",
+            },
+            {
+              title: "Poliderma",
+              description: "",
+              href: "/who-we-create-for/poliderma",
+            },
+          ],
+        },
+        {
+          title: t("work.local"),
+          href: "/who-we-create-for/local-boutique-brands",
+          subcategories: [
+            {
+              title: "Castania",
+              description: "",
+              href: "/who-we-create-for/castania",
+            },
+            {
+              title: "NAVADA",
+              description: "",
+              href: "/who-we-create-for/navada",
+            },
+            {
+              title: "Minglanje v Klancu",
+              description: "",
+              href: "/who-we-create-for/minglanje-v-klanjcu",
+            },
+            {
+              title: "IDS",
+              description: "",
+              href: "/who-we-create-for/ids",
+            },
+          ],
+        },
+      ],
+    },
+
+    contact: {
+      title: t("nav.lets_talk"),
+      items: [
+        {
+          title: t("mega.contact_demo"),
+          description: t("mega.contact_desc"),
+          cards: [
+            {
+              title: t("nav.book_demo"),
+              description: "",
+              href: "/lets-talk#demo",
+            },
+            {
+              title: t("mega.ask_anything"),
+              description: "",
+              href: "/lets-talk#ask",
+            },
+          ],
+        },
+      ],
+    },
+  };
 
   useEffect(() => {
     setActiveSectionIndex(0);
@@ -281,6 +282,24 @@ const Header = () => {
 
   if (pathname?.startsWith("/admin")) {
     return null;
+  }
+
+  if (!mounted) {
+    return (
+      <header className="sticky top-0 z-50 w-full bg-white">
+        <div className="relative border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-20">
+              <div className="flex-shrink-0">
+                <Link href="/" className="flex items-center gap-2 text-3xl font-serif font-medium text-gray-900">
+                  <img src="/assets/Image/hrescic-logo.svg" alt="Hrescic logo" className="h-8 w-auto" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    );
   }
 
   return (
@@ -342,7 +361,7 @@ const Header = () => {
                 href="/lets-talk#demo"
                 className="bg-[#37C100] hover:bg-[#2d9802] text-white px-6 py-3 rounded-full text-sm font-medium transition-all"
               >
-                Book a Free Demo
+                {t("nav.book_demo")}
               </Link>
 
               <select
@@ -376,24 +395,19 @@ const Header = () => {
                 <h2 className="text-[26px] font-semibold text-gray-900">
                   {currentMega.title}
                 </h2>
-                {/* {currentMega.subtitle && (
-                  <p className="mt-1 text-sm text-gray-500 max-w-xl">
-                    {currentMega.subtitle}
-                  </p>
-                )} */}
               </div>
 
               <div className="border-t border-gray-200 mb-6" />
 
-              {(activeMega === "whatWeDo" || activeMega === "whoWeCreateFor") &&
+               {(activeMega === "whatWeDo" || activeMega === "whoWeCreateFor") &&
               currentSections ? (
                 <div className="flex items-stretch gap-10">
                   {/* LEFT COLUMN */}
                   <div className="w-64 flex-shrink-0 pr-4">
                     <h3 className="text-sm font-semibold uppercase text-gray-400 mb-2">
-                      {activeMega === "whoWeCreateFor"
-                        ? "Core Industries"
-                        : "Core Services"}
+                       {activeMega === "whoWeCreateFor"
+                        ? t("mega.core_industries")
+                        : t("mega.core_services")}
                     </h3>
 
                     <div className="flex flex-col space-y-1">
@@ -424,9 +438,9 @@ const Header = () => {
                   {/* RIGHT COLUMN */}
                   <div className="flex-1 pl-6">
                     <h3 className="text-sm font-semibold uppercase text-gray-400 mb-2">
-                      {activeMega === "whoWeCreateFor"
-                        ? "Selected Case Studies"
-                        : "Subcategories"}
+                       {activeMega === "whoWeCreateFor"
+                        ? t("mega.case_studies")
+                        : t("mega.subcategories")}
                     </h3>
 
                     {currentActiveSection ? (
@@ -455,7 +469,7 @@ const Header = () => {
                       </div>
                     ) : (
                       <p className="text-gray-500">
-                        Select a core service on the left to see subcategories.
+                         {t("mega.select_service")}
                       </p>
                     )}
                   </div>
@@ -523,7 +537,7 @@ const Header = () => {
               onClick={() => setMobileOpen(false)}
               className="bg-[#37c100] hover:bg-[#8000FF] text-white w-full py-3 rounded-full text-sm font-medium text-center transition-all"
             >
-              Book a Free Demo
+               {t("nav.book_demo")}
             </Link>
 
             <select

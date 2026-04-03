@@ -6,39 +6,39 @@ import { Play, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import YouTube, { YouTubeEvent, YouTubeProps } from "react-youtube";
 
-const services = [
-  {
-    title: "Branding & Strategy",
-    description: "Build clarity, consistency and a voice people remember.",
-    linkText: "Explore branding services",
-    href: "/what-we-do",
-  },
-  {
-    title: "Web & Digital",
-    description:
-      "Websites and booking experiences designed to convert - not just exist.",
-    linkText: "Explore web services",
-    href: "/what-we-do",
-  },
-  {
-    title: "Content & Marketing",
-    description:
-      "Content that compounds: social, email, campaigns and analytics.",
-    linkText: "Explore marketing services",
-    href: "/what-we-do",
-  },
-  {
-    title: "AI Video Production",
-    description:
-      "Turn photos into cinematic stories. Faster, smarter, and finally affordable.",
-    linkText: "See full services",
-    href: "/what-we-do",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function AboutStrip() {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const [loadVideo, setLoadVideo] = useState(false);
+
+  const services = [
+    {
+      title: t("about.branding"),
+      description: t("about.branding_desc"),
+      linkText: t("about.branding_link"),
+      href: "/what-we-do",
+    },
+    {
+      title: t("about.web"),
+      description: t("about.web_desc"),
+      linkText: t("about.web_link"),
+      href: "/what-we-do",
+    },
+    {
+      title: t("about.content"),
+      description: t("about.content_desc"),
+      linkText: t("about.content_link"),
+      href: "/what-we-do",
+    },
+    {
+      title: t("about.ai"),
+      description: t("about.ai_desc"),
+      linkText: t("about.ai_link"),
+      href: "/what-we-do",
+    },
+  ];
 
   const videoId = "VCo6_Q0-mL0";
 
@@ -97,12 +97,10 @@ export default function AboutStrip() {
       <div className="container-xl mx-auto">
         <div className="mx-auto mb-12 max-w-lg text-center md:mb-16">
           <h2 className="mb-4 text-3xl font-normal text-[#555555] md:text-4xl">
-            What We Do
+            {t("about.title")}
           </h2>
           <p className="text-lg text-[#555555] md:text-lg">
-            We combine brand strategy, web design and content to build creative
-            systems - not one-off campaigns. Pick what you need, or plug us in
-            as your ongoing team.
+            {t("about.subtitle")}
           </p>
         </div>
 
@@ -194,4 +192,4 @@ export default function AboutStrip() {
       </div>
     </section>
   );
-}
+}

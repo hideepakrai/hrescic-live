@@ -9,6 +9,7 @@ export type AdminRole = "super_admin" | "content_manager" | "sales_crm";
 export interface AuthenticatedAdmin {
   id?: string;
   email?: string;
+  name?: string;
   role: AdminRole;
   rawRole?: string;
 }
@@ -35,7 +36,9 @@ export function normalizeAdminRole(input: unknown): AdminRole {
     normalized === "admin" ||
     normalized === "hrescic_admin" ||
     normalized === "administrator" ||
-    normalized === "owner"
+    normalized === "owner" ||
+    normalized.includes("owner") ||
+    normalized.includes("admin")
   ) {
     return "super_admin";
   }
@@ -45,7 +48,9 @@ export function normalizeAdminRole(input: unknown): AdminRole {
     normalized === "contentmanager" ||
     normalized === "content" ||
     normalized === "editor" ||
-    normalized === "seo_manager"
+    normalized === "seo_manager" ||
+    normalized.includes("editor") ||
+    normalized.includes("content")
   ) {
     return "content_manager";
   }
@@ -55,7 +60,9 @@ export function normalizeAdminRole(input: unknown): AdminRole {
     normalized === "salescrm" ||
     normalized === "sales" ||
     normalized === "crm" ||
-    normalized === "business_development"
+    normalized === "business_development" ||
+    normalized.includes("sales") ||
+    normalized.includes("crm")
   ) {
     return "sales_crm";
   }

@@ -1,6 +1,87 @@
 {
-    "title": "Multi-language app",
-    "label": "Select another language!",
-    "about": "About",
-    "home": "Home"
+  "nav": {
+    "what_we_do": "What We Do",
+    "who_we_create_for": "Who We Create For",
+    "lets_talk": "Let's Talk",
+    "book_demo": "Book a Free Demo",
+    "ideas_insights": "Ideas & Insights"
+  },
+  "mega": {
+    "core_services": "Core Services",
+    "core_industries": "Core Industries",
+    "subcategories": "Subcategories",
+    "case_studies": "Selected Case Studies",
+    "contact_demo": "Contact & Demo",
+    "contact_desc": "Quick contact, inquiry or arrangement for a presentation of solutions and strategies.",
+    "ask_anything": "Ask Us Anything",
+    "select_service": "Select a core service on the left to see subcategories."
+  },
+  "footer": {
+    "explore": "Explore",
+    "connect": "Connect",
+    "follow": "Follow",
+    "rights": "© 2026 Hreščić.com. All rights reserved.",
+    "made_with": "Made with strategy, storytelling & strong coffee in Samobor. ☕"
+  },
+  "hero": {
+    "title_elite": "Elite Marketing",
+    "title_expertise": "Expertise, Ready When",
+    "title_need": "You Need It",
+    "description": "Access premium creative and strategic talent that integrates seamlessly with your business, precisely when, and how you need it.",
+    "lets_talk": "Let's Talk",
+    "play_showreel": "Play Showreel"
+  },
+  "about": {
+    "title": "What We Do",
+    "subtitle": "We combine brand strategy, web design and content to build creative systems - not one-off campaigns. Pick what you need, or plug us in as your ongoing team.",
+    "branding": "Branding & Strategy",
+    "branding_desc": "Build clarity, consistency and a voice people remember.",
+    "branding_link": "Explore branding services",
+    "web": "Web & Digital",
+    "web_desc": "Websites and booking experiences designed to convert - not just exist.",
+    "web_link": "Explore web services",
+    "content": "Content & Marketing",
+    "content_desc": "Content that compounds: social, email, campaigns and analytics.",
+    "content_link": "Explore marketing services",
+    "ai": "AI Video Production",
+    "ai_desc": "Turn photos into cinematic stories. Faster, smarter, and finally affordable.",
+    "ai_link": "See full services"
+  },
+  "work": {
+    "title": "Who We Create For",
+    "subtitle": "We work with forward-thinking businesses across tourism, health, beauty, charter and boutique industries - keeping them visible, trustworthy and alive.",
+    "tourism": "Tourism & Travel",
+    "tourism_desc": "For brands that host the world. We help villas, boutique hotels, rental agencies, and yacht charters boost bookings and visibility.",
+    "tourism_link": "See tourism projects",
+    "learning": "Learning & Development",
+    "learning_desc": "For brands that educate professionals to reach their goals. Complete marketing funnel services to capture, nurture and convert leads into course sales.",
+    "learning_link": "Explore educational projects",
+    "health": "Health, Pharma & Beauty",
+    "health_desc": "For brands that build trust through care. From clinics to pharma and beauty — clarity, empathy, credibility.",
+    "health_link": "See health & beauty work",
+    "local": "Local & Boutique Brands",
+    "local_desc": "For makers, doers and dreamers. Authentic identities and digital presence for independent brands.",
+    "local_link": "Discover boutique projects",
+    "excellence_title": "Delivering on-demand excellence",
+    "excellence_subtitle": "for brands around the world",
+    "stat_revenue": "in revenue - helped achieved for clients in driving their portfolios",
+    "stat_products": "digital products and services delivered",
+    "stat_video": "hours of video materials edited, animated and postproduced"
+  },
+  "cta": {
+    "title": "Marketing Excellence That Works On Your Terms",
+    "description": "Because great marketing doesn't stop — it evolves. Whether you need a website that books guests, a video that tells your story, or a full creative system that scales with you — we're here to help your brand stay relevant, consistent and alive."
+  },
+  "partners": {
+    "title": "Brands We Partner With",
+    "subtitle": "From luxury tourism to local craftsmanship - we work with brands that value strategy, creativity and measurable outcomes.",
+    "cat_illustration": "Illustration Design, eBook & Digital Reports",
+    "cat_storyboard": "Illustration Design, storyboard",
+    "cat_direction": "Direction and Storyboard",
+    "cat_minglanje": "Direction, Design",
+    "cat_concept": "Concept, direction and storyboard"
+  },
+  "slider": {
+    "trusted_by": "Trusted by Industry Professionals From:"
+  }
 }

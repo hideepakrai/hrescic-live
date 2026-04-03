@@ -42,6 +42,8 @@ const bottomRowBrands = [
   { img: "/assets/logo/logo10.svg", alt: "Profil Klett" },
 ];
 
+import { useTranslation } from "react-i18next";
+
 const LogoCard = ({ img, alt }: { img: string; alt: string }) => {
   return (
     <div className="flex h-[80px] w-full items-center justify-center rounded-2xl  bg-white px-4 py-0 transition-all duration-300 hover:-translate-y-0.5 ">
@@ -55,12 +57,13 @@ const LogoCard = ({ img, alt }: { img: string; alt: string }) => {
 };
 
 const SliderBrand = () => {
+  const { t } = useTranslation();
   return (
     <section className="w-full bg-white py-8 sm:py-10 lg:pt-4 lg:pb-12">
       <div className="container-xl mx-auto px-4">
         <div className="mb-7 flex justify-center">
           <p className="text-center text-[13px] italic font-normal text-[#666666] sm:text-[15px]">
-            Trusted by Industry Professionals From:
+            {t("slider.trusted_by")}
           </p>
         </div>
 

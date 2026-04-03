@@ -2,6 +2,10 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { CheckCircle2, Filter, Loader2, MessageSquare, RefreshCw, Save } from "lucide-react";
+import { useSelector } from "react-redux";
+import { selectAdminLocale } from "@/lib/store/features/adminLocaleSlice";
+import { LocaleCode } from "@/types/localization";
+import { ADMIN_TRANSLATIONS } from "@/lib/translations";
 
 type LeadStatus =
   | "new"
@@ -99,6 +103,9 @@ async function readJsonSafe<T>(res: Response): Promise<T> {
 }
 
 export default function LeadsAdminPage() {
+  const currentLocale = useSelector(selectAdminLocale) as LocaleCode;
+  const t = ADMIN_TRANSLATIONS[currentLocale] || ADMIN_TRANSLATIONS.en;
+
   const [tab, setTab] = useState<TabKey>("all");
   const [statusFilter, setStatusFilter] = useState<"all" | LeadStatus>("all");
   const [search, setSearch] = useState("");
@@ -243,7 +250,7 @@ export default function LeadsAdminPage() {
         throw new Error(response.error || "Failed to update lead");
       }
 
-      setSuccess("Lead updated successfully.");
+      setSuccess(t.leads.detail.update_success);
       await loadLeads(false);
       await loadLeadDetail(selectedLeadId);
     } catch (err) {
@@ -266,13 +273,13 @@ export default function LeadsAdminPage() {
       <section className="rounded-2xl border border-[#d7dfdb] bg-gradient-to-r from-[#f4fbf1] via-white to-white p-5 shadow-sm">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h1 className="text-2xl font-black tracking-tight">Leads Inbox</h1>
+            <h1 className="text-2xl font-black tracking-tight">{t.leads.title}</h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              Review website submissions from Demo and Ask forms.
+              {t.leads.desc}
             </p>
           </div>
           <div className="rounded-lg border border-border bg-muted/30 px-3 py-2 text-xs text-muted-foreground">
-            Total: <span className="font-semibold text-foreground">{total}</span>
+            {t.leads.total}: <span className="font-semibold text-foreground">{total}</span>
           </div>
         </div>
       </section>
@@ -290,13 +297,13 @@ export default function LeadsAdminPage() {
       <section className="rounded-2xl border border-[#d7dfdb] bg-white p-4 shadow-sm">
         <div className="flex flex-wrap items-center gap-2">
           <button className={tabButtonClass("all")} onClick={() => { setTab("all"); setPage(1); }}>
-            All
+            {t.leads.tabs.all}
           </button>
           <button className={tabButtonClass("demo")} onClick={() => { setTab("demo"); setPage(1); }}>
-            Demo
+            {t.leads.tabs.demo}
           </button>
           <button className={tabButtonClass("ask")} onClick={() => { setTab("ask"); setPage(1); }}>
-            Ask
+            {t.leads.tabs.ask}
           </button>
 
           <div className="ml-auto flex flex-wrap items-center gap-2">
@@ -307,7 +314,7 @@ export default function LeadsAdminPage() {
                 onChange={(e) => { setStatusFilter(e.target.value as "all" | LeadStatus); setPage(1); }}
                 className="h-9 rounded-xl border border-[#d7dfdb] pl-8 pr-2 text-sm"
               >
-                <option value="all">All statuses</option>
+                <option value="all">{t.leads.filters.all_statuses}</option>
                 <option value="new">new</option>
                 <option value="contacted">contacted</option>
                 <option value="qualified">qualified</option>
@@ -320,11 +327,11 @@ export default function LeadsAdminPage() {
               <input
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search name/email/message"
+                placeholder={t.leads.filters.search_placeholder}
                 className="h-9 w-[230px] rounded-xl border border-[#d7dfdb] px-3 text-sm"
               />
               <button type="submit" className="rounded-xl border border-[#d7dfdb] px-3 py-2 text-sm font-semibold hover:bg-[#f4fbf1]">
-                Search
+                {t.common.search}
               </button>
             </form>
             <button
@@ -333,7 +340,7 @@ export default function LeadsAdminPage() {
               className="inline-flex items-center gap-2 rounded-xl border border-[#d7dfdb] px-3 py-2 text-sm font-semibold hover:bg-[#f4fbf1] disabled:opacity-60"
             >
               {refreshing ? <Loader2 className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4" />}
-              Refresh
+              {t.leads.filters.refresh}
             </button>
           </div>
         </div>
@@ -345,24 +352,24 @@ export default function LeadsAdminPage() {
             <table className="w-full min-w-[780px] border-collapse text-sm">
               <thead>
                 <tr className="border-b border-[#e5e7eb] text-left text-xs font-bold uppercase tracking-[0.11em] text-muted-foreground">
-                  <th className="px-2 py-2">Type</th>
-                  <th className="px-2 py-2">Name</th>
-                  <th className="px-2 py-2">Email</th>
-                  <th className="px-2 py-2">Status</th>
-                  <th className="px-2 py-2">Created</th>
+                  <th className="px-2 py-2">{t.leads.table.type}</th>
+                  <th className="px-2 py-2">{t.leads.table.name}</th>
+                  <th className="px-2 py-2">{t.leads.table.email}</th>
+                  <th className="px-2 py-2">{t.leads.table.status}</th>
+                  <th className="px-2 py-2">{t.leads.table.created}</th>
                 </tr>
               </thead>
               <tbody>
                 {loading ? (
                   <tr>
                     <td colSpan={5} className="px-2 py-10 text-center text-muted-foreground">
-                      Loading leads...
+                      {t.leads.table.loading}
                     </td>
                   </tr>
                 ) : leads.length === 0 ? (
                   <tr>
                     <td colSpan={5} className="px-2 py-10 text-center text-muted-foreground">
-                      No leads found for current filter.
+                      {t.leads.table.empty}
                     </td>
                   </tr>
                 ) : (
@@ -392,7 +399,7 @@ export default function LeadsAdminPage() {
 
           <div className="mt-3 flex items-center justify-between border-t border-[#e5e7eb] pt-3 text-sm">
             <p className="text-muted-foreground">
-              Page {page} of {Math.max(totalPages, 1)}
+              {t.common.page_of.replace("{page}", String(page)).replace("{total}", String(Math.max(totalPages, 1)))}
             </p>
             <div className="flex gap-2">
               <button
@@ -400,14 +407,14 @@ export default function LeadsAdminPage() {
                 onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
                 className="rounded-lg border border-[#d7dfdb] px-3 py-1.5 font-semibold hover:bg-[#f4fbf1] disabled:opacity-50"
               >
-                Prev
+                {t.common.prev}
               </button>
               <button
                 disabled={page >= totalPages}
                 onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
                 className="rounded-lg border border-[#d7dfdb] px-3 py-1.5 font-semibold hover:bg-[#f4fbf1] disabled:opacity-50"
               >
-                Next
+                {t.common.next}
               </button>
             </div>
           </div>
@@ -415,13 +422,13 @@ export default function LeadsAdminPage() {
 
         <section className="rounded-2xl border border-[#d7dfdb] bg-white p-4 shadow-sm">
           {detailLoading ? (
-            <div className="py-16 text-center text-sm text-muted-foreground">Loading lead details...</div>
+            <div className="py-16 text-center text-sm text-muted-foreground">{t.leads.detail.loading}</div>
           ) : !selectedLead ? (
-            <div className="py-16 text-center text-sm text-muted-foreground">Select a lead to view details.</div>
+            <div className="py-16 text-center text-sm text-muted-foreground">{t.leads.detail.select_placeholder}</div>
           ) : (
             <div className="space-y-4">
               <div className="rounded-xl border border-[#e5e7eb] bg-[#f9fafb] p-3">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">Lead Summary</p>
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">{t.leads.detail.summary_title}</p>
                 <h3 className="mt-1 text-lg font-black">{selectedLead.name}</h3>
                 <p className="text-sm text-muted-foreground">{selectedLead.email}</p>
                 <p className="mt-1 text-xs uppercase tracking-[0.1em] text-muted-foreground">
@@ -430,7 +437,7 @@ export default function LeadsAdminPage() {
               </div>
 
               <label className="space-y-1 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Status</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{t.leads.detail.status}</span>
                 <select
                   value={detailStatus}
                   onChange={(e) => setDetailStatus(e.target.value as LeadStatus)}
@@ -446,17 +453,17 @@ export default function LeadsAdminPage() {
               </label>
 
               <label className="space-y-1 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Assignee ID</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{t.leads.detail.assignee}</span>
                 <input
                   value={detailAssigneeId}
                   onChange={(e) => setDetailAssigneeId(e.target.value)}
-                  placeholder="Mongo user id"
+                  placeholder={t.leads.detail.assignee_placeholder}
                   className="h-10 w-full rounded-xl border border-[#d7dfdb] px-3"
                 />
               </label>
 
               <label className="space-y-1 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Follow-up At</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{t.leads.detail.follow_up}</span>
                 <input
                   type="datetime-local"
                   value={detailFollowUpAt}
@@ -467,7 +474,7 @@ export default function LeadsAdminPage() {
 
               <label className="space-y-1 text-sm">
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                  Note (timeline)
+                  {t.leads.detail.note}
                 </span>
                 <textarea
                   value={detailNote}
@@ -488,23 +495,23 @@ export default function LeadsAdminPage() {
                   </>
                 ) : (
                   <>
-                    <Save className="h-4 w-4" /> Save Lead
+                    <Save className="h-4 w-4" /> {t.leads.detail.save_btn}
                   </>
                 )}
               </button>
 
               <div className="rounded-xl border border-[#e5e7eb] bg-white p-3">
                 <p className="mb-2 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
-                  <MessageSquare className="h-3.5 w-3.5" /> Message
+                  <MessageSquare className="h-3.5 w-3.5" /> {t.leads.detail.message}
                 </p>
                 <p className="whitespace-pre-wrap text-sm">{selectedLead.message}</p>
               </div>
 
               <div className="rounded-xl border border-[#e5e7eb] bg-white p-3">
-                <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">Timeline</p>
+                <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">{t.leads.detail.timeline}</p>
                 <div className="max-h-[220px] space-y-2 overflow-y-auto pr-1">
                   {(selectedLead.timeline || []).length === 0 ? (
-                    <p className="text-sm text-muted-foreground">No timeline entries.</p>
+                    <p className="text-sm text-muted-foreground">{t.leads.detail.no_timeline}</p>
                   ) : (
                     (selectedLead.timeline || []).map((entry, index) => (
                       <div key={`${entry.type}-${entry.createdAt}-${index}`} className="rounded-lg border border-[#eef2f7] p-2.5 text-xs">

@@ -1,6 +1,87 @@
 {
-    "title": "hr - Multi-language app",
-    "label": "hr Select another language!",
-    "about": "hr About",
-    "home": "hr Home"
+  "nav": {
+    "what_we_do": "Što radimo",
+    "who_we_create_for": "Za koga stvaramo",
+    "lets_talk": "Razgovarajmo",
+    "book_demo": "Rezervirajte besplatni demo",
+    "ideas_insights": "Ideje i uvidi"
+  },
+  "mega": {
+    "core_services": "Core usluge",
+    "core_industries": "Core industrije",
+    "subcategories": "Podkategorije",
+    "case_studies": "Odabrane studije slučaja",
+    "contact_demo": "Kontakt i demo",
+    "contact_desc": "Brzi kontakt, upit ili dogovor za prezentaciju rješenja i strategije.",
+    "ask_anything": "Pitajte nas bilo što",
+    "select_service": "Odaberite core uslugu na lijevoj strani da vidite podkategorije."
+  },
+  "footer": {
+    "explore": "Istražite",
+    "connect": "Povežite se",
+    "follow": "Pratite nas",
+    "rights": "© 2026 Hreščić.com. Sva prava pridržana.",
+    "made_with": "Napravljeno uz strategiju, storytelling i jaku kavu u Samoboru. ☕"
+  },
+  "hero": {
+    "title_elite": "Elite Marketing",
+    "title_expertise": "Ekspertiza, spremna kad",
+    "title_need": "vam zatreba",
+    "description": "Pristupite premium kreativnim i strateškim talentima koji se neprimjetno integriraju s vašim poslovanjem, točno onda i onako kako vam je potrebno.",
+    "lets_talk": "Razgovarajmo",
+    "play_showreel": "Pogledajte showreel"
+  },
+  "about": {
+    "title": "Što radimo",
+    "subtitle": "Kombiniramo strategiju brenda, web dizajn i sadržaj za izgradnju kreativnih sustava - ne jednokratnih kampanja. Odaberite što vam treba ili nas uključite kao svoj stalni tim.",
+    "branding": "Branding i strategija",
+    "branding_desc": "Izgradite jasnoću, dosljednost i glas koji ljudi pamte.",
+    "branding_link": "Istražite usluge brandiranja",
+    "web": "Web i digital",
+    "web_desc": "Web stranice i iskustva rezervacije dizajnirana da konvertiraju - ne samo da postoje.",
+    "web_link": "Istražite web usluge",
+    "content": "Sadržaj i marketing",
+    "content_desc": "Sadržaj koji se umnožava: društvene mreže, email, kampanje i analitika.",
+    "content_link": "Istražite marketinške usluge",
+    "ai": "AI Video produkcija",
+    "ai_desc": "Pretvorite fotografije u filmske priče. Brže, pametnije i konačno pristupačno.",
+    "ai_link": "Pogledajte sve usluge"
+  },
+  "work": {
+    "title": "Za koga stvaramo",
+    "subtitle": "Radimo s naprednim tvrtkama u industrijama turizma, zdravlja, ljepote, chartera i boutique proizvoda - održavajući ih vidljivima, pouzdanima i živima.",
+    "tourism": "Turizam i putovanja",
+    "tourism_desc": "Za brendove koji ugošćuju svijet. Pomažemo vilama, boutique hotelima, agencijama za iznajmljivanje i charterima jahti da povećaju broj rezervacija i vidljivost.",
+    "tourism_link": "Pogledajte turističke projekte",
+    "learning": "Učenje i razvoj",
+    "learning_desc": "Za brendove koji educiraju profesionalce da postignu svoje ciljeve. Kompletne usluge marketinškog lijevka za privlačenje, njegovanje i pretvaranje upita u prodaju tečajeva.",
+    "learning_link": "Istražite edukativne projekte",
+    "health": "Zdravlje, farmacija i ljepota",
+    "health_desc": "Za brendove koji grade povjerenje kroz brigu. Od klinika do farmacije i ljepote — jasnoća, empatija, vjerodostojnost.",
+    "health_link": "Pogledajte radove u zdravlju i ljepoti",
+    "local": "Lokalni i boutique brendovi",
+    "local_desc": "Za stvaraoce, činitelje i sanjare. Autentični identiteti i digitalna prisutnost za neovisne brendove.",
+    "local_link": "Otkrijte boutique projekte",
+    "excellence_title": "Isporuka izvrsnosti na zahtjev",
+    "excellence_subtitle": "za brendove diljem svijeta",
+    "stat_revenue": "u prihodima - pomogli smo klijentima u vođenju njihovih portfelja",
+    "stat_products": "isporučenih digitalnih proizvoda i usluga",
+    "stat_video": "sati video materijala uređenih, animiranih i postproduciranih"
+  },
+  "cta": {
+    "title": "Marketinška izvrsnost koja funkcionira po vašim uvjetima",
+    "description": "Zato što odličan marketing ne prestaje — on evoluira. Bilo da trebate web stranicu koja rezervira goste, video koji priča vašu priču ili potpuni kreativni sustav koji raste s vama — tu smo da vaš brend ostane relevantan, dosljedan i živ."
+  },
+  "partners": {
+    "title": "Brendovi s kojima surađujemo",
+    "subtitle": "Od luksuznog turizma do lokalne radinosti - radimo s brendovima koji cijene strategiju, kreativnost i mjerljive rezultate.",
+    "cat_illustration": "Dizajn ilustracija, e-knjige i digitalni izvještaji",
+    "cat_storyboard": "Dizajn ilustracija, storyboard",
+    "cat_direction": "Režija i storyboard",
+    "cat_minglanje": "Režija, dizajn",
+    "cat_concept": "Koncept, režija i storyboard"
+  },
+  "slider": {
+    "trusted_by": "Povjerenje stručnjaka iz industrije:"
+  }
 }

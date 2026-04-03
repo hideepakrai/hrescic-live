@@ -1,23 +1,20 @@
 import i18n from "i18next";
-import i18nBackend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 
-const getCurrentHost =
-  process.env.NEXT_PUBLIC_MODE === "development"
-    ? "http://localhost:5173"
-    : "LINK TO PROD";
+import en from "../public/i18n/en.json";
+import hr from "../public/i18n/hr.json";
 
 i18n
-  .use(i18nBackend)
   .use(initReactI18next)
   .init({
+    resources: {
+      en: { translation: en },
+      hr: { translation: hr },
+    },
     fallbackLng: "en",
     lng: "en",
     interpolation: {
       escapeValue: false,
-    },
-    backend: {
-      loadPath: `${getCurrentHost}/i18n/{{lng}}.json`,
     },
   });
 

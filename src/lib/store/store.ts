@@ -8,6 +8,8 @@ import adminOrdersReducer from './features/adminOrdersSlice';
 import pagesReducer from './pages/pagesSlice';
 import commentsReducer from './comments/commentSlice';
 import authReducer from './auth/authSlice';
+import adminLocaleReducer from './features/adminLocaleSlice';
+
 export const makeStore = () => {
   return configureStore({
     reducer: {
@@ -20,6 +22,7 @@ export const makeStore = () => {
       adminAttributes: adminAttributesReducer,
       adminVariants: adminVariantsReducer,
       adminOrders: adminOrdersReducer,
+      adminLocale: adminLocaleReducer,
     },
   });
 };
