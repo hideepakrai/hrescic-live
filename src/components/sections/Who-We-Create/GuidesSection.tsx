@@ -42,7 +42,7 @@ const GuidesSection: React.FC = () => {
 
   return (
     <section className="w-full bg-white pt-14 pb-24">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-8xl px-4">
         {/* <p className="mb-3 text-center text-[16px] font-semibold text-[#555]">
          GUIDES & CHECKLISTS
         </p> */}

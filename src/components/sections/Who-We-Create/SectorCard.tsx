@@ -103,7 +103,7 @@ const cards: SectorCard[] = [
 const SectorCards: React.FC = () => {
   return (
     <section className="w-full bg-white py-10">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-8xl px-4">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
           {cards.map((c, i) => (
             <article

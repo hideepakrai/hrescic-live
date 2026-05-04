@@ -47,7 +47,7 @@ const CartPage = () => {
   }
 
   return (
-    <div className="pb-24 pt-12 px-[5%] max-w-7xl mx-auto">
+    <div className="pb-24 pt-12 px-[5%] max-w-8xl mx-auto">
       <div className="flex items-center gap-4 mb-12">
         <Link href="/shop" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-surface transition-colors">
           <ChevronLeft size={20} />

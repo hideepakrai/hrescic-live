@@ -112,7 +112,7 @@ export default function AccountPage() {
 
   return (
     <SettingsLayout>
-      <div className="max-w-7xl space-y-8 pb-10">
+      <div className="max-w-8xl space-y-8 pb-10">
         <div>
           <h1 className="text-2xl font-black uppercase tracking-tight text-[#1D2931]">{t.account.title}</h1>
           <p className="text-sm text-muted-foreground">{t.account.desc}</p>

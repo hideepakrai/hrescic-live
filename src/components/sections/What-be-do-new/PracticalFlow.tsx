@@ -15,7 +15,7 @@ interface PracticalFlowProps {
 
 const PracticalFlow: React.FC<PracticalFlowProps> = ({ headline, subtext, items }) => {
   return (
-    <section className="container-xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <section className="container-xl mx-auto py-8 sm:px-6 lg:px-8">
       <div className="relative overflow-hidden rounded-[20px] mx-4 md:mx-0 bg-[#1D2931]">
         <div className="mx-auto max-w-5xl px-6 py-12 text-center text-white sm:px-8 sm:py-16 lg:px-12 lg:py-20">
           <h3 className="text-3xl font-light leading-tight md:text-5xl mb-6">

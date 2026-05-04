@@ -57,10 +57,10 @@ export default function WhoWeCreateFor() {
   ];
 
   return (
-    <section className="bg-white py-16 px-4 md:px-10 md:py-18">
+    <section className="bg-white py-16  md:py-18">
       <div className="container-xl mx-auto">
         <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
-          <h2 className="mb-4 text-3xl font-normal text-gray-color md:text-[40px]">
+          <h2 className="mb-4 text-3xl font-semibold leading-[1.2] text-[#223039] md:text-[40px]">
             {t("work.title")}
           </h2>
           <p className="text-base text-gray-color md:text-lg">
@@ -105,7 +105,7 @@ export default function WhoWeCreateFor() {
         </div>
 
         <div className="mt-4 rounded-2xl bg-[#1D2931] p-10 text-center text-white md:p-14">
-          <h3 className="mx-auto max-w-2xl px-0 py-5 text-[24px] font-normal md:mb-12 md:px-4 md:text-[40px]">
+          <h3 className="mx-auto max-w-[960px] px-0 py-5 text-[24px] font-semibold leading-[1.2] md:mb-12 md:px-4 md:text-[40px]">
             {t("work.excellence_title")}
             <br />
             {t("work.excellence_subtitle")}
@@ -115,7 +115,7 @@ export default function WhoWeCreateFor() {
             {stats.map((stat) => (
               <div key={stat.label}>
                 <div className="mb-2 text-[#41C717]">
-                  <h3 className="text-4xl font-normal lg:text-[50px]">
+                  <h3 className="text-4xl font-semibold lg:text-[50px]">
                     {stat.value}
                   </h3>
                 </div>

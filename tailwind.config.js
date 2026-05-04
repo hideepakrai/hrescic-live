@@ -11,10 +11,14 @@ export default {
   				'ui-sans-serif',
   				'system-ui'
   			],
-  			optima: [
-  				'Optima',
-  				'sans-serif'
+  			sans: [
+  				'Inter',
+  				'ui-sans-serif',
+  				'system-ui'
   			]
+  		},
+  		maxWidth: {
+  			'8xl': '1620px'
   		},
   		colors: {
   			brand: {

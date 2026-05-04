@@ -13,7 +13,7 @@ const caseStudies = [
 
 const CaseStudies = () => {
   return (
-    <section className="w-full bg-[#f5f7fb] py-16 px-4 md:px-10 lg:px-20">
+    <section className="w-full bg-[#f5f7fb] py-16  lg:px-20">
       <div className="max-w-6xl mx-auto">
         {/* Top label + heading (from second image content) */}
         <p className="text-xs font-semibold tracking-[0.25em] text-red-500 uppercase mb-3">

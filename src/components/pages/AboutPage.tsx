@@ -126,7 +126,7 @@ const AboutPage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/30" />
         </div>
 
-        <div className="relative mx-auto grid min-h-[78vh] max-w-7xl items-center gap-10 px-[5%] py-24 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="relative mx-auto grid min-h-[78vh] max-w-8xl items-center gap-10 px-[5%] py-24 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -223,7 +223,7 @@ const AboutPage = () => {
         data-annotate-id="about-stats-section"
         className="border-b border-border bg-surface px-[5%] py-8"
       >
-        <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-8xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((item, idx) => (
             <motion.div
               key={item.label}
@@ -247,7 +247,7 @@ const AboutPage = () => {
       {/* STORY + MISSION */}
       <section
         data-annotate-id="about-story-section"
-        className="mx-auto max-w-7xl px-[5%] py-24"
+        className="mx-auto max-w-8xl px-[5%] py-24"
       >
         <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr]">
           <motion.div
@@ -313,7 +313,7 @@ const AboutPage = () => {
         data-annotate-id="about-values-section"
         className="border-y border-border bg-surface/50 px-[5%] py-24"
       >
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-8xl">
           <div className="mb-16 text-center">
             <p className="mb-3 text-[12px] font-black uppercase tracking-[3px] text-secondary">
               What Defines Us
@@ -355,7 +355,7 @@ const AboutPage = () => {
       {/* PROCESS */}
       <section
         data-annotate-id="about-process-section"
-        className="mx-auto max-w-7xl px-[5%] py-24"
+        className="mx-auto max-w-8xl px-[5%] py-24"
       >
         <div className="mb-14 max-w-3xl">
           <p className="mb-3 text-[12px] font-black uppercase tracking-[3px] text-secondary">
@@ -395,7 +395,7 @@ const AboutPage = () => {
         data-annotate-id="about-materials-section"
         className="border-y border-border bg-[#f7f4ef] px-[5%] py-24"
       >
-        <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="mx-auto grid max-w-8xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -462,7 +462,7 @@ const AboutPage = () => {
       {/* ASSURANCES */}
       <section
         data-annotate-id="about-assurances-section"
-        className="mx-auto max-w-7xl px-[5%] py-24"
+        className="mx-auto max-w-8xl px-[5%] py-24"
       >
         <div className="mb-14 text-center">
           <p className="mb-3 text-[12px] font-black uppercase tracking-[3px] text-secondary">
@@ -499,7 +499,7 @@ const AboutPage = () => {
 
       {/* CTA */}
       <section data-annotate-id="about-cta-section" className="px-[5%] pb-20">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[30px] bg-primary px-6 py-14 text-white sm:px-10 lg:px-14 lg:py-16">
+        <div className="mx-auto max-w-8xl overflow-hidden rounded-[30px] bg-primary px-6 py-14 text-white sm:px-10 lg:px-14 lg:py-16">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
             <div>
               <p className="mb-3 text-[12px] font-black uppercase tracking-[3px] text-secondary">

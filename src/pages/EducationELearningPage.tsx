@@ -104,7 +104,7 @@ const EducationELearningPage = () => {
                   <h1
                     className="pe-4  text-[28px] sm:text-[34px] md:text-[40px] lg:text-[38px] font-[400] leading-[1.08] tracking-[-0.03em] text-transparent bg-clip-text"
                     style={{
-                      fontFamily: "Optima, Georgia, Times New Roman, serif",
+                      fontFamily: "Inter, Georgia, Times New Roman, serif",
                       backgroundImage: "linear-gradient(90deg, #5E1DE1 0%, #FF1DA4 100%)",
                     }}>
                     Education & e-learning brands don't scale by adding more products. They scale by creating clarity.

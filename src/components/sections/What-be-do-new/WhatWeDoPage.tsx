@@ -23,7 +23,7 @@ const WhatWeDoPage = () => {
 
               {/* LEFT CONTENT */}
               <div className="max-w-xl">
-                <h1 className="text-white font-serif text-3xl sm:text-4xl lg:text-[52px] leading-tight mb-6">
+                <h1 className="text-white font-sans text-3xl sm:text-4xl lg:text-[52px] leading-tight mb-6">
                   Creative systems that<br />keep your brand alive.
                 </h1>
                 <p className="text-gray-300 text-sm sm:text-base max-w-md mb-6 leading-relaxed">

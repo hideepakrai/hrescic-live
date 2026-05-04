@@ -48,7 +48,7 @@ const ServicesPage = () => {
     <div className="pb-20">
       {/* Hero Section */}
       <section className="py-24 px-[5%] bg-surface border-b border-border">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-8xl mx-auto text-center">
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 px-[5%] max-w-7xl mx-auto">
+      <section className="py-24 px-[5%] max-w-8xl mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, idx) => (
             <motion.div 
@@ -105,7 +105,7 @@ const ServicesPage = () => {
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="max-w-7xl mx-auto bg-primary text-white p-12 lg:p-20 rounded-3xl text-center relative overflow-hidden"
+          className="max-w-8xl mx-auto bg-primary text-white p-12 lg:p-20 rounded-3xl text-center relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />

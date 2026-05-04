@@ -51,7 +51,7 @@ const ServiceIcon = () => (
 
 const WhatWeDoSection = () => {
   return (
-    <section className="container-xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <section className="container-xl mx-auto py-16 ">
       {/* Header Section */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-light tracking-tight text-gray-800">

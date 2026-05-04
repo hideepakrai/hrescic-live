@@ -12,7 +12,7 @@ const CTASection = () => {
       <div className="container mx-auto max-w-3xl text-center px-4">
 
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-normal text-[#555555]">
+        <h2 className="text-3xl font-semibold leading-[1.2] text-[#223039] md:text-[40px]">
           {t("cta.title")}
         </h2>
 

@@ -105,7 +105,7 @@ const MasonryShuffleBackgrounds = () => {
 const WorkPage = () => {
   return (
     <>
-      <section className="w-full px-3 pt-3 sm:px-4 lg:px-5">
+      <section className="w-full pt-3">
         <div className="container-xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -117,7 +117,7 @@ const WorkPage = () => {
             <div className="grid md:grid-cols-[55%_45%] gap-10 items-center px-6 md:px-16 py-20">
               {/* LEFT HERO CONTENT */}
               <div className="max-w-[500px] px-2">
-                <h1 className="text-white font-normal text-3xl sm:text-4xl lg:text-[50px] mb-6 font-serif">
+                <h1 className="text-white font-normal text-3xl sm:text-4xl lg:text-[50px] mb-6 font-sans">
                   Brands from different worlds - connected by one truth:
                 </h1>
                 <p className="text-gray-300 text-sm sm:text-base max-w-md mb-8">

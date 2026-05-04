@@ -208,7 +208,7 @@ export default function HomeHeroSection() {
 
   if (!mounted) {
     return (
-      <section className="w-full px-3 pt-3 sm:px-4 lg:px-5">
+      <section className="w-full pt-3">
         <div className="container-xl mx-auto">
           <div className="relative overflow-hidden rounded-[18px] bg-[#1D2931] lg:rounded-[20px] min-h-[430px]" />
         </div>
@@ -217,7 +217,7 @@ export default function HomeHeroSection() {
   }
 
   return (
-    <section className="w-full px-3 pt-3 sm:px-4 lg:px-5">
+    <section className="w-full pt-3">
       <div className="container-xl mx-auto">
         <div className="relative overflow-hidden rounded-[18px] bg-[#1D2931] lg:rounded-[20px]">
           <div className="pointer-events-none absolute inset-0">
@@ -226,16 +226,16 @@ export default function HomeHeroSection() {
           </div>
 
           <div className="relative grid min-h-[430px] items-center gap-12 px-6 py-8 sm:px-8 sm:py-10 md:px-8 lg:grid-cols-[1.02fr_.98fr] lg:gap-10 lg:px-14 lg:py-16">
-            <div className="max-w-[560px] lg:ps-1">
-              <h1 className="font-serif text-[34px] font-normal leading-[1.08] tracking-[-0.03em] text-white sm:text-[42px] md:text-[48px] lg:text-[50px] xl:text-[50px]">
+            <div className="max-w-[525px] lg:ps-1">
+              <h1 className="font-sans text-[34px] font-[500] leading-[1.2] tracking-[-0.02em] text-white sm:text-[42px] md:text-[48px] lg:text-[50px] xl:text-[50px]">
                 {t("hero.title_elite")}
                 <br />
                 {t("hero.title_expertise")}
-                <br />
+             
                 {t("hero.title_need")}
               </h1>
 
-              <p className="mt-6 max-w-[470px] text-[14px] leading-7 text-white/80 sm:text-[15px] lg:text-[17px]">
+              <p className="mt-6 max-w-[470px] text-[14px] leading-7 text-white/80 sm:text-[15px] lg:text-[18px]">
                 {t("hero.description")}
               </p>
 

@@ -60,7 +60,7 @@ const CheckItem = ({ text }: { text: string }) => {
 
 const ServicesSection = () => {
   return (
-    <section className="container-xl mx-auto px-4 py-16 sm:px-6 lg:px-8 md:mt-0 mt-16">
+    <section className="container-xl mx-auto py-16 sm:px-6 lg:px-8 md:mt-0 mt-16">
       <div className="mb-12 text-center">
         <h2 className="text-3xl font-light tracking-tight text-gray-800 md:text-4xl">
           What We Do

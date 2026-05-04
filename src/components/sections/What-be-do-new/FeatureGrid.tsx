@@ -15,7 +15,7 @@ interface FeatureGridProps {
 
 const FeatureGrid: React.FC<FeatureGridProps> = ({ title, columns }) => {
   return (
-    <section className="container-xl mx-auto px-4 py-18 my-20 md:my-20  sm:px-6 lg:px-8">
+    <section className="container-xl mx-auto py-18 my-20 md:my-20  sm:px-6 lg:px-8">
       <div className="mb-10 text-center px-4 md:px-0">
         <h2 className="text-2xl font-semibold text-[#1D2931] md:text-3xl">
           {title}

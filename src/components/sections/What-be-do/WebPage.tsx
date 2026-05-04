@@ -15,7 +15,7 @@ const WebPage = () => {
         <div className="mx-auto md:ps-16 px-4 py-20 grid md:grid-cols-[55%_45%] gap-10 items-center">
           {/* 🔹 Left Text Content */}
           <div className="max-w-xl px-2">
-            <h1 className="text-white font-normal text-3xl sm:text-4xl lg:text-[50px] mb-6 font-serif">
+            <h1 className="text-white font-normal text-3xl sm:text-4xl lg:text-[50px] mb-6 font-sans">
               Creative systems that keep your brand alive. 
             </h1> 
 

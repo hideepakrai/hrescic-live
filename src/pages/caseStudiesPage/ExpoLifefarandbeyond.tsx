@@ -8,7 +8,7 @@ const ExpoLifefarandbeyond = () => {
     <div className="min-h-screen bg-transparent p-3 sm:p-4 md:p-6 lg:p-8 flex flex-col gap-4 font-inter">
 
       {/* Top Section */}
-      <section className="w-full max-w-[1200px] mx-auto bg-[#242b33] rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-lg">
+      <section className="w-full max-w-8xl mx-auto bg-[#242b33] rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-lg">
 
         {/* Left Content */}
         <div className="flex-1 p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 flex flex-col justify-start relative py-16">
@@ -23,7 +23,7 @@ const ExpoLifefarandbeyond = () => {
 
           <h2
             className="text-[25px] md:text-[35px] leading-[120%] text-white pt-20 md:pe-14 pe-4 "
-            style={{ fontFamily: "'Optima', sans-serif" }}
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             The packaging served as
            
@@ -50,7 +50,7 @@ const ExpoLifefarandbeyond = () => {
       </section>
 
       {/* Bottom Section */}
-      <section className="w-full max-w-[1200px] mx-auto bg-[#242b33] rounded-2xl shadow-lg flex flex-col p-4 sm:p-6 md:p-8 lg:p-10 mb-6 md:mb-10">
+      <section className="w-full max-w-8xl mx-auto bg-[#242b33] rounded-2xl shadow-lg flex flex-col p-4 sm:p-6 md:p-8 lg:p-10 mb-6 md:mb-10">
 
         {/* Video Section */}
         <div
@@ -103,7 +103,7 @@ const ExpoLifefarandbeyond = () => {
         <div className="mt-4 sm:mt-6 flex flex-col gap-1 md:px-2">
           <h3
             className="text-white text-[1.2rem] sm:text-[1.35rem] md:text-xl lg:text-2xl font-normal tracking-wide"
-            style={{ fontFamily: "'Optima', sans-serif" }}
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             EXO - Life and Beyond
           </h3>

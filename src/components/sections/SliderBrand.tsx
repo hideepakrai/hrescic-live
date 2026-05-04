@@ -60,7 +60,7 @@ const SliderBrand = () => {
   const { t } = useTranslation();
   return (
     <section className="w-full bg-white py-8 sm:py-10 lg:pt-4 lg:pb-12">
-      <div className="container-xl mx-auto px-4">
+      <div className="container-xl mx-auto">
         <div className="mb-7 flex justify-center">
           <p className="text-center text-[13px] italic font-normal text-[#666666] sm:text-[15px]">
             {t("slider.trusted_by")}

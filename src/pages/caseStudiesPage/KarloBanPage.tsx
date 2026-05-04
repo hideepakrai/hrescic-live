@@ -22,7 +22,7 @@ const PlayIcon = ({ dark = false }: { dark?: boolean }) => (
 
 const KarloBanPage = () => {
   return (
-    <div className="overflow-x-hidden bg-[#f4f4f2] text-[#2f2a28] px-4 py-8 md:px-0">
+    <div className="overflow-x-hidden bg-[#f4f4f2] text-[#2f2a28] py-8">
       {/* HERO */}
       <section
         className="container-xl  overflow-hidden rounded-[18px] shadow-[0_20px_60px_rgba(32,12,7,0.16)] sm:rounded-[20px] lg:rounded-[24px]"
@@ -50,7 +50,7 @@ const KarloBanPage = () => {
             <div className="mt-auto max-w-[640px] pb-2 sm:pb-4">
               <h1
                 className="text-[30px] leading-[1.06] tracking-[-0.03em] text-white sm:text-[36px] md:text-[42px] lg:text-[50px]"
-                style={{ fontFamily: "Georgia, Times New Roman, serif" }}
+                style={{ fontFamily: "Inter" }}
               >
                 When Craft Meets Collaboration
               </h1>
@@ -82,7 +82,7 @@ const KarloBanPage = () => {
       </section>
 
       {/* STORY / INTRO */}
-      <section className="mx-auto grid max-w-[1280px] gap-8 px-4 py-12 sm:px-6 md:grid-cols-[1.05fr_1.15fr] md:items-center lg:gap-12 lg:px-8 lg:py-20">
+      <section className="mx-auto grid max-w-8xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-[1.05fr_1.15fr] md:items-center lg:gap-12 lg:px-8 lg:py-20">
         <div className="max-w-[520px]">
           <p className="text-[17px] leading-[1.55] text-[#6b6866] sm:text-[18px] md:text-[20px]">
             From the very beginning, this project was built on alignment,
@@ -116,7 +116,7 @@ const KarloBanPage = () => {
         <div className="rounded-[18px] bg-[#efefed] px-4 py-8 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] sm:rounded-[22px] sm:px-8 sm:py-10 md:px-12 md:py-12 lg:px-16 lg:py-14">
           <p
             className="mx-auto max-w-[740px] text-[19px] leading-[1.45] text-[#5c5856] sm:text-[22px] md:text-[24px] lg:text-[26px]"
-            style={{ fontFamily: "Georgia, Times New Roman, serif" }}
+            style={{ fontFamily: "Inter" }}
           >
             Many thanks to Karlo for the trust, openness, and clarity of his
             craft, and to all creative partners that worked on the project:
@@ -133,7 +133,7 @@ const KarloBanPage = () => {
       <section className="container-xl pb-12 sm:pb-14 lg:pb-16">
          <h2
           className="text-[32px] text-[#504a46] sm:text-[36px] md:text-[40px] lg:text-[44px] text-center pt-10 pb-6"
-          style={{ fontFamily: "Georgia, Times New Roman, serif" }}
+          style={{ fontFamily: "Inter" }}
         >
           Results
         </h2>
@@ -170,7 +170,7 @@ const KarloBanPage = () => {
           <div className="flex min-h-[120px] items-center justify-center rounded-[18px] bg-transparent px-4 py-6 text-center md:col-span-3 lg:row-span-1">
             <p
               className="text-[20px] leading-[1.35] text-[#625d59] sm:text-[24px] lg:text-[26px]"
-              style={{ fontFamily: "Georgia, Times New Roman, serif" }}
+              style={{ fontFamily: "Inter" }}
             >
               Branding / Web UX &amp; UI
             </p>
@@ -217,7 +217,7 @@ const KarloBanPage = () => {
           <div className="rounded-[18px] bg-transparent px-0 text-center md:col-span-6 lg:col-span-6 lg:row-span-2">
             <p
               className="mb-5 mt-1 px-2 text-[20px] leading-[1.35] text-[#625d59] sm:mt-2 sm:text-[24px] lg:mb-8 lg:mt-4 lg:text-[26px]"
-              style={{ fontFamily: "Georgia, Times New Roman, serif" }}
+              style={{ fontFamily: "Inter" }}
             >
               AI Supported Video Post-production.
             </p>

@@ -24,7 +24,7 @@ const IdeaInSightPage = () => {
   return (
     // Section with a white background
     <section className="py-16 md:py-12 bg-white">
-      <div className="container-xl mx-auto px-4">
+      <div className="container-xl mx-auto">
 
         {/* === Main container card (as per image) === */}
         <div className="bg-[#F8F8F8] rounded-2xl py-16 md:py-20 px-6 md:px-10">

@@ -82,7 +82,7 @@ const WebDigitalPage = () => {
             <div className="grid md:grid-cols-[55%_45%] gap-10 items-center px-6 md:px-16 py-20">
               {/* LEFT CONTENT */}
               <div className="max-w-xl">
-                <h1 className="text-white font-serif text-3xl sm:text-4xl lg:text-[50px] leading-tight mb-6">
+                <h1 className="text-white font-sans text-3xl sm:text-4xl lg:text-[50px] leading-tight mb-6">
                   Web is not a page.<br />It's your conversion system.
                 </h1>
                 <p className="text-gray-300 text-sm sm:text-base max-w-md mb-6 leading-relaxed">

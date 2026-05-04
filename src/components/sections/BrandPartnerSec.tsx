@@ -123,10 +123,10 @@ const BrandPartnerSec = () => {
   ];
 
   return (
-    <section className="bg-white py-16 md:py-10 px-4 md:px-10">
+    <section className="bg-white py-16 md:py-10 ">
       <div className="container-xl mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-[40px] font-normal text-gray-900 mb-4">
+          <h2 className="text-3xl font-semibold leading-[1.2] text-[#223039] mb-4 md:text-[40px]">
             {t("partners.title")}
           </h2>
           <p className="text-gray-600 text-base md:text-lg">

@@ -95,8 +95,8 @@ export default function AboutStrip() {
       className="scroll-mt-24 bg-white px-4 py-16 md:px-10 md:py-10"
     >
       <div className="container-xl mx-auto">
-        <div className="mx-auto mb-12 max-w-lg text-center md:mb-16">
-          <h2 className="mb-4 text-3xl font-normal text-[#555555] md:text-4xl">
+        <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
+          <h2 className="mb-4 text-3xl font-semibold leading-[1.2] text-[#223039] md:text-[40px]">
             {t("about.title")}
           </h2>
           <p className="text-lg text-[#555555] md:text-lg">
@@ -192,4 +192,4 @@ export default function AboutStrip() {
       </div>
     </section>
   );
-}
+}

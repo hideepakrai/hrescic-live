@@ -60,7 +60,7 @@ const FAQPage = () => {
     <div className="pb-20">
       {/* Hero Section */}
       <section className="py-24 px-[5%] bg-surface border-b border-border">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-8xl mx-auto text-center">
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ const FAQPage = () => {
 
       {/* Contact Support Section */}
       <section className="py-24 px-[5%] bg-surface/50 border-y border-border">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-8xl mx-auto text-center">
           <h2 className="text-[38px] font-bold tracking-tight mb-12">Still have questions?</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[

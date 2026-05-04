@@ -67,7 +67,7 @@ const BlogPage = () => {
     <div className="pb-20">
       {/* Hero Section */}
       <section className="py-24 px-[5%] bg-surface border-b border-border">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-8xl mx-auto text-center">
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ const BlogPage = () => {
       </section>
 
       {/* Featured Post */}
-      <section className="py-24 px-[5%] max-w-7xl mx-auto">
+      <section className="py-24 px-[5%] max-w-8xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -135,7 +135,7 @@ const BlogPage = () => {
       </section>
 
       {/* Blog Grid */}
-      <section className="py-24 px-[5%] max-w-7xl mx-auto pt-0">
+      <section className="py-24 px-[5%] max-w-8xl mx-auto pt-0">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {posts.slice(1).map((post, idx) => (
             <motion.div 

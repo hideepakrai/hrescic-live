@@ -3,10 +3,10 @@ import { IoCheckmarkCircle } from "react-icons/io5";
 
 const MarketingBlogCart = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-10">
+    <section className="max-w-8xl mx-auto px-4 md:px-6 lg:px-8 py-10">
       {/* Top Title */}
       <div className="mb-10">
-        <h2 className="text-3xl font-medium md:text-[38px] font-serif text-[#555555] mb-2">
+        <h2 className="text-3xl font-medium md:text-[38px] font-sans text-[#555555] mb-2">
           Not another generic marketing blog.
         </h2>
         <p className="text-[#555] text-[16px] md:text-[20px] font-normal max-w-xl">
@@ -25,7 +25,7 @@ const MarketingBlogCart = () => {
 
             <div className="py-12"></div>
 
-            <h3 className="font-serif md:text-3xl text-xl mt-6 leading-snug">
+            <h3 className="font-sans md:text-3xl text-xl mt-6 leading-snug">
               Sharp thinking about what
               <br /> makes brands work.
             </h3>
@@ -51,7 +51,7 @@ const MarketingBlogCart = () => {
 
             <div className="py-12"></div>
 
-            <h3 className="font-serif md:text-3xl text-xl mt-6 leading-snug">
+            <h3 className="font-sans md:text-3xl text-xl mt-6 leading-snug">
               Your website is not a brochure —
               <br /> it's a system.
             </h3>
@@ -79,7 +79,7 @@ const MarketingBlogCart = () => {
 
             <div className="py-16"></div>
 
-            <h3 className="font-serif md:text-3xl text-xl mt-6 leading-snug">
+            <h3 className="font-sans md:text-3xl text-xl mt-6 leading-snug">
               Consistency without
               <br /> burnout.
             </h3>
@@ -106,7 +106,7 @@ const MarketingBlogCart = () => {
 
             <div className="py-12"></div>
 
-            <h3 className="font-serif md:text-3xl text-xl mt-6 leading-snug">
+            <h3 className="font-sans md:text-3xl text-xl mt-6 leading-snug">
               Tourism, charter, beauty
               <br /> & boutique brands —
               <br /> simplified.

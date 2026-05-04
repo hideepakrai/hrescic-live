@@ -104,7 +104,7 @@ const rows: Row[] = [
 
 const ComparisonSection: React.FC = () => {
   return (
-    <section className="container-xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-6">
+    <section className="container-xl mx-auto  py-16 space-y-6">
       {/* Section label (red) */}
     
 

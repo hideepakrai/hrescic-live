@@ -115,7 +115,7 @@ const IconBubble: React.FC = () => (
 
 const PlansDeliverablesSec: React.FC = () => {
   return (
-    <section className="container-xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
+    <section className="container-xl mx-auto  py-16 space-y-12">
       {/* Section heading */}
       <div>
         <h2 className="text-3xl md:text-4xl font-light tracking-tight text-gray-900">

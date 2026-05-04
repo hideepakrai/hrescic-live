@@ -94,13 +94,13 @@ export default function IntegrationsPage() {
 
   return (
     <SettingsLayout>
-      <div className="max-w-7xl space-y-8 pb-10">
+      <div className="max-w-8xl space-y-8 pb-10">
         <div>
           <h1 className="text-2xl font-black uppercase tracking-tight text-[#1D2931]">{t.integrations.title}</h1>
           <p className="text-sm text-muted-foreground">{t.integrations.desc}</p>
         </div>
 
-      <form onSubmit={handleSubmit} className="space-y-8 max-w-7xl mx-auto pt-0">
+      <form onSubmit={handleSubmit} className="space-y-8 max-w-8xl mx-auto pt-0">
         <div className="grid gap-8 lg:grid-cols-2">
           {/* ANALYTICS & SECURITY */}
           <div className="space-y-8">

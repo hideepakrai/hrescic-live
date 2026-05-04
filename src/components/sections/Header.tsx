@@ -286,12 +286,12 @@ const Header = () => {
 
   if (!mounted) {
     return (
-      <header className="sticky top-0 z-50 w-full bg-white">
+      <header className="sticky top-0 z-50 w-full bg-white ">
         <div className="relative border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-20">
               <div className="flex-shrink-0">
-                <Link href="/" className="flex items-center gap-2 text-3xl font-serif font-medium text-gray-900">
+                <Link href="/" className="flex items-center gap-2 text-3xl font-sans font-medium text-gray-900">
                   <img src="/assets/Image/hrescic-logo.svg" alt="Hrescic logo" className="h-8 w-auto" />
                 </Link>
               </div>
@@ -310,12 +310,12 @@ const Header = () => {
           setActiveMega(null);
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8  md:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0">
               <Link
                 href="/"
-                className="flex items-center gap-2 text-3xl font-serif font-medium text-gray-900"
+                className="flex items-center gap-2 text-3xl font-sans font-medium text-gray-900"
               >
                 <img
                   src="/assets/Image/hrescic-logo.svg"
@@ -390,7 +390,7 @@ const Header = () => {
 
         {currentMega && (
           <div className="hidden md:block absolute inset-x-0 top-full bg-white border-t border-gray-100 shadow-lg">
-            <div className="max-w-7xl mx-auto px-10 py-8">
+            <div className="max-w-8xl mx-auto px-10 py-8">
               <div className="mb-4">
                 <h2 className="text-[26px] font-semibold text-gray-900">
                   {currentMega.title}

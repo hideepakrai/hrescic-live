@@ -105,13 +105,13 @@ const Footer: React.FC = () => {
   }
 
   return (
-    <footer className="relative bg-[#0F172A] pt-20 pb-10 overflow-hidden font-sans text-slate-300">
+    <footer className="relative bg-[#0F172A] pt-20 pb-10 overflow-hidden font-sans text-slate-300 px-6">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#37c100]/20 to-transparent" />
       <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#37c100]/5 rounded-full blur-3xl" />
       <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#37c100]/5 rounded-full blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-8xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Explore */}
           <div>
