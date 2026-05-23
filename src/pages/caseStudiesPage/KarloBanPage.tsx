@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useState, useMemo, useEffect } from "react";
+import YouTube, { YouTubeEvent, YouTubeProps } from "react-youtube";
 
 const bladeMark = (
   <img
@@ -21,11 +23,38 @@ const PlayIcon = ({ dark = false }: { dark?: boolean }) => (
 );
 
 const KarloBanPage = () => {
+  const [loadVideo, setLoadVideo] = useState(false);
+  const videoId = "cflmfqt1zBg";
+
+  const ytOpts: YouTubeProps["opts"] = useMemo(
+    () => ({
+      width: "100%",
+      height: "100%",
+      playerVars: {
+        autoplay: 1,
+        controls: 1,
+        rel: 0,
+        modestbranding: 1,
+      },
+    }),
+    []
+  );
+
+  const handlePlay = (_e: YouTubeEvent<number>) => {
+    // Optionally handle play
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#video-section") {
+      setLoadVideo(true);
+    }
+  }, []);
+
   return (
     <div className="overflow-x-hidden bg-[#f4f4f2] text-[#2f2a28] py-8">
       {/* HERO */}
       <section
-        className="container-xl  overflow-hidden rounded-[18px] shadow-[0_20px_60px_rgba(32,12,7,0.16)] sm:rounded-[20px] lg:rounded-[24px]"
+        className="relative container-xl min-h-[420px] md:min-h-[520px] overflow-hidden rounded-[18px] shadow-[0_20px_60px_rgba(32,12,7,0.16)] sm:rounded-[20px] lg:rounded-[24px]"
         style={{
           backgroundImage: "url('/assets/Image/karoban-hero.png')",
           backgroundRepeat: "no-repeat",
@@ -33,7 +62,7 @@ const KarloBanPage = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="relative grid min-h-[420px] grid-cols-1 md:min-h-[520px] lg:grid-cols-[1fr_1fr]">
+        <div className="relative grid min-h-[420px] md:min-h-[520px] grid-cols-1 lg:grid-cols-[1fr_1fr]">
           {/* left content */}
           <div className="relative z-10 flex flex-col px-4 py-5 sm:px-6 sm:py-7 md:px-8 md:py-8 lg:px-12 lg:py-10">
             <div className="mb-10 flex items-center gap-2 text-[11px] text-white/80 sm:mb-12 sm:gap-3 sm:text-xs lg:mb-14">
@@ -61,7 +90,15 @@ const KarloBanPage = () => {
                 blade Karlo Ban creates.
               </p>
 
-              <button className="mt-6 inline-flex w-fit items-center gap-3 rounded-full bg-white/10 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-white/15 sm:mt-7">
+              <button 
+                onClick={() => {
+                  setLoadVideo(true);
+                  setTimeout(() => {
+                    document.getElementById('video-section')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
+                className="mt-6 inline-flex w-fit items-center gap-3 rounded-full bg-white/10 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-white/15 sm:mt-7"
+              >
                 <PlayIcon />
                 <span>Play Video</span>
               </button>
@@ -126,8 +163,42 @@ const KarloBanPage = () => {
         </div>
       </section>
 
+      {/* VIDEO SECTION */}
+      <section id="video-section" className="container-xl pb-12 sm:pb-14 lg:pb-16">
+        <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-[18px] overflow-hidden group shadow-[0_16px_36px_rgba(0,0,0,0.08)] bg-black">
+          {!loadVideo ? (
+            <>
+              <img
+                src="/assets/Image/karoban-hero.png"
+                alt="Video preview"
+                className="absolute inset-0 w-full h-full object-cover object-center opacity-70 transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <button 
+                  onClick={() => setLoadVideo(true)}
+                  className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition-all hover:bg-white/30 hover:scale-105"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="ml-1">
+                    <path d="M8 5.14v13.72c0 .8.87 1.3 1.56.89l10.58-6.86a1.03 1.03 0 0 0 0-1.78L9.56 4.25A1.04 1.04 0 0 0 8 5.14Z" />
+                  </svg>
+                </button>
+              </div>
+            </>
+          ) : (
+            <div className="absolute inset-0 w-full h-full z-20">
+              <YouTube
+                videoId={videoId}
+                opts={ytOpts}
+                className="h-full w-full"
+                iframeClassName="h-full w-full"
+                onPlay={handlePlay}
+              />
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* RESULTS TITLE */}
-     
 
       {/* RESULTS GRID */}
       <section className="container-xl pb-12 sm:pb-14 lg:pb-16">

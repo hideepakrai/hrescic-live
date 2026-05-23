@@ -92,7 +92,7 @@ export default function WhoWeCreateFor() {
                 <div className="mt-auto">
                   <hr className="mb-4 border-gray-200" />
                   <a
-                    href={item.href}
+                    href={`${item.href}#video-section`}
                     className="group flex items-center gap-1 text-[15px] font-medium text-[#3aaa35] transition-all hover:underline"
                   >
                     {item.linkText}

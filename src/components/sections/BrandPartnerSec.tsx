@@ -138,7 +138,7 @@ const BrandPartnerSec = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
           {partners.map((partner) => (
             <Link
-              href={partner.link}
+              href={`${partner.link}#video-section`}
               key={partner.id}
               className={`flex flex-col group ${partner.gridCols}`}
             >

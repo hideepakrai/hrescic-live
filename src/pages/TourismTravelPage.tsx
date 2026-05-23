@@ -1,4 +1,9 @@
-import React from "react";
+"use client";
+
+import React, { useState, useMemo, useEffect } from "react";
+import { Play } from "lucide-react";
+import { motion } from "framer-motion";
+import YouTube, { YouTubeEvent, YouTubeProps } from "react-youtube";
 
 const issueList = [
     "Heavy OTA dependency",
@@ -64,6 +69,37 @@ const GoldButton = ({ children }: { children: React.ReactNode }) => (
 );
 
 const TourismTravelPage = () => {
+    const [loadVideo, setLoadVideo] = useState(false);
+    const videoId = "A5Euw5nAYxo";
+
+    const ytOpts: YouTubeProps["opts"] = useMemo(
+        () => ({
+            width: "100%",
+            height: "100%",
+            playerVars: {
+                autoplay: 1,
+                controls: 1,
+                rel: 0,
+                modestbranding: 1,
+            },
+        }),
+        []
+    );
+
+    const handleManualPlay = () => {
+        setLoadVideo(true);
+    };
+
+    const handlePlay = (_e: YouTubeEvent<number>) => {
+        // Handle play event if needed
+    };
+
+    useEffect(() => {
+        if (typeof window !== "undefined" && window.location.hash === "#video-section") {
+            setLoadVideo(true);
+        }
+    }, []);
+
     return (
         <div className="w-full bg-white overflow-x-hidden">
             {/* HERO SECTION */}
@@ -118,13 +154,26 @@ const TourismTravelPage = () => {
                         </div>
 
                         <div className="order-1 lg:order-2 p-[2px]">
-                            <div className="relative h-[260px] overflow-hidden sm:h-[340px] md:h-[430px] lg:h-full lg:min-h-[552px]">
+                            <div 
+                                className="relative h-[260px] overflow-hidden sm:h-[340px] md:h-[430px] lg:h-full lg:min-h-[552px] cursor-pointer group"
+                                onClick={() => {
+                                    setLoadVideo(true);
+                                    setTimeout(() => {
+                                        document.getElementById('video-section')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    }, 100);
+                                }}
+                            >
                                 <img
                                     src="/assets/Image/tourism-hero.png"
                                     alt="Health pharma beauty product"
-                                    className="h-full w-full object-cover object-center"
+                                    className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                                 />
-                                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_28%,rgba(255,255,255,0)_100%)]" />
+                                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_28%,rgba(255,255,255,0)_100%)] group-hover:bg-black/10 transition-colors" />
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-black/20 text-white backdrop-blur-md transition-all group-hover:bg-black/30 group-hover:scale-105">
+                                        <Play className="h-6 w-6 sm:h-8 sm:w-8 ml-1 fill-white" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -180,6 +229,49 @@ const TourismTravelPage = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* VIDEO SECTION */}
+            <section id="video-section" className="w-full px-3 pb-6 pt-0 sm:px-5 sm:pb-8 lg:pb-10 mb-14">
+                <div className="mx-auto container-xl">
+                    <motion.div
+                        layout
+                        transition={{ duration: 0.7, ease: "easeInOut" }}
+                        className="relative h-[400px] w-full overflow-hidden rounded-2xl bg-[#003C42] md:h-[600px] mt-8"
+                        style={{
+                            backgroundImage: !loadVideo
+                                ? `url('https://img.youtube.com/vi/${videoId}/maxresdefault.jpg')`
+                                : "none",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                        }}
+                    >
+                        {!loadVideo && (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <button
+                                    onClick={handleManualPlay}
+                                    className="flex h-20 w-20 items-center justify-center rounded-full bg-black/20 text-white backdrop-blur-sm transition-all hover:bg-black/30"
+                                    aria-label="Play video"
+                                    type="button"
+                                >
+                                    <Play className="h-8 w-8 fill-white" />
+                                </button>
+                            </div>
+                        )}
+
+                        {loadVideo && (
+                            <div className="absolute inset-0">
+                                <YouTube
+                                    videoId={videoId}
+                                    opts={ytOpts}
+                                    className="h-[600px] w-full"
+                                    iframeClassName="h-full w-full"
+                                    onPlay={handlePlay}
+                                />
+                            </div>
+                        )}
+                    </motion.div>
                 </div>
             </section>
 

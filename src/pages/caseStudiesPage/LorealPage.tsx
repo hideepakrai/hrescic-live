@@ -1,8 +1,30 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useMemo, useEffect } from "react";
+import YouTube, { YouTubeProps } from "react-youtube";
 
 const LorealPage = () => {
   const [playVideo, setPlayVideo] = useState(false);
+  const videoId = "PmQPMplV1oE";
+
+  const ytOpts: YouTubeProps["opts"] = useMemo(
+    () => ({
+      width: "100%",
+      height: "100%",
+      playerVars: {
+        autoplay: 1,
+        controls: 1,
+        rel: 0,
+        modestbranding: 1,
+      },
+    }),
+    []
+  );
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#video-section") {
+      setPlayVideo(true);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-transparent p-3 sm:p-4 md:p-6 lg:p-8 font-inter">
@@ -44,7 +66,7 @@ const LorealPage = () => {
         </section>
 
         {/* Bottom Section */}
-        <section className="w-full bg-[#000000] rounded-2xl shadow-lg flex flex-col p-4 sm:p-6 md:p-8 lg:p-10 mb-6 md:mb-10">
+        <section id="video-section" className="w-full bg-[#000000] rounded-2xl shadow-lg flex flex-col p-4 sm:p-6 md:p-8 lg:p-10 mb-6 md:mb-10">
           {/* Video Section */}
           <div
             onClick={() => setPlayVideo(true)}
@@ -83,16 +105,14 @@ const LorealPage = () => {
                 </div>
               </>
             ) : (
-              <video
-                controls
-                autoPlay
-                className="absolute inset-0 w-full h-full object-cover"
-              >
-                <source
-                  src="/assets/video/loreal-revitalift.mp4"
-                  type="video/mp4"
+              <div className="absolute inset-0 w-full h-full">
+                <YouTube
+                  videoId={videoId}
+                  opts={ytOpts}
+                  className="w-full h-full"
+                  iframeClassName="w-full h-full"
                 />
-              </video>
+              </div>
             )}
           </div>
 

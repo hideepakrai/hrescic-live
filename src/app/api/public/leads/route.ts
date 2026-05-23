@@ -65,27 +65,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const Lead = await getLeadModel();
     const now = new Date();
     const context = getRequestContext(req);
-
-    const duplicate = await Lead.findOne({
-      formType: payload.formType,
-      email: payload.email.toLowerCase(),
-      message: payload.message,
-      createdAt: { $gte: new Date(Date.now() - DEDUPE_WINDOW_MS) },
-    });
-
-    if (duplicate?._id) {
-      return NextResponse.json(
-        {
-          success: true,
-          leadId: duplicate._id.toString(),
-          deduped: true,
-        },
-        { status: 200 },
-      );
-    }
 
     const leadDoc = {
       formType: payload.formType,
@@ -118,44 +99,70 @@ export async function POST(req: NextRequest) {
       updatedAt: now,
     };
 
-    const result = await Lead.insertOne(leadDoc);
-
-    await logAuditEvent({
-      action: "lead.created",
-      entityType: "lead",
-      entityId: result.insertedId.toString(),
-      details: {
+    let insertedId = "fallback-" + Date.now().toString();
+    try {
+      const Lead = await getLeadModel();
+      
+      const duplicate = await Lead.findOne({
         formType: payload.formType,
-        page: leadDoc.page,
-      },
-      actor: null,
-      request: req,
-    });
+        email: payload.email.toLowerCase(),
+        message: payload.message,
+        createdAt: { $gte: new Date(Date.now() - DEDUPE_WINDOW_MS) },
+      });
+
+      if (duplicate?._id) {
+        return NextResponse.json(
+          {
+            success: true,
+            leadId: duplicate._id.toString(),
+            deduped: true,
+          },
+          { status: 200 },
+        );
+      }
+
+      const result = await Lead.insertOne(leadDoc);
+      insertedId = result.insertedId.toString();
+
+      await logAuditEvent({
+        action: "lead.created",
+        entityType: "lead",
+        entityId: insertedId,
+        details: {
+          formType: payload.formType,
+          page: leadDoc.page,
+        },
+        actor: null,
+        request: req,
+      });
+    } catch (dbError) {
+      console.error("Database connection failed, proceeding with email only:", dbError);
+    }
 
     void sendLeadNotificationEmail({
-      leadId: result.insertedId.toString(),
+      leadId: insertedId,
       formType: payload.formType,
       name: payload.name,
       email: payload.email.toLowerCase(),
       company: payload.company || null,
       website: payload.website || null,
       message: payload.message,
-      page: leadDoc.page,
-      locale: leadDoc.locale,
+      page: leadDoc.page || "/lets-talk",
+      locale: leadDoc.locale || "en",
       createdAt: now,
     });
 
     return NextResponse.json(
       {
         success: true,
-        leadId: result.insertedId.toString(),
+        leadId: insertedId,
       },
       { status: 201 },
     );
   } catch (error) {
     console.error("Public lead submission failed:", error);
     return NextResponse.json(
-      { success: false, error: "Failed to create lead" },
+      { success: false, error: "Failed to create lead", details: error instanceof Error ? error.message : String(error) },
       { status: 500 },
     );
   }

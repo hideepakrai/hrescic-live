@@ -15,6 +15,7 @@ type MediaCard = {
 type Tile = {
   id: number;
   image: string;
+  action?: 'exo' | 'revitalift' | 'showreel';
 };
 
 type Slot = {
@@ -112,11 +113,11 @@ export default function HomeHeroSection() {
   ];
 
   const tileData: Tile[] = [
-    { id: 1, image: "/assets/Image/img1.png" },
-    { id: 2, image: "/assets/Image/img2.png" },
-    { id: 3, image: "/assets/Image/img3.png" },
-    { id: 4, image: "/assets/Image/img4.png" },
-    { id: 5, image: "/assets/Image/img5.png" },
+    { id: 1, image: "/assets/Image/exo-turtle.jpg", action: 'exo' },
+    { id: 2, image: "/assets/Image/revitalift-jar.png", action: 'revitalift' },
+    { id: 3, image: "/assets/Image/img1.png", action: 'showreel' },
+    { id: 4, image: "/assets/Image/img4.png", action: 'showreel' },
+    { id: 5, image: "/assets/Image/img5.png", action: 'showreel' },
   ];
 
   const createNextAssignments = (prev: AssignedTile[]): AssignedTile[] => {
@@ -175,6 +176,15 @@ export default function HomeHeroSection() {
               <motion.div
                 key={tile.id}
                 layout
+                onClick={() => {
+                  if (tile.action === 'exo') {
+                    window.location.href = '/who-we-create-for/expo-life-far-beyond#video-section';
+                  } else if (tile.action === 'revitalift') {
+                    window.location.href = '/who-we-create-for/loreal#video-section';
+                  } else {
+                    handleShowreelClick();
+                  }
+                }}
                 transition={{
                   layout: {
                     duration: 1.1,
@@ -183,7 +193,7 @@ export default function HomeHeroSection() {
                     damping: 20,
                   },
                 }}
-                className={`relative overflow-hidden rounded-[18px] bg-white/5 ${slot.className}`}
+                className={`relative overflow-hidden rounded-[18px] bg-white/5 cursor-pointer hover:opacity-90 transition-opacity ${slot.className}`}
               >
                 <img
                   src={tile.image}

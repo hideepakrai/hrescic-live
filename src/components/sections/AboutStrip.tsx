@@ -40,7 +40,7 @@ export default function AboutStrip() {
     },
   ];
 
-  const videoId = "VCo6_Q0-mL0";
+  const videoId = "s879lJLEfW8";
 
   const ytOpts: YouTubeProps["opts"] = useMemo(
     () => ({
@@ -118,12 +118,12 @@ export default function AboutStrip() {
             transition={{ duration: 0.7, ease: "easeInOut" }}
             className={
               expanded
-                ? "relative h-[400px] w-full overflow-hidden rounded-2xl bg-[#3E0577] md:h-[560px]"
+                ? "relative h-[400px] w-full overflow-hidden rounded-2xl bg-[#3E0577] md:h-[600px]"
                 : "relative flex h-[400px] w-full flex-col justify-between overflow-hidden rounded-2xl bg-[#3E0577] p-6 md:h-[450px]"
             }
             style={{
               backgroundImage: !loadVideo
-                ? "url('/assets/Image/group-img.png')"
+                ? `url('https://img.youtube.com/vi/${videoId}/maxresdefault.jpg')`
                 : "none",
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -147,7 +147,7 @@ export default function AboutStrip() {
                 <YouTube
                   videoId={videoId}
                   opts={ytOpts}
-                  className="h-full w-full"
+                  className="h-[600px] w-full"
                   iframeClassName="h-full w-full"
                   onPlay={handlePlay}
                 />
