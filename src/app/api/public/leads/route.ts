@@ -139,7 +139,7 @@ export async function POST(req: NextRequest) {
       console.error("Database connection failed, proceeding with email only:", dbError);
     }
 
-    void sendLeadNotificationEmail({
+    await sendLeadNotificationEmail({
       leadId: insertedId,
       formType: payload.formType,
       name: payload.name,
@@ -150,6 +150,8 @@ export async function POST(req: NextRequest) {
       page: leadDoc.page || "/lets-talk",
       locale: leadDoc.locale || "en",
       createdAt: now,
+    }).catch(err => {
+      console.error("Non-fatal error sending email notification:", err);
     });
 
     return NextResponse.json(
