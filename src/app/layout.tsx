@@ -5,6 +5,7 @@ import Header from '@/components/sections/Header'
 import Footer from '@/components/sections/Footer'
 import Providers from '@/components/Providers'
 import { getJwtSecret } from '@/lib/runtime'
+import { Toaster } from 'sonner'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 getJwtSecret()
@@ -27,6 +28,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </Providers>
+        <Toaster richColors position="bottom-right" />
       </body>
     </html>
   )

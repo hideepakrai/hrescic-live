@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import { toast } from "sonner";
 import WhatToExpect from "./WhatToExpect";
 import {
   DEFAULT_LETS_TALK_CONTENT,
@@ -261,14 +262,17 @@ const LetsTalk: React.FC = () => {
     const data = (await res.json()) as { success?: boolean; error?: string; details?: unknown };
     if (!res.ok || !data.success) {
       console.error("Lead submission failed:", data.error, data.details);
+      const errText = data.error || fallbackErrorMessage;
       setFeedback({
         type: "error",
-        text: data.error || fallbackErrorMessage,
+        text: errText,
       });
+      toast.error(errText);
       return false;
     }
 
     setFeedback({ type: "success", text: successMessage });
+    toast.success(successMessage);
     reset();
     return true;
   };

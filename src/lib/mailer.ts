@@ -123,42 +123,64 @@ function escapeHtml(value: string): string {
 }
 
 function buildNotificationHtml(input: LeadNotificationPayload): string {
+  const formattedDate = new Intl.DateTimeFormat('en-US', { 
+    dateStyle: 'medium', 
+    timeStyle: 'short', 
+    timeZone: 'UTC' 
+  }).format(input.createdAt) + " (UTC)";
+  const fullPageUrl = input.page.startsWith('http') ? input.page : `https://www.hrescic.com${input.page.startsWith('/') ? '' : '/'}${input.page}`;
+
+  const messageLabel = input.formType === 'ask' ? 'What do you need help with?' : 'What would you like to improve?';
+
   return `
     <div style="font-family:Arial,sans-serif;color:#111827;">
       <h2 style="margin:0 0 12px;">New ${escapeHtml(input.formType.toUpperCase())} lead received</h2>
       <p style="margin:0 0 16px;">A new lead was submitted from the website contact flow.</p>
       <table style="border-collapse:collapse;width:100%;max-width:720px;">
-        <tr><td style="padding:6px 0;font-weight:bold;">Lead ID</td><td style="padding:6px 0;">${escapeHtml(input.leadId)}</td></tr>
+        <tr><td style="padding:6px 0;font-weight:bold;width:150px;">Lead ID</td><td style="padding:6px 0;">${escapeHtml(input.leadId)}</td></tr>
         <tr><td style="padding:6px 0;font-weight:bold;">Form Type</td><td style="padding:6px 0;">${escapeHtml(input.formType)}</td></tr>
-        <tr><td style="padding:6px 0;font-weight:bold;">Name</td><td style="padding:6px 0;">${escapeHtml(input.name)}</td></tr>
+        <tr><td style="padding:6px 0;font-weight:bold;">Page</td><td style="padding:6px 0;"><a href="${escapeHtml(fullPageUrl)}">${escapeHtml(fullPageUrl)}</a></td></tr>
+        <tr><td style="padding:6px 0;font-weight:bold;">Language</td><td style="padding:6px 0;">${escapeHtml(input.locale)}</td></tr>
+        <tr><td style="padding:6px 0;font-weight:bold;">Submitted At</td><td style="padding:6px 0;">${escapeHtml(formattedDate)}</td></tr>
+        <tr><td colspan="2" style="padding:12px 0 4px; border-bottom:1px solid #e5e7eb;"></td></tr>
+        <tr><td style="padding:12px 0 6px;font-weight:bold;">Name</td><td style="padding:12px 0 6px;">${escapeHtml(input.name)}</td></tr>
         <tr><td style="padding:6px 0;font-weight:bold;">Email</td><td style="padding:6px 0;">${escapeHtml(input.email)}</td></tr>
-        <tr><td style="padding:6px 0;font-weight:bold;">Company</td><td style="padding:6px 0;">${escapeHtml(input.company || "-")}</td></tr>
-        <tr><td style="padding:6px 0;font-weight:bold;">Website</td><td style="padding:6px 0;">${escapeHtml(input.website || "-")}</td></tr>
-        <tr><td style="padding:6px 0;font-weight:bold;">Page</td><td style="padding:6px 0;">${escapeHtml(input.page)}</td></tr>
-        <tr><td style="padding:6px 0;font-weight:bold;">Locale</td><td style="padding:6px 0;">${escapeHtml(input.locale)}</td></tr>
-        <tr><td style="padding:6px 0;font-weight:bold;">Submitted At</td><td style="padding:6px 0;">${escapeHtml(input.createdAt.toISOString())}</td></tr>
+        ${input.formType !== 'ask' ? `<tr><td style="padding:6px 0;font-weight:bold;">Company</td><td style="padding:6px 0;">${escapeHtml(input.company || "-")}</td></tr>
+        <tr><td style="padding:6px 0;font-weight:bold;">Website</td><td style="padding:6px 0;">${escapeHtml(input.website || "-")}</td></tr>` : ''}
       </table>
-      <h3 style="margin:20px 0 6px;">Message</h3>
+      <h3 style="margin:20px 0 6px;">${escapeHtml(messageLabel)}</h3>
       <p style="white-space:pre-wrap;line-height:1.5;background:#f9fafb;border:1px solid #e5e7eb;padding:12px;border-radius:8px;">${escapeHtml(input.message)}</p>
     </div>
   `;
 }
 
 function buildNotificationText(input: LeadNotificationPayload): string {
+  const formattedDate = new Intl.DateTimeFormat('en-US', { 
+    dateStyle: 'medium', 
+    timeStyle: 'short', 
+    timeZone: 'UTC' 
+  }).format(input.createdAt) + " (UTC)";
+  const fullPageUrl = input.page.startsWith('http') ? input.page : `https://www.hrescic.com${input.page.startsWith('/') ? '' : '/'}${input.page}`;
+
+  const messageLabel = input.formType === 'ask' ? 'What do you need help with?' : 'What would you like to improve?';
+
   return [
     `New ${input.formType.toUpperCase()} lead received`,
     "",
     `Lead ID: ${input.leadId}`,
     `Form Type: ${input.formType}`,
+    `Page: ${fullPageUrl}`,
+    `Language: ${input.locale}`,
+    `Submitted At: ${formattedDate}`,
+    "----------------------------------------",
     `Name: ${input.name}`,
     `Email: ${input.email}`,
-    `Company: ${input.company || "-"}`,
-    `Website: ${input.website || "-"}`,
-    `Page: ${input.page}`,
-    `Locale: ${input.locale}`,
-    `Submitted At: ${input.createdAt.toISOString()}`,
+    ...(input.formType !== 'ask' ? [
+      `Company: ${input.company || "-"}`,
+      `Website: ${input.website || "-"}`,
+    ] : []),
     "",
-    "Message:",
+    `${messageLabel}:`,
     input.message,
   ].join("\n");
 }
