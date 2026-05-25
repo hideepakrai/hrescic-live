@@ -1,4 +1,5 @@
 import nodemailer, { Transporter } from "nodemailer";
+import { getCmsCollectionModel } from "@/models";
 
 export type LeadNotificationPayload = {
   leadId: string;
@@ -25,6 +26,7 @@ type MailerConfig = {
   notifyTo: string[];
 };
 
+let cachedTransporterKey = "";
 let cachedTransporter: Transporter | null = null;
 
 function parseBoolean(value: string | undefined, fallback = false): boolean {
@@ -46,16 +48,29 @@ function parseRecipients(value: string | undefined): string[] {
     .filter((item) => item.length > 0);
 }
 
-function readMailerConfig(): MailerConfig {
-  const host = (process.env.SMTP_HOST || "").trim();
-  const port = parsePort(process.env.SMTP_PORT);
-  const secure = parseBoolean(process.env.SMTP_SECURE, false);
-  const user = (process.env.SMTP_USER || "").trim();
-  const pass = (process.env.SMTP_PASS || "").trim();
-  const fromEmail = (process.env.SMTP_FROM_EMAIL || "").trim();
-  const fromName = (process.env.SMTP_FROM_NAME || "Hrescic").trim();
-  const notifyTo = parseRecipients(process.env.LEAD_NOTIFY_TO);
-  const enabled = parseBoolean(process.env.LEAD_EMAIL_NOTIFICATIONS_ENABLED, false);
+async function readMailerConfig(): Promise<MailerConfig> {
+  let dbData: any = {};
+  try {
+    const Settings = await getCmsCollectionModel("settings");
+    const config = await Settings.findOne({ key: "integrations" });
+    if (config?.data) {
+      dbData = config.data;
+    }
+  } catch (error) {
+    console.warn("Could not fetch mailer config from DB, falling back to env variables:", error);
+  }
+
+  const host = (dbData.smtpHost || process.env.SMTP_HOST || "").trim();
+  const port = parsePort(dbData.smtpPort || process.env.SMTP_PORT);
+  const secure = parseBoolean(process.env.SMTP_SECURE, false) || port === 465;
+  const user = (dbData.smtpUser || process.env.SMTP_USER || "").trim();
+  const pass = (dbData.smtpPass || process.env.SMTP_PASS || "").trim();
+  const fromEmail = (dbData.smtpFrom || process.env.SMTP_FROM_EMAIL || dbData.smtpUser || process.env.SMTP_USER || "").trim();
+  const fromName = (dbData.smtpFromName || process.env.SMTP_FROM_NAME || "Hrescic").trim();
+  const notifyTo = parseRecipients(dbData.notifyRecipients || process.env.LEAD_NOTIFY_TO);
+  const enabled = dbData.notificationsEnabled !== undefined 
+    ? Boolean(dbData.notificationsEnabled) 
+    : parseBoolean(process.env.LEAD_EMAIL_NOTIFICATIONS_ENABLED, false);
 
   return {
     enabled,
@@ -82,7 +97,10 @@ function configIsComplete(config: MailerConfig): boolean {
 }
 
 function getTransporter(config: MailerConfig): Transporter {
-  if (cachedTransporter) return cachedTransporter;
+  const key = JSON.stringify({ h: config.host, p: config.port, u: config.user, s: config.secure });
+  if (cachedTransporter && cachedTransporterKey === key) return cachedTransporter;
+  
+  cachedTransporterKey = key;
   cachedTransporter = nodemailer.createTransport({
     host: config.host,
     port: config.port,
@@ -146,7 +164,7 @@ function buildNotificationText(input: LeadNotificationPayload): string {
 }
 
 export async function sendLeadNotificationEmail(input: LeadNotificationPayload): Promise<void> {
-  const config = readMailerConfig();
+  const config = await readMailerConfig();
 
   if (!config.enabled) {
     console.info(
